@@ -1,0 +1,401 @@
+
+一、选择题（25*2=50）
+1 一个java程序运行从上到下的环境次序是（C）
+A 操作系统、Java程序、JRE/JVM、硬件
+B JRE/JVM、Java程序、硬件、操作系统
+C Java程序、JER/JVM、操作系统、硬件
+D Java程序、操作系统、JRE/JVM、硬件
+2 下面代码中的第2 行可以插入一行代码( AB)保证程序编译通过。
+1.public interface A{//接口中的方法共有的抽象的
+2.
+3.}
+A void method();
+B public void method();
+C static void method();
+D private void method();
+E protected void method();
+3、关于异常下列描述中，错误的是(BC)
+  A．异常机制可以用于流程控制
+  B. finally代码段在发生异常时不一定必须执行
+  c．在catch代码段中可以使用return语句来返回到异常抛出点
+  D．可以把catch到的异常对象两次抛出，使上层try-catch结构继续
+4、关于被私有访问控制符private修饰的成员变量，以下说法正确的是(C）
+    A．可以被三种类所引用：该类自身、与它在同一个包中的其他类
+    B．可以被两种类访问和引用：该类本身、该类的所有子类
+    C．只能被该类自身所访问和修改
+    D．只能被同一个包中的类访问
+5、某类Example的main()方法参数为args,当命令行中输入Java Example cat 时，args[0]的值为(   B  )。
+	A．cat   B.Java  C.example    D.null
+6、下面关于Thread类提供的责成控制方法的说法中，错误的是（  B ）
+A. 在线程A中执行线程B的join方法，则线程A等待直到线程B执行完毕
+//join方法将线程B由异步的线程转换为同步的线程
+B．线程A通过调用iterrupt方法来中断其阻塞状态
+// iterrupt方法用来阻塞调用该方法的线程
+C．若线程A调用方法isAlive返回值为true,则说明A正在执行中
+D . currentThread方法返回当前线程的引用
+7、类 Test1定义如下：
+     //重载与重写
+	1.public class Test1{
+	2.	public float aMethod(float a,float b){  } 
+	3.
+	4.}
+将以下哪种方法插入行3是不合法的。（    B  ）
+
+A、public float aMethod (float a,  float b, float c) {}//重载
+B、public float  aMethod (float  c, float d){}//与原方法完全相同
+C、public   int aMethod (int a,  int b) { }//重载
+D、public float aMethod (int a, int b, int c) {}//重载
+8、下面程序的输出结果是(D)
+  private static void foo(){
+    try{
+    	System.out. println (“try”) ;
+	foo();
+    }catch(Throwable e){
+	System.out. println ("catch”) ;
+	foo();
+    }finally{
+	System.out.println(“finally”);
+	foo();
+    }
+ }
+ Public static void main(String[] args){
+	foo();
+}// 代码演示的时候由于虚拟机的原因会有假相
+A、执行一段时间后报栈溢出。                       B、会一直输出“try”
+C、会一直输出”try”和”finally”                         D、会一直输出”try”、”catch”和”finally”    
+9、下面的哪些程序片段可能导致错误？（ BD   ）
+	A . String s =”Gone with the wind”;
+	     String t = “ good “;
+ 	     String k = s + t;
+	B . String s  = “Gone with the wind”;
+	     String t;
+	     t = s[3] + “one”;
+	C . String s = “Gone with the wind”;
+	     String standard = s.toUpperCase();
+	D . String s = “home directory”;
+	     String t = s-“directory”;
+10、已知如下代码：
+	1：class Example{
+	2:	String str;
+	3:	public Example(){
+	4:		str=”example”;
+	5:	}
+	6:	public Example(String s){
+	7:		str=s;
+	8:	}
+	9:}
+	10:class Demo extends Example{
+	11:}
+	12:public class Test{
+	13:	public void f(){
+	14:		Example ex = new Example(“Good”);
+	15:		Demo d = new Demo(“Good”);// 构造方法不能继承，    Demo只有空参的构造方法
+	16:	}
+	   }
+	哪句语句会导致错误？（  E）
+A、 line 3
+B、 line 6
+C、 line 10
+D、 line 14
+E、 line 15
+11、下面的代码中第4行创建的对象在什么时候符合垃圾回收的条件（B   ）
+	1.class Bar{}
+	2.class Test{
+	3.	Bar doBar(){
+	4.		Bar b = new Bar();
+	5.		return b;
+	6.}
+	7.public static void main(String args[]){
+	8.	Test t = new Test();
+	9.	Bar newBar = t.doBar();
+	10.	newBar = new Bar();//newBar引用指向新的对象，原对象可以被垃圾回收
+	11.	}
+	12.	}
+	A . 程序运行第9行之后
+	B．程序运行第10行之后
+	C . doBar方法运行结束之后
+	D . main方法运行结束之后
+12、下列关于for循环和while循环的说法中哪个是正确的？（A）
+	A . while循环能实现的操作，for循环也都能实现
+	B . while循环判断条件一般是程序结果，for循环判断条件一般是非程序结果
+	C . 两种循环任何时候都可替换
+	D . 两种循环结构中都必须有循环体，循环体不能为空
+13、下述说法中，错误的是（ A D ）
+	A . Java中，方法的重载是指多个方法可以共享同一个名字
+	B . java中，用abstract修饰的类称为抽象类，它不能实例化
+	C . java中，接口不包含成员变量和方法实现
+	D . java中，构造方法可以有返回值
+14、下面哪些是正确的（AEF）//强制转换与向上造型
+	11．class ClassA{}                             22. ClassB p1 = new ClassB();
+	12 . class ClassB extends ClassA{}       23. ClassC p2 = new ClassC();
+	13 . class ClassC extends ClassA{}       24. ClassA p3 = new ClassB();
+	and:                                                 25. ClassA p4 = new ClassC();
+	21.ClassA p0 = new ClassA();
+	A. p0 = p1;    B. p1 = p2;  C.p2 = p4;  D.p2 == (ClassC)p1;  E. p1 = (ClassB)p3;F. p2=(ClassC)p4;
+15、以下代码片段，正确的结果是：（  D）
+	11.class A{                                         
+	12.public void process(){System.out.println(“a”)}}
+	13.class B extends A{
+	14.public void process() throws IOException{//若父类方法没有抛出异常，则子类重写的方法不能抛出异常。
+	15.super.process();
+	16.System.out.print(“B,”);
+	17.throw new IOException();
+	18.}}
+	19.public static void main(String[] args)
+	20.try{ new B().process();}
+	21.catch(IOException e){
+	22.System.out.println(“Exception”);}}}
+A . Exception
+B . A,B,Exception
+C . compilation fails because of an error in line 20
+D . compilation fails because of an error in line 14
+E . A NullPointerException is thrown at runtime
+16、用直接插入排序方法对下面四个序列进行排序（由小到大），元素比较次数最少的是（ C  ）。
+A. 94,32,40,90,80,46,21,69
+B.32,40,21,46,69,94,90,80
+C.21,32,46,40,80,69,90,94
+D.90,69,80,46,21,32,94,40
+17、设栈最大长度为3,入栈顺序为1,2,3,4,5,6,则不可能的出栈序列是（  D）
+A.1,2,3,4,5,6                                             B.2,1,3,4,5,6
+C.3,4,2,1,5,6                                             D.4,3,2,1,5,6 //第一个出去的不可能是4
+18、设有98个已排序序列元素，采用二分法查找时，最大比较次数是（ D ）
+A.49                  B.15                C.20              D.7  // 2的6次幂64
+19、若一棵二叉树具有10个度为2的结点，5个度为1的结点，则度为0的结点个数是（ B  ）//画图数数即可    计算:  3*2+5 = 11      
+A.9                           B.11                        C.15                        D.不确定
+20、以下与数据存储结构无关的术语是（ D   ）。
+A．循环队列             B.链表                     C.哈希表                   D.栈
+21、设数组A[10…100，20…100]以行优先的方式顺序存储，每个元素占4个字节 ，且已知A[10，20]的地址为1000,则A[50，90]的地 址是（  D    ）
+A . 13240                 B . 14250                  C . 24220                     D . 14240
+22、链表不具有的特点是（   B   ）
+A . 插入、删除不需要移动元素
+B . 可能随机访问任一元素//链表中的对象含有它后面一个对象的地址
+C . 不必事先估计存储空间
+D . 所需空间与线性长度成正比
+23、下列关于线性表的叙述中，错误的是哪一个？（   BCD   ）
+A . 线性表采用顺序存储，必须占用一片连续存储单元
+B . 线性表采用顺序存储，便于进行插入和删除操作//便于查找的操作
+C . 线性表采用链接存储，不必须有占用一片连续的存储单元
+D . 线性表采用链接存储，便于插入和删除操作
+24、若一个栈的输入序列为1,2,3,…，n,输入序列的第一个元素是i,则第j个输出元素是( D     )。
+A . i-j-1                  B . i-j                         C . j-i+1                  D . 不确定
+25、下列说法不正确的是(   B   )。
+A . 图的遍历是从给定的源点出发每一个顶点仅被访问一次
+B . 图的深度遍历不适用于有向图
+C . 遍历的基本算法有两种：深度遍历和广度遍历
+D . 图的深度遍历是一个递归过程
+
+
+
+
+二、程序改错(5*2=10)
+1.（      static Integer i=0;                                                    ）
+public class Unbelievable{
+	static Integer i;// static int I;
+	public static void main(String[] args){
+		if(i==42)//空指针异常
+			System.out.println(“Unbelievable”);
+	}
+}
+2 .（//animal是Dog类的引用，不用强转为Cat，要把new  Dog()改为new Cat()   ）
+class Animal{
+	public String noise(){
+		return “peep”;
+	}
+}
+class Dog extends Animal{
+	public String noise(){
+		return “bark”;
+	}
+}
+class Cat extends Animal{
+	public  String noise(){
+		return “meow”;
+	}
+}
+public class Test{
+	public static void main(String[] args){
+		Animal animal = new Dog(); // new Cat()
+		Cat cat = (Cat)animal;//或者 （Dog）animal;应该强转成Dog而非Cat
+		cat.noise();
+	}
+}
+3 . (    //抽象方法不能用private修饰                                )
+abstract class Something{ 
+	private abstract String doSomething();
+}
+4 . (     正确                                                                             )
+public class Something{
+	public static void main(String[] args){
+		Other o = new Other();
+		new Something().addOne(o);
+	}
+	public void addOne(final Other o){
+		o.i++;
+	}
+}
+class Other{
+	public int i;
+}
+5 . (    // final修饰的成员变量必须赋初值                                                     )
+class Something{
+	final int i;
+	public void doSomething(){
+		System.out.println(“i=” + i);
+	}
+}
+
+三、程序阅读题（每空2分，共40分）
+1．阅读以下java代码，写出运行结果
+class StaticTest{
+	static int x=1;
+	int y;
+	StaticTest(){
+		y++;
+	}
+	public static void main(String args[]){
+		StaticTest st = new StaticTest();
+		System.out.println(“x=” + x);
+		System.out.println(“st.y=” + st.y);
+		st = new StaticTest();
+		System.out.println(“st.y=” + st.y);
+	}
+static { x++;}
+}
+
+x=2
+st.y=1
+st.y=1
+2.编写将一维数组a[]中互不相同的数按从小到大顺序重新存于一维数组a[]的程序。
+class A{//此题有错
+	public static void main(String[] args){
+		int a[]={15,7,15,6,4,3,4,6,7};
+		int i,j,k,low,high,mid,t;
+		for(i=k=1;i<a.length;i++){
+			low=0;
+			high=k-1;
+			while(   high>=low               ){
+				mid=(low+high)/2;
+				if(a[mid]>=a[i])       high=mid-1                       ;
+				else low=mid+1;
+			}
+			if(      a[low]>a[i]  ||arr[low]!=a[i]     ){
+				t=a[i];
+				for(j=k-1;     j>=low               ;j--)
+					a[j+1]=a[j];
+				           a[low]=t                         ;
+			k++;
+		}
+	}
+	for(j=0;j<k;j++)
+		System.out.println(a[j]);
+	}
+}
+3.请用java编写如下程序：此程序处理一个由0和非0数字成员组成的数组（长度自定），
+例如0 0 1 2 0 1 0 0 0 1 0 0 0 0 0 2 0 7 8 9 0 0 1 2 3 4,把数组中所有连续
+两个以上的0去掉，将结果存入一个新数组。如上例如处理后结果为1 2 0 1 0 7 8 9 1 2 3 
+public satic void main(String[] args){
+	int[] srcArray = {0,0,1,2,0,1,0,0,0,1,0,0,0,0,0,2,0,7,8,9,0,0,1,2,3,4};
+	int[] destArray = new int[50];
+	int i = 0,j = 0,count = 0;
+	for(i=0;i<srcArray.length;){
+		count = 0;
+		if(srcArray[i]!=0){
+1 destArray[j++] = srcArray[i];  
+			i++;
+		}else{
+			while(i<srcArray.length && ②srcArray[i]==0  &&count<2 ){
+2    count++;                        
+i++;
+}
+if(count<2){
+④destArray[j++] = srcArray[i-1]; 
+}
+		}
+	}
+	for(i =0;i<j;i++){
+		System.out.println(destArray[i] + “  “);
+	}
+}
+4 . 有n个人围成一个圈，顺序排号。从第一个人开始报数（从1到3报数）,凡报到3的人退出圈子，再从他的下一个人重新报数，问最后留下的是原来第几号的那位？
+public class Test{
+	public static void main(String[] args){
+		int peo;
+		System.out.println(“请输入人数：”);
+		Scanner inp = new Scanner(System.in);
+		peo = inp.nextInt();
+		int k = Keeper(peo,3);
+		System.out.println(“最后留下的是“+ k + “号!”);
+	}
+public static int Keeper(int peo,int n){
+	int k = 0;
+	int [] array = new int[peo];
+for(int i = 1;i<peo;i++){
+	int j = 1;
+	whlie (j<=n){
+		if(①                                      ){
+			j--;
+		}
+		if(j==n){
+3          array[i]=1  ;k++                             ;
+		}
+		j++;
+4        i = i% (peo -1)                                  ;
+	}
+}
+for(k = 0;k<peo;k++){
+	if(array[k]==0){
+5         break                       ;
+	}
+}
+return k + 1;
+}
+}
+5.在一个n*n的棋盘上，放置n个不能互相捕捉的国际象棋“皇后” 的所有布局。以下是n皇后的算法，请完成填空部分：
+	Public class Queen{
+		private int n;
+		private int[] queenPos;
+		private double num = 0;//记录共有多少种摆法
+		Queen(int d ){
+			n  = d;
+			queenPos = new int[d];
+		}
+		//放置皇后的方法
+		public void place(int row){
+			int i = 0;
+			if(row ==n){
+				①(                                                      )
+			}else{
+				for(i = 0;i<n;i++){
+					queenPos[row] = i;
+					if(legality(row))
+						②(                                      )
+				}
+			}
+		}
+	//判断而已是否合法
+	private Boolean legality(int list){
+		if(list==0)
+			return true;
+		for(int i=0;i<list;i++){
+		if(queenPos[i]==queenPos[list])
+			③(                                             );
+		if(④                                             )
+			Return false;
+		}
+		Return true;
+	}
+	//测试方法
+	Public static void main(String[] args){
+		System.out.println(“输入个数n:”);
+		Scanner in = new Scanner(System.in);
+		int n = in.nextInt();
+		try{
+			Queen q = new Queen(n);
+			q.place(0);
+			System.out.println(n+”*” + n+”时,” + “共有” + q.num + “种可能摆法.”);
+			System.out.println(“ok”);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+}
