@@ -1,0 +1,72 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		EE4011A419F7E67400B67328 /* pythontest.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = pythontest.py; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		EE40119D19F7E51B00B67328 = {
+			isa = PBXGroup;
+			children = (
+				EE4011A419F7E67400B67328 /* pythontest.py */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		EE40119E19F7E51B00B67328 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+			};
+			buildConfigurationList = EE4011A119F7E51B00B67328 /* Build configuration list for PBXProject "pythontest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EE40119D19F7E51B00B67328;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		EE4011A219F7E51B00B67328 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		EE4011A319F7E51B00B67328 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE4011A119F7E51B00B67328 /* Build configuration list for PBXProject "pythontest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE4011A219F7E51B00B67328 /* Debug */,
+				EE4011A319F7E51B00B67328 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EE40119E19F7E51B00B67328 /* Project object */;
+}
