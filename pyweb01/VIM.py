@@ -11,7 +11,7 @@ class HideX(object):
 
     #x = property(get_x, set_x)
 
-    #@property
+    @property
     def x():
         def fget(self):
             return ~self.__x
@@ -20,7 +20,7 @@ class HideX(object):
             self.__x = ~x
 
         return locals()
-    x=property(**x())
+    #x=property(**x())
 cx = HideX(3)
 print cx.x
 cx.x=45
