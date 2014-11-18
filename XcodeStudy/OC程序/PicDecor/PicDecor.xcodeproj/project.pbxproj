@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EE355EE81A073B8F00544294 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE355EE71A073B8F00544294 /* main.m */; };
+		EE355EEB1A073B8F00544294 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE355EEA1A073B8F00544294 /* AppDelegate.m */; };
+		EE355EEE1A073B8F00544294 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE355EED1A073B8F00544294 /* ViewController.m */; };
+		EE355EF11A073B8F00544294 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE355EEF1A073B8F00544294 /* Main.storyboard */; };
+		EE355EF31A073B8F00544294 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE355EF21A073B8F00544294 /* Images.xcassets */; };
+		EE355EF61A073B8F00544294 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE355EF41A073B8F00544294 /* LaunchScreen.xib */; };
+		EE355F021A073B8F00544294 /* PicDecorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE355F011A073B8F00544294 /* PicDecorTests.m */; };
+		EE355F0D1A07660A00544294 /* ImageEditing.m in Sources */ = {isa = PBXBuildFile; fileRef = EE355F0C1A07660A00544294 /* ImageEditing.m */; };
+		EE355F101A07668200544294 /* Decornations.m in Sources */ = {isa = PBXBuildFile; fileRef = EE355F0F1A07668200544294 /* Decornations.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EE355EFC1A073B8F00544294 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE355EDA1A073B8F00544294 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE355EE11A073B8F00544294;
+			remoteInfo = PicDecor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EE355EE21A073B8F00544294 /* PicDecor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicDecor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE355EE61A073B8F00544294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE355EE71A073B8F00544294 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EE355EE91A073B8F00544294 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EE355EEA1A073B8F00544294 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EE355EEC1A073B8F00544294 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EE355EED1A073B8F00544294 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EE355EF01A073B8F00544294 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EE355EF21A073B8F00544294 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EE355EF51A073B8F00544294 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		EE355EFB1A073B8F00544294 /* PicDecorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicDecorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE355F001A073B8F00544294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE355F011A073B8F00544294 /* PicDecorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicDecorTests.m; sourceTree = "<group>"; };
+		EE355F0B1A07660A00544294 /* ImageEditing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditing.h; sourceTree = "<group>"; };
+		EE355F0C1A07660A00544294 /* ImageEditing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditing.m; sourceTree = "<group>"; };
+		EE355F0E1A07668200544294 /* Decornations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decornations.h; sourceTree = "<group>"; };
+		EE355F0F1A07668200544294 /* Decornations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Decornations.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EE355EDF1A073B8F00544294 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE355EF81A073B8F00544294 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE355ED91A073B8F00544294 = {
+			isa = PBXGroup;
+			children = (
+				EE355EE41A073B8F00544294 /* PicDecor */,
+				EE355EFE1A073B8F00544294 /* PicDecorTests */,
+				EE355EE31A073B8F00544294 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EE355EE31A073B8F00544294 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE355EE21A073B8F00544294 /* PicDecor.app */,
+				EE355EFB1A073B8F00544294 /* PicDecorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE355EE41A073B8F00544294 /* PicDecor */ = {
+			isa = PBXGroup;
+			children = (
+				EE355EE91A073B8F00544294 /* AppDelegate.h */,
+				EE355EEA1A073B8F00544294 /* AppDelegate.m */,
+				EE355EEC1A073B8F00544294 /* ViewController.h */,
+				EE355EED1A073B8F00544294 /* ViewController.m */,
+				EE355EEF1A073B8F00544294 /* Main.storyboard */,
+				EE355EF21A073B8F00544294 /* Images.xcassets */,
+				EE355EF41A073B8F00544294 /* LaunchScreen.xib */,
+				EE355EE51A073B8F00544294 /* Supporting Files */,
+				EE355F0B1A07660A00544294 /* ImageEditing.h */,
+				EE355F0C1A07660A00544294 /* ImageEditing.m */,
+				EE355F0E1A07668200544294 /* Decornations.h */,
+				EE355F0F1A07668200544294 /* Decornations.m */,
+			);
+			path = PicDecor;
+			sourceTree = "<group>";
+		};
+		EE355EE51A073B8F00544294 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EE355EE61A073B8F00544294 /* Info.plist */,
+				EE355EE71A073B8F00544294 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EE355EFE1A073B8F00544294 /* PicDecorTests */ = {
+			isa = PBXGroup;
+			children = (
+				EE355F011A073B8F00544294 /* PicDecorTests.m */,
+				EE355EFF1A073B8F00544294 /* Supporting Files */,
+			);
+			path = PicDecorTests;
+			sourceTree = "<group>";
+		};
+		EE355EFF1A073B8F00544294 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EE355F001A073B8F00544294 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE355EE11A073B8F00544294 /* PicDecor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE355F051A073B8F00544294 /* Build configuration list for PBXNativeTarget "PicDecor" */;
+			buildPhases = (
+				EE355EDE1A073B8F00544294 /* Sources */,
+				EE355EDF1A073B8F00544294 /* Frameworks */,
+				EE355EE01A073B8F00544294 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PicDecor;
+			productName = PicDecor;
+			productReference = EE355EE21A073B8F00544294 /* PicDecor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EE355EFA1A073B8F00544294 /* PicDecorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE355F081A073B8F00544294 /* Build configuration list for PBXNativeTarget "PicDecorTests" */;
+			buildPhases = (
+				EE355EF71A073B8F00544294 /* Sources */,
+				EE355EF81A073B8F00544294 /* Frameworks */,
+				EE355EF91A073B8F00544294 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE355EFD1A073B8F00544294 /* PBXTargetDependency */,
+			);
+			name = PicDecorTests;
+			productName = PicDecorTests;
+			productReference = EE355EFB1A073B8F00544294 /* PicDecorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE355EDA1A073B8F00544294 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "张博良";
+				TargetAttributes = {
+					EE355EE11A073B8F00544294 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					EE355EFA1A073B8F00544294 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = EE355EE11A073B8F00544294;
+					};
+				};
+			};
+			buildConfigurationList = EE355EDD1A073B8F00544294 /* Build configuration list for PBXProject "PicDecor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EE355ED91A073B8F00544294;
+			productRefGroup = EE355EE31A073B8F00544294 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE355EE11A073B8F00544294 /* PicDecor */,
+				EE355EFA1A073B8F00544294 /* PicDecorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE355EE01A073B8F00544294 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE355EF11A073B8F00544294 /* Main.storyboard in Resources */,
+				EE355EF61A073B8F00544294 /* LaunchScreen.xib in Resources */,
+				EE355EF31A073B8F00544294 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE355EF91A073B8F00544294 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE355EDE1A073B8F00544294 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE355F0D1A07660A00544294 /* ImageEditing.m in Sources */,
+				EE355EEE1A073B8F00544294 /* ViewController.m in Sources */,
+				EE355EEB1A073B8F00544294 /* AppDelegate.m in Sources */,
+				EE355F101A07668200544294 /* Decornations.m in Sources */,
+				EE355EE81A073B8F00544294 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE355EF71A073B8F00544294 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE355F021A073B8F00544294 /* PicDecorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE355EFD1A073B8F00544294 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE355EE11A073B8F00544294 /* PicDecor */;
+			targetProxy = EE355EFC1A073B8F00544294 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EE355EEF1A073B8F00544294 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE355EF01A073B8F00544294 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EE355EF41A073B8F00544294 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE355EF51A073B8F00544294 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EE355F031A073B8F00544294 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EE355F041A073B8F00544294 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EE355F061A073B8F00544294 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PicDecor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EE355F071A073B8F00544294 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PicDecor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EE355F091A073B8F00544294 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PicDecorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PicDecor.app/PicDecor";
+			};
+			name = Debug;
+		};
+		EE355F0A1A073B8F00544294 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PicDecorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PicDecor.app/PicDecor";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE355EDD1A073B8F00544294 /* Build configuration list for PBXProject "PicDecor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE355F031A073B8F00544294 /* Debug */,
+				EE355F041A073B8F00544294 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE355F051A073B8F00544294 /* Build configuration list for PBXNativeTarget "PicDecor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE355F061A073B8F00544294 /* Debug */,
+				EE355F071A073B8F00544294 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EE355F081A073B8F00544294 /* Build configuration list for PBXNativeTarget "PicDecorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE355F091A073B8F00544294 /* Debug */,
+				EE355F0A1A073B8F00544294 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EE355EDA1A073B8F00544294 /* Project object */;
+}
