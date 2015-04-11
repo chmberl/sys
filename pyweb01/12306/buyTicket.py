@@ -19,7 +19,7 @@ if __name__ == '__main__':
     # 购票车站信息
     stationInfo={
             "stationType":["fromStationText","toStationText"],
-            "fromStationText":u"深圳",
+            "fromStationText":u"广州",
             "toStationText":u"长沙"}
 
     # 乘车人信息,座位类型（可多选）
@@ -31,7 +31,7 @@ if __name__ == '__main__':
     # P  特等座
     # 4  软卧
     passengers_info =  {
-            u"张博良":["O","M"],
+            u"张博良":["O","M","3"],
             #u"李四(学生)":["9","3","1"]
                 }
     # 乘车日期 目前只支持2015年2月份,如日期大于预售期,则为预售期最后一天
@@ -46,11 +46,11 @@ if __name__ == '__main__':
     searchTicket.fill_info_and_search_ticket(browser,stationInfo,ticketDate)
 
     # 循环次数
-    count = 200
+    count = 500
     query_id = "query_ticket"
 
     result = searchTicket.circulate_search_ticket(browser,query_id,count)
     if result:
-        order.put_ticket_info_and_randcode(browser,passengers_info)
+        orderTicket.put_ticket_info_and_randcode(browser,passengers_info)
     #browser.find_element_by_id("show_more").click()
 

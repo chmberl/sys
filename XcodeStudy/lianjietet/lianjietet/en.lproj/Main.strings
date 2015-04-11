@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "选择颜色："; ObjectID = "4Bn-e8-bZ3"; */
+"4Bn-e8-bZ3.text" = "选择颜色：";
+
+/* Class = "UILabel"; text = "你的颜色："; ObjectID = "Osj-zS-2uz"; */
+"Osj-zS-2uz.text" = "你的颜色：";
+
+/* Class = "UIButton"; normalTitle = "送给我花"; ObjectID = "U7u-b1-Acx"; */
+"U7u-b1-Acx.normalTitle" = "送给我花";
+
+/* Class = "UISegmentedControl"; n2x-5M-IDQ.segmentTitles[0] = "红色"; ObjectID = "n2x-5M-IDQ"; */
+"n2x-5M-IDQ.segmentTitles[0]" = "红色";
+
+/* Class = "UISegmentedControl"; n2x-5M-IDQ.segmentTitles[1] = "绿色"; ObjectID = "n2x-5M-IDQ"; */
+"n2x-5M-IDQ.segmentTitles[1]" = "绿色";
+
+/* Class = "UISegmentedControl"; n2x-5M-IDQ.segmentTitles[2] = "蓝色"; ObjectID = "n2x-5M-IDQ"; */
+"n2x-5M-IDQ.segmentTitles[2]" = "蓝色";
+
+/* Class = "UISegmentedControl"; n2x-5M-IDQ.segmentTitles[3] = "黄色"; ObjectID = "n2x-5M-IDQ"; */
+"n2x-5M-IDQ.segmentTitles[3]" = "黄色";
