@@ -2,17 +2,26 @@
 //  ViewController.m
 //  hello
 //
-//  Created by 张博良 on 15/4/8.
+//  Created by 张博良 on 15/4/12.
 //  Copyright (c) 2015年 张博良. All rights reserved.
 //
 
 #import "ViewController.h"
-
-@interface ViewController ()
-
-@end
+#import "UIKitPrjPlaceholder.h"
 
 @implementation ViewController
+
+
+@synthesize userOutput;
+@synthesize userInput;
+
+- (void)setOutput:(id)sender {
+    self.userOutput.text = self.userInput.text;
+    UIViewController *control = [[UIKitPrjPlaceholder alloc] init];
+    [self presentViewController:control animated:NO completion:^(void) {
+        NSLog(@"%@", @"跳转成功");
+    }];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -2,7 +2,7 @@
 //  ViewController.h
 //  hello
 //
-//  Created by 张博良 on 15/4/8.
+//  Created by 张博良 on 15/4/12.
 //  Copyright (c) 2015年 张博良. All rights reserved.
 //
 
@@ -10,6 +10,11 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UILabel *userOutput;
+@property (strong, nonatomic) IBOutlet UITextField *userInput;
+
+
+- (IBAction)setOutput:(id)sender;
 
 @end
 

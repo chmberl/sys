@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  hello
 //
-//  Created by 张博良 on 15/4/8.
+//  Created by 张博良 on 15/4/12.
 //  Copyright (c) 2015年 张博良. All rights reserved.
 //
 
@@ -16,18 +16,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    UILabel *myMessage;
-    //UILabel *myUnusedMessage;
-    myMessage = [[UILabel alloc] initWithFrame:CGRectMake(30.0, 50.0, 300.0, 50.0)];
-    myMessage.font = [UIFont systemFontOfSize:48];
-    myMessage.text = @"hello world";
-    //myMessage.textColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"Background.png"]];
-    [self.window addSubview:myMessage];
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    
-    
+    // Override point for customization after application launch.
     return YES;
 }
 

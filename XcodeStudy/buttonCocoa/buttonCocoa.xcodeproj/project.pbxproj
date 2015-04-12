@@ -1,0 +1,415 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EE607B021AD8BD7B0057DB7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE607B011AD8BD7B0057DB7C /* AppDelegate.swift */; };
+		EE607B041AD8BD7B0057DB7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE607B031AD8BD7B0057DB7C /* ViewController.swift */; };
+		EE607B061AD8BD7B0057DB7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE607B051AD8BD7B0057DB7C /* Images.xcassets */; };
+		EE607B091AD8BD7B0057DB7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE607B071AD8BD7B0057DB7C /* Main.storyboard */; };
+		EE607B151AD8BD7B0057DB7C /* buttonCocoaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE607B141AD8BD7B0057DB7C /* buttonCocoaTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EE607B0F1AD8BD7B0057DB7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE607AF41AD8BD7B0057DB7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE607AFB1AD8BD7B0057DB7C;
+			remoteInfo = buttonCocoa;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EE607AFC1AD8BD7B0057DB7C /* buttonCocoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buttonCocoa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE607B001AD8BD7B0057DB7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE607B011AD8BD7B0057DB7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EE607B031AD8BD7B0057DB7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE607B051AD8BD7B0057DB7C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EE607B081AD8BD7B0057DB7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EE607B0E1AD8BD7B0057DB7C /* buttonCocoaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = buttonCocoaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE607B131AD8BD7B0057DB7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE607B141AD8BD7B0057DB7C /* buttonCocoaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonCocoaTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EE607AF91AD8BD7B0057DB7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE607B0B1AD8BD7B0057DB7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE607AF31AD8BD7B0057DB7C = {
+			isa = PBXGroup;
+			children = (
+				EE607AFE1AD8BD7B0057DB7C /* buttonCocoa */,
+				EE607B111AD8BD7B0057DB7C /* buttonCocoaTests */,
+				EE607AFD1AD8BD7B0057DB7C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EE607AFD1AD8BD7B0057DB7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE607AFC1AD8BD7B0057DB7C /* buttonCocoa.app */,
+				EE607B0E1AD8BD7B0057DB7C /* buttonCocoaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE607AFE1AD8BD7B0057DB7C /* buttonCocoa */ = {
+			isa = PBXGroup;
+			children = (
+				EE607B011AD8BD7B0057DB7C /* AppDelegate.swift */,
+				EE607B031AD8BD7B0057DB7C /* ViewController.swift */,
+				EE607B051AD8BD7B0057DB7C /* Images.xcassets */,
+				EE607B071AD8BD7B0057DB7C /* Main.storyboard */,
+				EE607AFF1AD8BD7B0057DB7C /* Supporting Files */,
+			);
+			path = buttonCocoa;
+			sourceTree = "<group>";
+		};
+		EE607AFF1AD8BD7B0057DB7C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EE607B001AD8BD7B0057DB7C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EE607B111AD8BD7B0057DB7C /* buttonCocoaTests */ = {
+			isa = PBXGroup;
+			children = (
+				EE607B141AD8BD7B0057DB7C /* buttonCocoaTests.swift */,
+				EE607B121AD8BD7B0057DB7C /* Supporting Files */,
+			);
+			path = buttonCocoaTests;
+			sourceTree = "<group>";
+		};
+		EE607B121AD8BD7B0057DB7C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EE607B131AD8BD7B0057DB7C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE607AFB1AD8BD7B0057DB7C /* buttonCocoa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE607B181AD8BD7B0057DB7C /* Build configuration list for PBXNativeTarget "buttonCocoa" */;
+			buildPhases = (
+				EE607AF81AD8BD7B0057DB7C /* Sources */,
+				EE607AF91AD8BD7B0057DB7C /* Frameworks */,
+				EE607AFA1AD8BD7B0057DB7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = buttonCocoa;
+			productName = buttonCocoa;
+			productReference = EE607AFC1AD8BD7B0057DB7C /* buttonCocoa.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EE607B0D1AD8BD7B0057DB7C /* buttonCocoaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE607B1B1AD8BD7B0057DB7C /* Build configuration list for PBXNativeTarget "buttonCocoaTests" */;
+			buildPhases = (
+				EE607B0A1AD8BD7B0057DB7C /* Sources */,
+				EE607B0B1AD8BD7B0057DB7C /* Frameworks */,
+				EE607B0C1AD8BD7B0057DB7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE607B101AD8BD7B0057DB7C /* PBXTargetDependency */,
+			);
+			name = buttonCocoaTests;
+			productName = buttonCocoaTests;
+			productReference = EE607B0E1AD8BD7B0057DB7C /* buttonCocoaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE607AF41AD8BD7B0057DB7C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "张博良";
+				TargetAttributes = {
+					EE607AFB1AD8BD7B0057DB7C = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					EE607B0D1AD8BD7B0057DB7C = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = EE607AFB1AD8BD7B0057DB7C;
+					};
+				};
+			};
+			buildConfigurationList = EE607AF71AD8BD7B0057DB7C /* Build configuration list for PBXProject "buttonCocoa" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EE607AF31AD8BD7B0057DB7C;
+			productRefGroup = EE607AFD1AD8BD7B0057DB7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE607AFB1AD8BD7B0057DB7C /* buttonCocoa */,
+				EE607B0D1AD8BD7B0057DB7C /* buttonCocoaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE607AFA1AD8BD7B0057DB7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE607B061AD8BD7B0057DB7C /* Images.xcassets in Resources */,
+				EE607B091AD8BD7B0057DB7C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE607B0C1AD8BD7B0057DB7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE607AF81AD8BD7B0057DB7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE607B041AD8BD7B0057DB7C /* ViewController.swift in Sources */,
+				EE607B021AD8BD7B0057DB7C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE607B0A1AD8BD7B0057DB7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE607B151AD8BD7B0057DB7C /* buttonCocoaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE607B101AD8BD7B0057DB7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE607AFB1AD8BD7B0057DB7C /* buttonCocoa */;
+			targetProxy = EE607B0F1AD8BD7B0057DB7C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EE607B071AD8BD7B0057DB7C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE607B081AD8BD7B0057DB7C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EE607B161AD8BD7B0057DB7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EE607B171AD8BD7B0057DB7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EE607B191AD8BD7B0057DB7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = buttonCocoa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EE607B1A1AD8BD7B0057DB7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = buttonCocoa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EE607B1C1AD8BD7B0057DB7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = buttonCocoaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/buttonCocoa.app/Contents/MacOS/buttonCocoa";
+			};
+			name = Debug;
+		};
+		EE607B1D1AD8BD7B0057DB7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = buttonCocoaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/buttonCocoa.app/Contents/MacOS/buttonCocoa";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE607AF71AD8BD7B0057DB7C /* Build configuration list for PBXProject "buttonCocoa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE607B161AD8BD7B0057DB7C /* Debug */,
+				EE607B171AD8BD7B0057DB7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE607B181AD8BD7B0057DB7C /* Build configuration list for PBXNativeTarget "buttonCocoa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE607B191AD8BD7B0057DB7C /* Debug */,
+				EE607B1A1AD8BD7B0057DB7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EE607B1B1AD8BD7B0057DB7C /* Build configuration list for PBXNativeTarget "buttonCocoaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE607B1C1AD8BD7B0057DB7C /* Debug */,
+				EE607B1D1AD8BD7B0057DB7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EE607AF41AD8BD7B0057DB7C /* Project object */;
+}
