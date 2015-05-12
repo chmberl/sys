@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIKitPrjChangeColorAndFontViewController.h"
+#import "UIKitPrjTextViewViewController.h"
+#import "UIKitPrjEditableTextViewViewController.h"
 
 @interface ViewController : UIViewController
 

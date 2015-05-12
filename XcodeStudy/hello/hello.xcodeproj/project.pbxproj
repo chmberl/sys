@@ -15,8 +15,16 @@
 		EE0941CA1AD9FB610011F9C7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0941C81AD9FB610011F9C7 /* LaunchScreen.xib */; };
 		EE0941D61AD9FB610011F9C7 /* helloTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0941D51AD9FB610011F9C7 /* helloTests.m */; };
 		EE0941E71ADA09B90011F9C7 /* UIKitPrjPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0941E61ADA09B90011F9C7 /* UIKitPrjPlaceholder.m */; };
-		EE0941EB1ADA0F2D0011F9C7 /* UIkitPrjSimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0941E91ADA0F2D0011F9C7 /* UIkitPrjSimpleViewController.m */; };
 		EE0941EC1ADA0F2D0011F9C7 /* UIkitPrjSimpleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0941EA1ADA0F2D0011F9C7 /* UIkitPrjSimpleViewController.xib */; };
+		EE0941EF1ADA12D90011F9C7 /* UIKitPrjChangeColorAndFontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0941EE1ADA12D90011F9C7 /* UIKitPrjChangeColorAndFontViewController.m */; };
+		EE0941F11ADA1B6E0011F9C7 /* paper.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0941F01ADA1B6E0011F9C7 /* paper.png */; };
+		EE0941F41ADA1B930011F9C7 /* UIKitPrjBackgroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0941F31ADA1B930011F9C7 /* UIKitPrjBackgroundViewController.m */; };
+		EE0941F61ADA1C270011F9C7 /* paperGray.png in Resources */ = {isa = PBXBuildFile; fileRef = EE0941F51ADA1C270011F9C7 /* paperGray.png */; };
+		EE0941F91ADA308C0011F9C7 /* UIKitPrjTextViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0941F81ADA308C0011F9C7 /* UIKitPrjTextViewViewController.m */; };
+		EE0941FC1ADAB1C30011F9C7 /* UIKitPrjEditableTextViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0941FB1ADAB1C30011F9C7 /* UIKitPrjEditableTextViewViewController.m */; };
+		EE0941FF1ADBEF490011F9C7 /* UIKitPrjSimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0941FE1ADBEF490011F9C7 /* UIKitPrjSimpleViewController.m */; };
+		EE0942021ADBF22A0011F9C7 /* UIKitPrjButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0942011ADBF22A0011F9C7 /* UIKitPrjButtonViewController.m */; };
+		EE0942051ADBF5BB0011F9C7 /* UIKitPrjButtonWithTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0942041ADBF5BB0011F9C7 /* UIKitPrjButtonWithTypeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,9 +53,23 @@
 		EE0941D51AD9FB610011F9C7 /* helloTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = helloTests.m; sourceTree = "<group>"; };
 		EE0941E51ADA09B90011F9C7 /* UIKitPrjPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitPrjPlaceholder.h; sourceTree = "<group>"; };
 		EE0941E61ADA09B90011F9C7 /* UIKitPrjPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitPrjPlaceholder.m; sourceTree = "<group>"; };
-		EE0941E81ADA0F2D0011F9C7 /* UIkitPrjSimpleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIkitPrjSimpleViewController.h; sourceTree = "<group>"; };
-		EE0941E91ADA0F2D0011F9C7 /* UIkitPrjSimpleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIkitPrjSimpleViewController.m; sourceTree = "<group>"; };
 		EE0941EA1ADA0F2D0011F9C7 /* UIkitPrjSimpleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIkitPrjSimpleViewController.xib; sourceTree = "<group>"; };
+		EE0941ED1ADA12D90011F9C7 /* UIKitPrjChangeColorAndFontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitPrjChangeColorAndFontViewController.h; sourceTree = "<group>"; };
+		EE0941EE1ADA12D90011F9C7 /* UIKitPrjChangeColorAndFontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitPrjChangeColorAndFontViewController.m; sourceTree = "<group>"; };
+		EE0941F01ADA1B6E0011F9C7 /* paper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paper.png; path = ../../../../Downloads/daima/7/quan/UITextFieldSample/Images/paper.png; sourceTree = "<group>"; };
+		EE0941F21ADA1B930011F9C7 /* UIKitPrjBackgroundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitPrjBackgroundViewController.h; sourceTree = "<group>"; };
+		EE0941F31ADA1B930011F9C7 /* UIKitPrjBackgroundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitPrjBackgroundViewController.m; sourceTree = "<group>"; };
+		EE0941F51ADA1C270011F9C7 /* paperGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paperGray.png; path = ../../../../Downloads/daima/7/quan/UITextFieldSample/Images/paperGray.png; sourceTree = "<group>"; };
+		EE0941F71ADA308C0011F9C7 /* UIKitPrjTextViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitPrjTextViewViewController.h; sourceTree = "<group>"; };
+		EE0941F81ADA308C0011F9C7 /* UIKitPrjTextViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitPrjTextViewViewController.m; sourceTree = "<group>"; };
+		EE0941FA1ADAB1C30011F9C7 /* UIKitPrjEditableTextViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitPrjEditableTextViewViewController.h; sourceTree = "<group>"; };
+		EE0941FB1ADAB1C30011F9C7 /* UIKitPrjEditableTextViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitPrjEditableTextViewViewController.m; sourceTree = "<group>"; };
+		EE0941FD1ADBEF490011F9C7 /* UIKitPrjSimpleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitPrjSimpleViewController.h; sourceTree = "<group>"; };
+		EE0941FE1ADBEF490011F9C7 /* UIKitPrjSimpleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitPrjSimpleViewController.m; sourceTree = "<group>"; };
+		EE0942001ADBF22A0011F9C7 /* UIKitPrjButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitPrjButtonViewController.h; sourceTree = "<group>"; };
+		EE0942011ADBF22A0011F9C7 /* UIKitPrjButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitPrjButtonViewController.m; sourceTree = "<group>"; };
+		EE0942031ADBF5BB0011F9C7 /* UIKitPrjButtonWithTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitPrjButtonWithTypeViewController.h; sourceTree = "<group>"; };
+		EE0942041ADBF5BB0011F9C7 /* UIKitPrjButtonWithTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitPrjButtonWithTypeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +121,21 @@
 				EE0941B91AD9FB600011F9C7 /* Supporting Files */,
 				EE0941E51ADA09B90011F9C7 /* UIKitPrjPlaceholder.h */,
 				EE0941E61ADA09B90011F9C7 /* UIKitPrjPlaceholder.m */,
-				EE0941E81ADA0F2D0011F9C7 /* UIkitPrjSimpleViewController.h */,
-				EE0941E91ADA0F2D0011F9C7 /* UIkitPrjSimpleViewController.m */,
 				EE0941EA1ADA0F2D0011F9C7 /* UIkitPrjSimpleViewController.xib */,
+				EE0941ED1ADA12D90011F9C7 /* UIKitPrjChangeColorAndFontViewController.h */,
+				EE0941EE1ADA12D90011F9C7 /* UIKitPrjChangeColorAndFontViewController.m */,
+				EE0941F21ADA1B930011F9C7 /* UIKitPrjBackgroundViewController.h */,
+				EE0941F31ADA1B930011F9C7 /* UIKitPrjBackgroundViewController.m */,
+				EE0941F71ADA308C0011F9C7 /* UIKitPrjTextViewViewController.h */,
+				EE0941F81ADA308C0011F9C7 /* UIKitPrjTextViewViewController.m */,
+				EE0941FA1ADAB1C30011F9C7 /* UIKitPrjEditableTextViewViewController.h */,
+				EE0941FB1ADAB1C30011F9C7 /* UIKitPrjEditableTextViewViewController.m */,
+				EE0941FD1ADBEF490011F9C7 /* UIKitPrjSimpleViewController.h */,
+				EE0941FE1ADBEF490011F9C7 /* UIKitPrjSimpleViewController.m */,
+				EE0942001ADBF22A0011F9C7 /* UIKitPrjButtonViewController.h */,
+				EE0942011ADBF22A0011F9C7 /* UIKitPrjButtonViewController.m */,
+				EE0942031ADBF5BB0011F9C7 /* UIKitPrjButtonWithTypeViewController.h */,
+				EE0942041ADBF5BB0011F9C7 /* UIKitPrjButtonWithTypeViewController.m */,
 			);
 			path = hello;
 			sourceTree = "<group>";
@@ -109,6 +143,8 @@
 		EE0941B91AD9FB600011F9C7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EE0941F51ADA1C270011F9C7 /* paperGray.png */,
+				EE0941F01ADA1B6E0011F9C7 /* paper.png */,
 				EE0941BA1AD9FB600011F9C7 /* Info.plist */,
 				EE0941BB1AD9FB600011F9C7 /* main.m */,
 			);
@@ -213,6 +249,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE0941EC1ADA0F2D0011F9C7 /* UIkitPrjSimpleViewController.xib in Resources */,
+				EE0941F61ADA1C270011F9C7 /* paperGray.png in Resources */,
+				EE0941F11ADA1B6E0011F9C7 /* paper.png in Resources */,
 				EE0941C51AD9FB600011F9C7 /* Main.storyboard in Resources */,
 				EE0941CA1AD9FB610011F9C7 /* LaunchScreen.xib in Resources */,
 				EE0941C71AD9FB600011F9C7 /* Images.xcassets in Resources */,
@@ -233,11 +271,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE0942051ADBF5BB0011F9C7 /* UIKitPrjButtonWithTypeViewController.m in Sources */,
+				EE0941F91ADA308C0011F9C7 /* UIKitPrjTextViewViewController.m in Sources */,
 				EE0941C21AD9FB600011F9C7 /* ViewController.m in Sources */,
+				EE0941FF1ADBEF490011F9C7 /* UIKitPrjSimpleViewController.m in Sources */,
+				EE0941EF1ADA12D90011F9C7 /* UIKitPrjChangeColorAndFontViewController.m in Sources */,
 				EE0941E71ADA09B90011F9C7 /* UIKitPrjPlaceholder.m in Sources */,
-				EE0941EB1ADA0F2D0011F9C7 /* UIkitPrjSimpleViewController.m in Sources */,
 				EE0941BF1AD9FB600011F9C7 /* AppDelegate.m in Sources */,
+				EE0941F41ADA1B930011F9C7 /* UIKitPrjBackgroundViewController.m in Sources */,
 				EE0941BC1AD9FB600011F9C7 /* main.m in Sources */,
+				EE0942021ADBF22A0011F9C7 /* UIKitPrjButtonViewController.m in Sources */,
+				EE0941FC1ADAB1C30011F9C7 /* UIKitPrjEditableTextViewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +476,7 @@
 				EE0941DB1AD9FB610011F9C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EE0941DC1AD9FB610011F9C7 /* Build configuration list for PBXNativeTarget "helloTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +485,7 @@
 				EE0941DE1AD9FB610011F9C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

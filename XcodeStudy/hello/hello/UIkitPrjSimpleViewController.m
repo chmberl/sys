@@ -1,22 +1,31 @@
 //
-//  UIkitPrjSimpleViewController.m
+//  UIKitPrjSimpleViewController.m
 //  hello
 //
-//  Created by 张博良 on 15/4/12.
+//  Created by 张博良 on 15/4/13.
 //  Copyright (c) 2015年 张博良. All rights reserved.
 //
 
-#import "UIkitPrjSimpleViewController.h"
+#import "UIKitPrjSimpleViewController.h"
 
-@interface UIkitPrjSimpleViewController ()
+@interface UIKitPrjSimpleViewController ()
 
 @end
 
-@implementation UIkitPrjSimpleViewController
+@implementation UIKitPrjSimpleViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = self.view.bounds;
+    label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    label.text = @"good";
+    [label setTextAlignment:NSTextAlignmentCenter];
+    
+    label.backgroundColor = [UIColor blackColor];
+    label.textColor = [UIColor whiteColor];
+    label.font = [UIFont fontWithName:@"Zapfino" size:48];
+    [self.view addSubview:label];
 }
 
 - (void)didReceiveMemoryWarning {

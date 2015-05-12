@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EED2C5711AEBBD1F00BE3BCF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EED2C5701AEBBD1F00BE3BCF /* main.m */; };
+		EED2C5741AEBBD1F00BE3BCF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EED2C5731AEBBD1F00BE3BCF /* AppDelegate.m */; };
+		EED2C5771AEBBD1F00BE3BCF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EED2C5761AEBBD1F00BE3BCF /* ViewController.m */; };
+		EED2C57A1AEBBD1F00BE3BCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EED2C5781AEBBD1F00BE3BCF /* Main.storyboard */; };
+		EED2C57C1AEBBD1F00BE3BCF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED2C57B1AEBBD1F00BE3BCF /* Images.xcassets */; };
+		EED2C57F1AEBBD1F00BE3BCF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED2C57D1AEBBD1F00BE3BCF /* LaunchScreen.xib */; };
+		EED2C58B1AEBBD1F00BE3BCF /* ThreePointTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EED2C58A1AEBBD1F00BE3BCF /* ThreePointTestTests.m */; };
+		EED2C5961AEBBD8200BE3BCF /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = EED2C5951AEBBD8200BE3BCF /* TestView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EED2C5851AEBBD1F00BE3BCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EED2C5631AEBBD1F00BE3BCF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EED2C56A1AEBBD1F00BE3BCF;
+			remoteInfo = ThreePointTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EED2C56B1AEBBD1F00BE3BCF /* ThreePointTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreePointTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EED2C56F1AEBBD1F00BE3BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EED2C5701AEBBD1F00BE3BCF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EED2C5721AEBBD1F00BE3BCF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EED2C5731AEBBD1F00BE3BCF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EED2C5751AEBBD1F00BE3BCF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EED2C5761AEBBD1F00BE3BCF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EED2C5791AEBBD1F00BE3BCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EED2C57B1AEBBD1F00BE3BCF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EED2C57E1AEBBD1F00BE3BCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		EED2C5841AEBBD1F00BE3BCF /* ThreePointTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreePointTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EED2C5891AEBBD1F00BE3BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EED2C58A1AEBBD1F00BE3BCF /* ThreePointTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreePointTestTests.m; sourceTree = "<group>"; };
+		EED2C5941AEBBD8200BE3BCF /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
+		EED2C5951AEBBD8200BE3BCF /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EED2C5681AEBBD1F00BE3BCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EED2C5811AEBBD1F00BE3BCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EED2C5621AEBBD1F00BE3BCF = {
+			isa = PBXGroup;
+			children = (
+				EED2C56D1AEBBD1F00BE3BCF /* ThreePointTest */,
+				EED2C5871AEBBD1F00BE3BCF /* ThreePointTestTests */,
+				EED2C56C1AEBBD1F00BE3BCF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EED2C56C1AEBBD1F00BE3BCF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EED2C56B1AEBBD1F00BE3BCF /* ThreePointTest.app */,
+				EED2C5841AEBBD1F00BE3BCF /* ThreePointTestTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EED2C56D1AEBBD1F00BE3BCF /* ThreePointTest */ = {
+			isa = PBXGroup;
+			children = (
+				EED2C5721AEBBD1F00BE3BCF /* AppDelegate.h */,
+				EED2C5731AEBBD1F00BE3BCF /* AppDelegate.m */,
+				EED2C5751AEBBD1F00BE3BCF /* ViewController.h */,
+				EED2C5761AEBBD1F00BE3BCF /* ViewController.m */,
+				EED2C5781AEBBD1F00BE3BCF /* Main.storyboard */,
+				EED2C57B1AEBBD1F00BE3BCF /* Images.xcassets */,
+				EED2C57D1AEBBD1F00BE3BCF /* LaunchScreen.xib */,
+				EED2C56E1AEBBD1F00BE3BCF /* Supporting Files */,
+				EED2C5941AEBBD8200BE3BCF /* TestView.h */,
+				EED2C5951AEBBD8200BE3BCF /* TestView.m */,
+			);
+			path = ThreePointTest;
+			sourceTree = "<group>";
+		};
+		EED2C56E1AEBBD1F00BE3BCF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EED2C56F1AEBBD1F00BE3BCF /* Info.plist */,
+				EED2C5701AEBBD1F00BE3BCF /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EED2C5871AEBBD1F00BE3BCF /* ThreePointTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				EED2C58A1AEBBD1F00BE3BCF /* ThreePointTestTests.m */,
+				EED2C5881AEBBD1F00BE3BCF /* Supporting Files */,
+			);
+			path = ThreePointTestTests;
+			sourceTree = "<group>";
+		};
+		EED2C5881AEBBD1F00BE3BCF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EED2C5891AEBBD1F00BE3BCF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EED2C56A1AEBBD1F00BE3BCF /* ThreePointTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EED2C58E1AEBBD1F00BE3BCF /* Build configuration list for PBXNativeTarget "ThreePointTest" */;
+			buildPhases = (
+				EED2C5671AEBBD1F00BE3BCF /* Sources */,
+				EED2C5681AEBBD1F00BE3BCF /* Frameworks */,
+				EED2C5691AEBBD1F00BE3BCF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThreePointTest;
+			productName = ThreePointTest;
+			productReference = EED2C56B1AEBBD1F00BE3BCF /* ThreePointTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EED2C5831AEBBD1F00BE3BCF /* ThreePointTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EED2C5911AEBBD1F00BE3BCF /* Build configuration list for PBXNativeTarget "ThreePointTestTests" */;
+			buildPhases = (
+				EED2C5801AEBBD1F00BE3BCF /* Sources */,
+				EED2C5811AEBBD1F00BE3BCF /* Frameworks */,
+				EED2C5821AEBBD1F00BE3BCF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EED2C5861AEBBD1F00BE3BCF /* PBXTargetDependency */,
+			);
+			name = ThreePointTestTests;
+			productName = ThreePointTestTests;
+			productReference = EED2C5841AEBBD1F00BE3BCF /* ThreePointTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EED2C5631AEBBD1F00BE3BCF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "张博良";
+				TargetAttributes = {
+					EED2C56A1AEBBD1F00BE3BCF = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					EED2C5831AEBBD1F00BE3BCF = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = EED2C56A1AEBBD1F00BE3BCF;
+					};
+				};
+			};
+			buildConfigurationList = EED2C5661AEBBD1F00BE3BCF /* Build configuration list for PBXProject "ThreePointTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EED2C5621AEBBD1F00BE3BCF;
+			productRefGroup = EED2C56C1AEBBD1F00BE3BCF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EED2C56A1AEBBD1F00BE3BCF /* ThreePointTest */,
+				EED2C5831AEBBD1F00BE3BCF /* ThreePointTestTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EED2C5691AEBBD1F00BE3BCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED2C57A1AEBBD1F00BE3BCF /* Main.storyboard in Resources */,
+				EED2C57F1AEBBD1F00BE3BCF /* LaunchScreen.xib in Resources */,
+				EED2C57C1AEBBD1F00BE3BCF /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EED2C5821AEBBD1F00BE3BCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EED2C5671AEBBD1F00BE3BCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED2C5961AEBBD8200BE3BCF /* TestView.m in Sources */,
+				EED2C5771AEBBD1F00BE3BCF /* ViewController.m in Sources */,
+				EED2C5741AEBBD1F00BE3BCF /* AppDelegate.m in Sources */,
+				EED2C5711AEBBD1F00BE3BCF /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EED2C5801AEBBD1F00BE3BCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED2C58B1AEBBD1F00BE3BCF /* ThreePointTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EED2C5861AEBBD1F00BE3BCF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EED2C56A1AEBBD1F00BE3BCF /* ThreePointTest */;
+			targetProxy = EED2C5851AEBBD1F00BE3BCF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EED2C5781AEBBD1F00BE3BCF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EED2C5791AEBBD1F00BE3BCF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EED2C57D1AEBBD1F00BE3BCF /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EED2C57E1AEBBD1F00BE3BCF /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EED2C58C1AEBBD1F00BE3BCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EED2C58D1AEBBD1F00BE3BCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EED2C58F1AEBBD1F00BE3BCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ThreePointTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EED2C5901AEBBD1F00BE3BCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ThreePointTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EED2C5921AEBBD1F00BE3BCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ThreePointTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThreePointTest.app/ThreePointTest";
+			};
+			name = Debug;
+		};
+		EED2C5931AEBBD1F00BE3BCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ThreePointTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThreePointTest.app/ThreePointTest";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EED2C5661AEBBD1F00BE3BCF /* Build configuration list for PBXProject "ThreePointTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EED2C58C1AEBBD1F00BE3BCF /* Debug */,
+				EED2C58D1AEBBD1F00BE3BCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EED2C58E1AEBBD1F00BE3BCF /* Build configuration list for PBXNativeTarget "ThreePointTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EED2C58F1AEBBD1F00BE3BCF /* Debug */,
+				EED2C5901AEBBD1F00BE3BCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EED2C5911AEBBD1F00BE3BCF /* Build configuration list for PBXNativeTarget "ThreePointTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EED2C5921AEBBD1F00BE3BCF /* Debug */,
+				EED2C5931AEBBD1F00BE3BCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EED2C5631AEBBD1F00BE3BCF /* Project object */;
+}

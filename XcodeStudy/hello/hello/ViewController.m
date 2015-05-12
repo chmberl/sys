@@ -8,6 +8,10 @@
 
 #import "ViewController.h"
 #import "UIKitPrjPlaceholder.h"
+#import "UIkitPrjSimpleViewController.h"
+#import "UIKitPrjBackgroundViewController.h"
+#import "UIKitPrjSimpleViewController.h"
+#import "UIKitPrjButtonViewController.h"
 
 @implementation ViewController
 
@@ -16,8 +20,9 @@
 @synthesize userInput;
 
 - (void)setOutput:(id)sender {
+ 
     self.userOutput.text = self.userInput.text;
-    UIViewController *control = [[UIKitPrjPlaceholder alloc] init];
+    UIViewController *control = [[UIKitPrjButtonViewController alloc] init];
     [self presentViewController:control animated:NO completion:^(void) {
         NSLog(@"%@", @"跳转成功");
     }];
@@ -25,6 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //[userInput becomeFirstResponder];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
