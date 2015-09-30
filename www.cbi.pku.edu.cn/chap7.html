@@ -1,0 +1,1246 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=gb_2312-80">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Emacs 的其它相关事项</title>
+</head>
+
+<body>
+
+<h1><font size="3" face="Times New Roman">Emacs </font><font
+size="3">的其它相关事项</font></h1>
+
+<h4><font size="3">这章所谈的内容较为纷杂，但都环绕在加强
+</font><font size="3" face="Times New Roman">EMACS </font><font
+size="3">的编辑功能 为核心。所谈的内容包括 </font><font
+size="3" face="Times New Roman"><i>register</i></font><font
+size="3">、 </font><font size="3" face="Times New Roman"><i>bookmark</i></font><font
+size="3">、 错字的自动侦测以及如何在</font><font
+size="3" face="Times New Roman">EMACS </font><font size="3">中使用绘图功能。
+现在就开始讨论 </font><font size="3"
+face="Times New Roman"><i>register</i> </font><font size="3">和<i>
+</i></font><font size="3" face="Times New Roman"><i>bookmark</i></font><font
+size="3">。 </font></h4>
+
+<hr>
+
+<h2><a name="1"><font size="3" face="Times New Roman">Registers
+and Bookmarks</font></a></h2>
+
+<h4><font size="3" face="Times New Roman">EMACS </font><font
+size="3">的 </font><font size="3" face="Times New Roman"><i>register</i>
+</font><font size="3">是一个可将文件与游标位置 </font><font
+size="3" face="Times New Roman">(<i> point loaction</i></font><font
+size="3">）暂时存放其间的地方。 </font><font size="3"
+face="Times New Roman"><i>register</i> </font><font size="3">有它的缺失，那就是一旦离开目前所使用的
+</font><font size="3" face="Times New Roman">EMACS</font><font
+size="3">，所有存於 </font><font size="3"
+face="Times New Roman"><i>register</i> </font><font size="3">中的资料，也会随著消失。
+若想再使用这些放於 </font><font size="3"
+face="Times New Roman"><i>register</i> </font><font size="3">中的文件或游标位置时，
+必需重新将资料存入 </font><font size="3"
+face="Times New Roman"><i>register</i> </font><font size="3">中。所以
+</font><font size="3" face="Times New Roman"><i>register</i> </font><font
+size="3">只适合暂时性的储存，若想永久使用文件或游标位置，
+必需仰赖 </font><font size="3" face="Times New Roman"><i>bookmark</i></font><font
+size="3">的帮助了。 </font><font size="3"
+face="Times New Roman"><i>bookmark</i> </font><font size="3">与 </font><font
+size="3" face="Times New Roman"><i>register</i> </font><font
+size="3">相似，它们都用来 储存物件，但在相似中又有不一样的地方。二者不同的地方
+如下： </font></h4>
+
+<ul>
+    <li><font size="3">命名上的不同</font></li>
+    <li><font size="3" face="Times New Roman"><i>bookmark</i> </font><font
+        size="3">的名称可由「一个以上」的字元（</font><font
+        size="3" face="Times New Roman">character</font><font
+        size="3">） 组成，但 </font><font size="3"
+        face="Times New Roman"><i>register</i> </font><font
+        size="3">的名称只能由「一个」字元来命名 </font></li>
+    <li><font size="3">资料保存的时间不同</font></li>
+    <li><font size="3">存於 </font><font size="3"
+        face="Times New Roman"><i>bookmark</i> </font><font
+        size="3">的资料具有永恒性，它可以在离开 </font><font
+        size="3" face="Times New Roman">EMACS </font><font
+        size="3">後还存在。但存於<i> </i></font><font
+        size="3" face="Times New Roman"><i>register</i> </font><font
+        size="3">中的资料，在离开</font><font size="3"
+        face="Times New Roman">EMACS </font><font size="3">後就无效了。
+        </font></li>
+</ul>
+
+<dl>
+    <dd><font size="3">现在就分别介绍 </font><font
+        size="3" face="Times New Roman"><i>register</i> </font><font
+        size="3">与 </font><font size="3" face="Times New Roman"><i>bookmark</i>
+        </font><font size="3">二者的用法。首先讨论 </font><font
+        size="3" face="Times New Roman"><i>register</i> </font><font
+        size="3">的用法。<i> </i></font><font size="3"
+        face="Times New Roman"><i>register</i> </font><font
+        size="3">可存放的内容有，游标的位置、一般文件与长方形文件的内容、
+        档案的名称以及本文未曾讨论的视窗资料等等。现在就一一
+        来介绍这些内容如何存放，以及存放後如何将其取出用，
+        与视窗有关的 </font><font size="3"
+        face="Times New Roman"><i>register</i> </font><font
+        size="3">在此依然不予讨论。 </font><ul>
+            <li><font size="3">储存与移动至特定 </font><font
+                size="3" face="Times New Roman">point </font><font
+                size="3">位置的方法</font></li>
+            <li><ul>
+                    <li><font size="3" face="Times New Roman"><b>Ctrl-x
+                        r SPC </b><b><i>r</i></b></font><font
+                        size="3"><b>（</b></font><font size="3"
+                        face="Times New Roman"><b>point-to-register</b></font><font
+                        size="3"><b>）
+                        将游标目前所在的位置，存於 </b></font><font
+                        size="3" face="Times New Roman"><b><i>register</i></b><b>
+                        </b></font><font size="3"><b>中。存於
+                        </b></font><font size="3"
+                        face="Times New Roman"><b><i>register</i></b><b>
+                        </b></font><font size="3"><b>的步骤如下：
+                        </b></font><ol>
+                            <li><font size="3"><b>将游标移至所要储存游标位置的地方。</b></font></li>
+                            <li><font size="3"><b>键入 </b></font><font
+                                size="3" face="Times New Roman"><b>``|Ctrl-x
+                                r|'' </b></font><font size="3"><b>以及
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>``SPACE''</b></font><font
+                                size="3"><b>（空白键）後，</b></font></li>
+                            <li><font size="3"
+                                face="Times New Roman"><b><i>echo
+                                area</i></b><b> </b></font><font
+                                size="3"><b>会出现 </b></font><font
+                                size="3" face="Times New Roman"><b>Point
+                                to register</b></font><font
+                                size="3"><b>：</b></font></li>
+                            <li><font size="3"><b>此时可输入任意一个字元（</b></font><font
+                                size="3" face="Times New Roman"><b>character</b></font><font
+                                size="3"><b>），做为此 </b></font><font
+                                size="3" face="Times New Roman"><b><i>register</i></b><b>
+                                </b></font><font size="3"><b>的名称。以後要使游标移至此位置就要靠此字元。
+                                </b></font><font size="3"
+                                face="Times New Roman"><b><i>register</i></b><b>
+                                </b></font><font size="3"><b>的名称，只能由一个字元组成。
+                                </b></font></li>
+                        </ol>
+                    </li>
+                    <li><font size="3" face="Times New Roman"><b>Ctrl-x
+                        r j </b><b><i>r</i></b></font><font
+                        size="3"><b>（</b></font><font size="3"
+                        face="Times New Roman"><b>jump-to-register</b></font><font
+                        size="3"><b>）</b></font></li>
+                    <li><font size="3"><b>根据 </b></font><font
+                        size="3" face="Times New Roman"><b><i>register</i></b><b>
+                        </b><b><i>r</i></b><b> </b></font><font
+                        size="3"><b>所储存的位置，将游标移至
+                        </b></font><font size="3"
+                        face="Times New Roman"><b><i>r</i></b><b>
+                        </b></font><font size="3"><b>所设定的位置。使用此指令前，必需确定
+                        </b></font><font size="3"
+                        face="Times New Roman"><b><i>register</i></b><b>
+                        </b><b><i>r</i></b></font><font size="3"><b>，
+                        已设定的妥当了 以下就是设定游标位置以及使用游标位置的步骤：
+                        </b></font><ol>
+                            <li><font size="3"><b>先以 </b></font><font
+                                size="3" face="Times New Roman"><b>``Ctrl-x
+                                r SPC </b><b><i>r</i></b><b>''</b></font><font
+                                size="3"><b>，将游标的位置储存於
+                                </b></font><font size="3"
+                                face="Times New Roman"><b><i>register</i></b><b>
+                                </b><b><i>r</i></b><b> </b></font><font
+                                size="3"><b>内。</b></font></li>
+                            <li><font size="3"><b>键入 </b></font><font
+                                size="3" face="Times New Roman"><b>``Ctrl-x
+                                r j''</b></font><font size="3"><b>，
+                                </b></font><font size="3"
+                                face="Times New Roman"><b><i>echo
+                                area</i></b><b> </b></font><font
+                                size="3"><b>会出现 </b></font><font
+                                size="3" face="Times New Roman"><b>``Jump
+                                to register:'' </b></font><font
+                                size="3"><b>的讯息。</b></font></li>
+                            <li><font size="3"><b>在 </b></font><font
+                                size="3" face="Times New Roman"><b>``Jump
+                                to register:'' </b></font><font
+                                size="3"><b>之後，输入已设定妥善的
+                                </b></font><font size="3"
+                                face="Times New Roman"><b><i>register</i></b><b>
+                                </b><b><i>r</i></b><b> </b></font><font
+                                size="3"><b>的名称。
+                                此时游标所在的缓冲区若与
+                                </b></font><font size="3"
+                                face="Times New Roman"><b><i>register</i></b><b>
+                                </b><b><i>r</i></b><b> </b></font><font
+                                size="3"><b>所设定
+                                的缓冲区不一样时，游标会自动移至另一个缓冲区，视窗的
+                                内容也会换成新的缓冲区内容。所以，使用
+                                </b></font><font size="3"
+                                face="Times New Roman"><b><i>register</i></b><b>
+                                </b></font><font size="3"><b>所存放的游标位置，是可以跨越不同的缓冲区来做移动的。</b></font></li>
+                        </ol>
+                    </li>
+                </ul>
+            </li>
+            <li><font size="3" face="Times New Roman"><b><i>register</i></b><b>
+                </b></font><font size="3"><b>还可用来存放经常被访问到的档案。</b></font></li>
+            <li><font size="3"><b>有人或许会不解，为何耗费如此的功夫，只为了从事
+                </b></font><font size="3" face="Times New Roman"><b>``
+                Ctrl-x Ctrl-f'' </b></font><font size="3"><b>指令可以做到的事。使用
+                </b></font><font size="3" face="Times New Roman"><b>``
+                Ctrl-x Ctrl-f'' </b></font><font size="3"><b>有一个不便之处，就是若所欲访问的档案与
+                </b></font><font size="3" face="Times New Roman"><b>EMACS
+                </b></font><font size="3"><b>的预设档案位置
+                不一样时，则必需告之完整的路径名。所以，此时若使用
+                </b></font><font size="3" face="Times New Roman"><b><i>register</i></b><b>
+                </b></font><font size="3"><b>来储存档名，就只需要给予
+                </b></font><font size="3" face="Times New Roman"><b><i>register</i></b><b>
+                </b></font><font size="3"><b>的名称即可。至於，
+                冗长的全称就交给 </b></font><font
+                size="3" face="Times New Roman"><b><i>register</i></b><b>
+                </b></font><font size="3"><b>去处理了。以下就是以
+                </b></font><font size="3" face="Times New Roman"><b><i>register</i></b><b>
+                </b></font><font size="3"><b>存档案的方法：
+                </b></font><ol>
+                    <li><font size="3"><b>使用 </b></font><font
+                        size="3" face="Times New Roman"><b><i>register</i></b><b>
+                        </b></font><font size="3"><b>来储存档名与储存游标位置，最大的
+                        不同点在於，以</b><b><i> </i></b></font><font
+                        size="3" face="Times New Roman"><b><i>register</i></b><b>
+                        </b></font><font size="3"><b>来储存档名必需借助
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>``.emacs'' </b></font><font
+                        size="3"><b>档。 因为以 </b></font><font
+                        size="3" face="Times New Roman"><b><i>register</i></b><b>
+                        </b></font><font size="3"><b>来储存档案名称，必需借由
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>``.emacs'' </b></font><font
+                        size="3"><b>来设定。</b></font></li>
+                    <li><font size="3"><b>以 </b></font><font
+                        size="3" face="Times New Roman"><b><i>register</i></b><b>
+                        </b></font><font size="3"><b>来储存档案名称的实际执行步骤如下：</b></font></li>
+                    <li><ol>
+                            <li><font size="3"><b>设定 </b></font><font
+                                size="3" face="Times New Roman"><b>``.emacs''
+                                </b></font><font size="3"><b>的方法</b></font></li>
+                            <li><font size="3"><b>在 </b></font><font
+                                size="3" face="Times New Roman"><b>``.emacs''
+                                </b></font><font size="3"><b>档中以
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>``set-register''
+                                </b></font><font size="3"><b>函式
+                                ，将 </b></font><font size="3"
+                                face="Times New Roman"><b><i>register</i></b><b>
+                                </b></font><font size="3"><b>的名称以及其所储存的档名设定清础。以下的例子就是将
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>``chap7.tex''
+                                </b></font><font size="3"><b>的档名，放於名为
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>``a'' </b></font><font
+                                size="3"><b>的 </b></font><font
+                                size="3" face="Times New Roman"><b><i>register</i></b><b>
+                                </b></font><font size="3"><b>时，
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>``.emacs''
+                                </b></font><font size="3"><b>档的设定方法
+                                。 </b></font><font size="3"
+                                face="Times New Roman"><b>(set-register
+                                ?a '(file .
+                                &quot;\~/report/emacs/basic/chap7.tex&quot;))
+                                </b></font></li>
+                            <li><font size="3"><b>当档案名称的设定已在
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>``.emacs''
+                                </b></font><font size="3"><b>档中完成後，必需离开
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>EMACS </b></font><font
+                                size="3"><b>，再重新进入 </b></font><font
+                                size="3" face="Times New Roman"><b>EMACS
+                                </b></font><font size="3"><b>一次。因为只有重新执行
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>EMACS </b></font><font
+                                size="3"><b>， 修改过的 </b></font><font
+                                size="3" face="Times New Roman"><b>``.emacs''
+                                </b></font><font size="3"><b>档才有机会被重新执行。
+                                重新执行过的 </b></font><font
+                                size="3" face="Times New Roman"><b>EMACS
+                                ,</b></font><font size="3"><b>就可以
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>``
+                                Ctrl-x r j </b><b><i>r</i></b><b>''
+                                </b></font><font size="3"><b>将档案从
+                                </b></font><font size="3"
+                                face="Times New Roman"><b><i>register</i></b><b>
+                                </b><b><i>r</i></b><b> </b></font><font
+                                size="3"><b>中拿出来使用。
+                                以下就是使用 </b></font><font
+                                size="3" face="Times New Roman"><b><i>register</i></b><b>
+                                </b><b><i>r</i></b><b> </b></font><font
+                                size="3"><b>的方法：</b></font></li>
+                            <li><ol>
+                                    <li><font size="3"><b>键入 </b></font><font
+                                        size="3"
+                                        face="Times New Roman"><b>``Ctrl-x
+                                        r j RET ''</b></font><font
+                                        size="3"><b>， </b></font><font
+                                        size="3"
+                                        face="Times New Roman"><b><i>echo
+                                        area</i></b><b> </b></font><font
+                                        size="3"><b>会出现</b></font></li>
+                                    <li><font size="3"
+                                        face="Times New Roman"><b>``Jump
+                                        to register:''</b></font><font
+                                        size="3"><b>。 </b></font></li>
+                                    <li><font size="3"><b>待 </b></font><font
+                                        size="3"
+                                        face="Times New Roman"><b>``Jump
+                                        to register:'' </b></font><font
+                                        size="3"><b>的讯息出现时，即可输入已设定好</b></font></li>
+                                    <li><font size="3"
+                                        face="Times New Roman"><b><i>register</i></b><b>
+                                        </b></font><font size="3"><b>名称。以上例为例，若输入
+                                        </b></font><font size="3"
+                                        face="Times New Roman"><b>``a''</b></font><font
+                                        size="3"><b>， 则视窗会出现
+                                        </b></font><font size="3"
+                                        face="Times New Roman"><b>chap7.tex
+                                        </b></font><font size="3"><b>的文件内容。
+                                        </b></font></li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li><font size="3" face="Times New Roman"><b><i>register</i></b><b>
+                </b></font><font size="3"><b>中储存文件的方法</b></font></li>
+            <li><font size="3"><b>储存於 </b></font><font
+                size="3" face="Times New Roman"><b><i>register</i></b><b>
+                </b></font><font size="3"><b>的文件可以有二种：一种为线性的文件
+                （</b></font><font size="3"
+                face="Times New Roman"><b>linear text</b></font><font
+                size="3"><b>），另一种为长方形的文件（</b></font><font
+                size="3" face="Times New Roman"><b>rectangle text</b></font><font
+                size="3"><b>）。 所以有此区分，原於使用
+                </b></font><font size="3" face="Times New Roman"><b><i>register</i></b><b>
+                </b></font><font size="3"><b>储存文件，需先将所要
+                储存的文件做上标记，再根据标记放於
+                </b></font><font size="3" face="Times New Roman"><b><i>register</i></b><b>
+                </b></font><font size="3"><b>中。 线性文件与长方形文件在标记上是一样的，要区分二者的差异
+                只能仰赖使用时的指令了。想进一步了解长方形区域，请参考
+                </b></font><font size="3" face="Times New Roman"><b>5.4
+                </b></font><font size="3"><b>节 </b></font><font
+                size="3" face="Times New Roman"><b>``Move Text
+                and Copy Text'' </b></font><font size="3"><b>有关长方形部份。以下就讨论二者的用法。
+                </b></font><ul>
+                    <li><font size="3"><b>线性文件的 </b></font><font
+                        size="3" face="Times New Roman"><b><i>register</i></b><b>
+                        </b></font><font size="3"><b>设定方法如下：</b></font></li>
+                    <li><ol>
+                            <li><font size="3"><b>将要放入 </b></font><font
+                                size="3" face="Times New Roman"><b><i>register</i></b><b>
+                                </b></font><font size="3"><b>的线性文件做好标记。</b></font></li>
+                            <li><font size="3"><b>设定标记的详细方法，请参考
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>5.3 </b></font><font
+                                size="3"><b>节。现略做题示，
+                                使用 </b></font><font size="3"
+                                face="Times New Roman"><b>Ctrl-@ </b></font><font
+                                size="3"><b>或 </b></font><font
+                                size="3" face="Times New Roman"><b>Ctrl-SPC
+                                </b></font><font size="3"><b>做为线性文件的起始点，
+                                以游标所在的位置为终点。
+                                </b></font></li>
+                            <li><font size="3"><b>使用指令 </b></font><font
+                                size="3" face="Times New Roman"><b>``
+                                Ctrl-x r s </b><b><i>r</i></b><b>''</b></font><font
+                                size="3"><b>，将所设定好的线性文件</b></font></li>
+                            <li><font size="3"><b>放入</b><b><i>
+                                </i></b></font><font size="3"
+                                face="Times New Roman"><b><i>register</i></b><b>
+                                </b><b><i>r</i></b><b> </b></font><font
+                                size="3"><b>中。 </b></font></li>
+                            <li><font size="3"><b>欲使用 </b></font><font
+                                size="3" face="Times New Roman"><b><i>register</i></b><b>
+                                </b><b><i>r</i></b><b> </b></font><font
+                                size="3"><b>中的资料时，可以指令</b></font></li>
+                            <li><font size="3"
+                                face="Times New Roman"><b>``
+                                Ctrl-x r i </b><b><i>r</i></b><b>''
+                                </b></font><font size="3"><b>将存放於
+                                </b></font><font size="3"
+                                face="Times New Roman"><b><i>r</i></b><b>
+                                </b></font><font size="3"><b>中的资料取出使用。
+                                </b></font></li>
+                        </ol>
+                        <p><font size="3"><b>以上所设定的 </b></font><font
+                        size="3" face="Times New Roman"><b><i>register</i></b><b>
+                        </b></font><font size="3"><b>有一特性，就是离开</b></font><font
+                        size="3" face="Times New Roman"><b>EMACS </b></font><font
+                        size="3"><b>後所有的设定 也成为历史。想将
+                        </b></font><font size="3"
+                        face="Times New Roman"><b><i>register</i></b><b>
+                        </b></font><font size="3"><b>内容保留的方法，是将设定写在
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>``.emacs'' </b></font><font
+                        size="3"><b>中，如下是以 </b></font><font
+                        size="3" face="Times New Roman"><b><i>register</i></b><b>
+                        ``a'' </b></font><font size="3"><b>储存
+                        </b></font><font size="3"
+                        face="Times New Roman"><b><i>register</i></b><b>
+                        </b></font><font size="3"><b>文件，
+                        以及以 </b></font><font size="3"
+                        face="Times New Roman"><b><i>register</i></b><b>
+                        ``.'' </b></font><font size="3"><b>储存
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>``</b></font><font
+                        size="3"><b>。</b></font><font size="3"
+                        face="Times New Roman"><b>'' </b></font><font
+                        size="3"><b>资料的设定法： </b></font><font
+                        size="3" face="Times New Roman"><b>(set-register
+                        ?a &quot;register&quot;) (set-register ?.
+                        &quot;</b></font><font size="3"><b>。</b></font><font
+                        size="3" face="Times New Roman"><b>&quot;)
+                        </b></font></p>
+                    </li>
+                    <li><font size="3"><b>长方形文件的 </b></font><font
+                        size="3" face="Times New Roman"><b><i>register</i></b><b>
+                        </b></font><font size="3"><b>表示法：</b></font></li>
+                    <li><ol>
+                            <li><font size="3"><b>将要放入 </b></font><font
+                                size="3" face="Times New Roman"><b><i>register</i></b><b>
+                                </b></font><font size="3"><b>的长方形文件做好标记。设定标记的</b></font></li>
+                            <li><font size="3"><b>方法以及所谓长方形文件的定义，请参考第五章第三节及第四节。
+                                </b></font></li>
+                            <li><font size="3"><b>使用指令 </b></font><font
+                                size="3" face="Times New Roman"><b>``
+                                Ctrl-x r r </b><b><i>r</i></b><b>''</b></font><font
+                                size="3"><b>，将所设定好的线性文件</b></font></li>
+                            <li><font size="3"><b>放入</b><b><i>
+                                </i></b></font><font size="3"
+                                face="Times New Roman"><b><i>register</i></b><b>
+                                </b><b><i>r</i></b><b> </b></font><font
+                                size="3"><b>中。 </b></font></li>
+                            <li><font size="3"><b>使用 </b></font><font
+                                size="3" face="Times New Roman"><b><i>register</i></b><b>
+                                </b><b><i>r</i></b><b> </b></font><font
+                                size="3"><b>中的资料时，可以指令</b></font></li>
+                            <li><font size="3"
+                                face="Times New Roman"><b>``
+                                Ctrl-x r i </b><b><i>r</i></b><b>''
+                                </b></font><font size="3"><b>将存放於
+                                </b></font><font size="3"
+                                face="Times New Roman"><b><i>r</i></b><b>
+                                </b></font><font size="3"><b>中的资料取出使用。
+                                </b></font></li>
+                        </ol>
+                        <p><font size="3"><b>放於 </b></font><font
+                        size="3" face="Times New Roman"><b><i>register</i></b><b>
+                        </b></font><font size="3"><b>中的文件，不论是线性文件或长方形文件，
+                        将其拿出使用的指令都是一样的。不一样处在於放入
+                        </b></font><font size="3"
+                        face="Times New Roman"><b><i>register</i></b><b>
+                        </b></font><font size="3"><b>时的差异。会有差异是不难理解的，因为二者在处理标记的过程是一样，
+                        只有靠存入 </b></font><font size="3"
+                        face="Times New Roman"><b><i>register</i></b><b>
+                        </b></font><font size="3"><b>时，以不同的指令来加以区别。
+                        </b></font></p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p><font size="3"><b>谈完了 </b></font><font size="3"
+        face="Times New Roman"><b><i>register</i></b><b> </b></font><font
+        size="3"><b>，接下来介绍 </b></font><font size="3"
+        face="Times New Roman"><b><i>bookmark</i></b><b> </b></font><font
+        size="3"><b>。 </b></font><font size="3"
+        face="Times New Roman"><b><i>bookmark</i></b><b> </b></font><font
+        size="3"><b>的一些基本概念，已在前面略做介绍了，现在就进一步详述它。
+        </b></font><font size="3" face="Times New Roman"><b><i>bookmark</i></b><b>
+        </b></font><font size="3"><b>与 </b></font><font
+        size="3" face="Times New Roman"><b><i>register</i></b><b>
+        </b></font><font size="3"><b>在记录游标位置的功能是一样的，
+        但在对 </b></font><font size="3"
+        face="Times New Roman"><b><i>register</i></b><b> </b></font><font
+        size="3"><b>的命名方面二者就显得有差异了。
+        </b></font><font size="3" face="Times New Roman"><b><i>bookmark</i></b><b>
+        </b></font><font size="3"><b>的命名可以由一个以上的字元组成。换言之，它可以有一个较长的名字，
+        但 </b></font><font size="3" face="Times New Roman"><b><i>register</i></b><b>
+        </b></font><font size="3"><b>就只能由一个字元来命名。而且以
+        </b></font><font size="3" face="Times New Roman"><b><i>bookmark</i></b><b>
+        </b></font><font size="3"><b>设定的资料，可永久储存起来，即使离开</b></font><font
+        size="3" face="Times New Roman"><b>EMACS</b></font><font
+        size="3"><b>，</b><b><i> </i></b></font><font size="3"
+        face="Times New Roman"><b><i>bookmark</i></b><b> </b></font><font
+        size="3"><b>的资料也不会就此消失。所以想要永久保存的资料，只有借重
+        </b></font><font size="3" face="Times New Roman"><b><i>bookmark</i></b><b>
+        </b></font><font size="3"><b>了。 以下就是 </b></font><font
+        size="3" face="Times New Roman"><b><i>bookmark</i></b><b>
+        </b></font><font size="3"><b>的使用方法。 </b></font></p>
+        <ol>
+            <li><font size="3"><b>以 </b></font><font size="3"
+                face="Times New Roman"><b>`` Ctrl-x r m </b><b><i>bookmark</i></b><b>
+                ''</b></font><font size="3"><b>指令，将游标所在的</b></font></li>
+            <li><font size="3"><b>位置做上记号</b></font><font
+                size="3" face="Times New Roman"><b>(mark</b></font><font
+                size="3"><b>），此记号就称为 </b></font><font
+                size="3" face="Times New Roman"><b><i>bookmark</i></b></font><font
+                size="3"><b>。 当第一次使用 </b></font><font
+                size="3" face="Times New Roman"><b>`` Ctrl-x r
+                m'' </b></font><font size="3"><b>指令时， </b></font><font
+                size="3" face="Times New Roman"><b><i>echo area</i></b><b>
+                </b></font><font size="3"><b>会出现 </b></font><font
+                size="3" face="Times New Roman"><b>``Set bookmark
+                (visited-filename) :'' </b></font><font size="3"><b>的讯息。此时，若不输入任何
+                字元只键入 </b></font><font size="3"
+                face="Times New Roman"><b>RET </b></font><font
+                size="3"><b>，系统会以所访问的档名做为
+                </b></font><font size="3" face="Times New Roman"><b><i>bookmark</i></b><b>
+                </b></font><font size="3"><b>的名称。若输入其它的字串，则
+                </b></font><font size="3" face="Times New Roman"><b><i>bookmark</i></b><b>
+                </b></font><font size="3"><b>就以此字串命名之。
+                </b></font></li>
+            <li><font size="3"><b>以 </b></font><font size="3"
+                face="Times New Roman"><b>`` Ctrl-x r b </b><b><i>bookmark</i></b><b>
+                RET'' </b></font><font size="3"><b>指令，来移动游标的位置。</b></font></li>
+            <li><font size="3"><b>键入 </b></font><font
+                size="3" face="Times New Roman"><b>``Ctrl-x r b''
+                </b></font><font size="3"><b>时，</b><b><i> </i></b></font><font
+                size="3" face="Times New Roman"><b><i>echo area</i></b><b>
+                </b></font><font size="3"><b>会出现</b></font><p><font
+                size="3" face="Times New Roman"><b>``Jump to
+                bookmark (bookmark-name) :''</b></font><font
+                size="3"><b>，</b></font></p>
+                <p><font size="3"><b>括号内的名称为系统的预设值。若所给予的预设值不是心中所爱，
+                可以在 </b></font><font size="3"
+                face="Times New Roman"><b>`:' </b></font><font
+                size="3"><b>之後输入想要的 </b></font><font
+                size="3" face="Times New Roman"><b><i>bookmark</i></b><b>
+                </b></font><font size="3"><b>名称。 </b></font></p>
+            </li>
+        </ol>
+        <p><font size="3"><b>资料以 </b></font><font size="3"
+        face="Times New Roman"><b><i>bookmark</i></b><b> </b></font><font
+        size="3"><b>的方式储存时，使用者若不另行指定
+        储存的档名，系统会将有的讯息存入一个名为
+        </b></font><font size="3" face="Times New Roman"><b>``~/.emacs-bkmrks''\index.emacs-bkmrks
+        </b></font><font size="3"><b>的档案中。
+        接下来，讨论一个使 </b></font><font size="3"
+        face="Times New Roman"><b>EMACS </b></font><font size="3"><b>的编辑功能更强化的议题
+        － </b></font><font size="3" face="Times New Roman"><b>Fixing
+        Typos </b></font><font size="3"><b>。 </b></font></p>
+        <hr>
+        <h2><a name="2"><font size="3"><b>文字的勘误</b></font></a></h2>
+        <h4><a><font size="3" face="Times New Roman"><b>EMACS </b></font><font
+        size="3"><b>所提供的这项功能，并不是内建於
+        </b></font><font size="3" face="Times New Roman"><b>EMACS
+        </b></font><font size="3"><b>的。 </b></font><font
+        size="3" face="Times New Roman"><b>EMACS </b></font><font
+        size="3"><b>只是提供使用 </b></font><font size="3"
+        face="Times New Roman"><b>UNIX </b></font><font size="3"><b>拼字工具的介面，使用者可以借由此一介面，
+        使用 </b></font><font size="3" face="Times New Roman"><b>UNIX
+        </b></font><font size="3"><b>的拼字工具。 </b></font><font
+        size="3" face="Times New Roman"><b>UNIX </b></font><font
+        size="3"><b>环境，较常使用的拼字检查工具程式
+        </b></font><font size="3" face="Times New Roman"><b>(spelling
+        checker program)</b></font><font size="3"><b>有 </b></font><font
+        size="3" face="Times New Roman"><b>spell </b></font><font
+        size="3"><b>与 </b></font><font size="3"
+        face="Times New Roman"><b>ispell</b></font><font size="3"><b>。二者又以
+        </b></font><font size="3" face="Times New Roman"><b>ispell
+        </b></font><font size="3"><b>较为方便好用。虽然如此，并不是所有的
+        </b></font><font size="3" face="Times New Roman"><b>UNIX </b></font><font
+        size="3"><b>系统都 提供有 </b></font><font size="3"
+        face="Times New Roman"><b>ispell </b></font><font
+        size="3"><b>与 </b></font><font size="3"
+        face="Times New Roman"><b>spell </b></font><font size="3"><b>等工具程式。使用者可以
+        </b></font><font size="3" face="Times New Roman"><b>``
+        which''</b></font><font size="3"><b>、 </b></font><font
+        size="3" face="Times New Roman"><b>`` find'' </b></font><font
+        size="3"><b>等指令，在 </b></font><font size="3"
+        face="Times New Roman"><b>shell </b></font><font size="3"><b>下查阅
+        </b></font><font size="3" face="Times New Roman"><b>UNIX </b></font><font
+        size="3"><b>系统所提供的工具为何。
+        不清楚如何使用 </b></font><font size="3"
+        face="Times New Roman"><b>which </b></font><font size="3"><b>或
+        </b></font><font size="3" face="Times New Roman"><b>find </b></font><font
+        size="3"><b>等指令的使用者， 请查看 </b></font><font
+        size="3" face="Times New Roman"><b>man page </b></font><font
+        size="3"><b>。 </b></font></a></h4>
+    </dd>
+    <dd><a><font size="3" face="Times New Roman"><b>EMACS </b></font><font
+        size="3"><b>提供的拼字检查介面，是针对 </b></font><font
+        size="3" face="Times New Roman"><b>ispell </b></font><font
+        size="3"><b>的使用法 为主。透过 </b></font><font
+        size="3" face="Times New Roman"><b>EMACS </b></font><font
+        size="3"><b>的介面，使用者可使用 </b></font><font
+        size="3" face="Times New Roman"><b>UNIX </b></font><font
+        size="3"><b>系统所安装的 </b></font><font size="3"
+        face="Times New Roman"><b>ispell</b></font><font size="3"><b>。若系统没有安装
+        </b></font><font size="3" face="Times New Roman"><b>ispell</b></font><font
+        size="3"><b>，可以 </b></font><font size="3"
+        face="Times New Roman"><b>ftp</b></font><font size="3"><b>到适当的地方得取。
+        </b></font><font size="3" face="Times New Roman"><b>(Ispell
+        is available via anonymous ftp from ftp.cs.ucla.edu in
+        the directory /pub/ispell.)</b></font></a></dd>
+    <dd><a><font size="3" face="Times New Roman"><b>ispell </b></font><font
+        size="3"><b>除了会自动侦察文件的拼字错误外，还提供可能
+        修改的讯息，供使用者参考。 </b></font><font
+        size="3" face="Times New Roman"><b>ispell </b></font><font
+        size="3"><b>的除错范围，可以侦察
+        一个字，也可以侦察一个区域或整个的缓冲区。
+        使用 </b></font><font size="3" face="Times New Roman"><b>ispell
+        </b></font><font size="3"><b>时，程式会根据所检查的内容做出适当的回应。
+        如果检查无误， </b></font><font size="3"
+        face="Times New Roman"><b><i>echo area</i></b><b> </b></font><font
+        size="3"><b>会出现无误的讯息。如果所检查
+        的字有误， </b></font><font size="3"
+        face="Times New Roman"><b>ispell </b></font><font
+        size="3"><b>会另开一个视窗，将所有可能的勘误组合
+        显示出来，以利使用者做评估。若在显示的视窗找到合适的取代文字，
+        可直接键入文字的编号来完成勘误的程序。
+        </b></font></a></dd>
+    <dd><a><font size="3" face="Times New Roman"><b>ispell </b></font><font
+        size="3"><b>使用了两种不同的字典，一种是由
+        </b></font><font size="3" face="Times New Roman"><b>ispell
+        </b></font><font size="3"><b>所提供的标准字典</b></font><font
+        size="3" face="Times New Roman"><b>(standard dictionary)</b></font><font
+        size="3"><b>。另一种是使用者自已
+        建构的私有字典（</b></font><font size="3"
+        face="Times New Roman"><b>private dictionary</b></font><font
+        size="3"><b>）。标准字典是系统所提供的；
+        使用者字典是在编辑文件时，因需要而随时加入的。当标准字典无法
+        找到的字，使用者可随时将新增的字加入私有字典中。系统所使用的
+        标准字典，可依使用者的需要来指定。当然，若不指定标准字典，
+        系统会使用预定的字典。若想改变预定的字典，可使用如下的指令来设定：</b></font></a><p><a><font
+        size="3" face="Times New Roman"><b>ESC-x
+        ispell-change-dictionary</b></font></a></p>
+        <p><a><font size="3"><b>若想查阅所使用的标准字典为何，可查阅变数</b></font><font
+        size="3" face="Times New Roman"><b>``ispell-dictionary'' </b></font><font
+        size="3"><b>来得到相关讯息。如下是笔者以 </b></font><font
+        size="3" face="Times New Roman"><b>`` Ctrl-h v'' </b></font><font
+        size="3"><b>指令查阅此变数 所得的结果。若已淡忘变数的查询，请参考
+        </b></font><font size="3" face="Times New Roman"><b>4.4 </b></font><font
+        size="3"><b>节。 </b></font><font size="3"
+        face="Times New Roman"><b>ispell-dictionary's value is
+        nil Documentation: If non-nil, a dictionary to use
+        instead of the default one. This is passed to the ispell
+        process using the &quot;-d&quot; switch and is used as
+        key in ispell-dictionary-alist (which see). You should
+        set this variable before your first call to ispell (e.g.
+        in your .emacs), or use the M-x ispell-change-dictionary
+        command to change it, as changing this variable only
+        takes effect in a newly started ispell process. </b></font><font
+        size="3"><b>现在就讨论 </b></font><font size="3"
+        face="Times New Roman"><b>ispell </b></font><font
+        size="3"><b>的使用方法。 </b></font></a></p>
+        <ul>
+            <li><a><font size="3"><b>一般文件使用 </b></font><font
+                size="3" face="Times New Roman"><b>{ ispell </b></font><font
+                size="3"><b>检查错误所使用的指令，</b></font></a></li>
+            <li><a><font size="3"><b>可依所检查的范围分成如下三种：
+                </b></font></a><ul>
+                    <li><a><font size="3"><b>检查「字」的 </b></font><font
+                        size="3" face="Times New Roman"><b>ispell</b></font><font
+                        size="3"><b>指令如下：</b></font></a></li>
+                    <li><a><font size="3" face="Times New Roman"><b>ESC-\$
+                        </b></font></a></li>
+                    <li><a><font size="3"><b>检查「区域」（</b></font><font
+                        size="3" face="Times New Roman"><b>region</b></font><font
+                        size="3"><b>）的 </b></font><font
+                        size="3" face="Times New Roman"><b>ispell
+                        </b></font><font size="3"><b>指令如下：</b></font></a></li>
+                    <li><a><font size="3" face="Times New Roman"><b>ESC-x
+                        ispell-region\index{ESC-x ispell-region </b></font><font
+                        size="3"><b>使用区域的检查以前，要先将区域的范围界定清础，再使用
+                        此指令来做区域的检查。 </b></font></a></li>
+                    <li><a><font size="3"><b>检查「缓冲区」（</b></font><font
+                        size="3" face="Times New Roman"><b>buffer</b></font><font
+                        size="3"><b>）的 </b></font><font
+                        size="3" face="Times New Roman"><b>ispell
+                        </b></font><font size="3"><b>指令如下：</b></font></a></li>
+                    <li><a><font size="3" face="Times New Roman"><b>ESC-x
+                        ispell-buffer </b></font><font size="3"><b>检查整个缓冲区内的文字内容。
+                        </b></font></a></li>
+                </ul>
+            </li>
+            <li><a><font size="3"><b>信件中使用 </b></font><font
+                size="3" face="Times New Roman"><b>ispell </b></font><font
+                size="3"><b>检查错误的指令</b></font></a></li>
+            <li><a><font size="3" face="Times New Roman"><b>ESC-x
+                ispell-message </b></font></a></li>
+            <li><a><font size="3"><b>以 </b></font><font
+                size="3" face="Times New Roman"><b>ispell </b></font><font
+                size="3"><b>检查文字内容时，</b><b><i> </i></b></font><font
+                size="3" face="Times New Roman"><b><i>echo area</i></b><b>
+                </b></font><font size="3"><b>会有回应</b></font></a></li>
+            <li><a><font size="3"><b>的讯息出现。若有错误发生时，会另开一个视窗，将所有的修改
+                可能显示出来。如何使用 </b></font><font
+                size="3" face="Times New Roman"><b>ispell </b></font><font
+                size="3"><b>来修改错误，就是现在
+                的话题了。 </b></font></a><ul>
+                    <li><a><font size="3"><b>若检查的范围只是一个字时，此时，所检查的字若正确无误，</b></font></a></li>
+                    <li><a><font size="3" face="Times New Roman"><b><i>echo
+                        area</i></b><b> </b></font><font size="3"><b>会出现</b></font></a><p><a><font
+                        size="3" face="Times New Roman"><b><i>word</i></b><b>
+                        is correct</b></font></a></p>
+                    </li>
+                    <li><a><font size="3"><b>若 </b></font><font
+                        size="3" face="Times New Roman"><b>ispell
+                        </b></font><font size="3"><b>认为所检查的英文字有误时，会另开视窗，</b></font></a></li>
+                    <li><a><font size="3"><b>将 </b></font><font
+                        size="3" face="Times New Roman"><b>ispell
+                        </b></font><font size="3"><b>认为可能的正确字列举出来。使用者可参照所显示
+                        的字，来做出合适的回应。回应的方式如下：
+                        </b></font></a><ul>
+                            <li><a><font size="3"
+                                face="Times New Roman"><b>SPC</b></font></a></li>
+                            <li><a><font size="3"><b>保留现状而不更改错误，但将游标移至下一个发生错误的地方。
+                                </b></font></a></li>
+                            <li><a><font size="3"
+                                face="Times New Roman"><b><i>digit</i></b></font></a></li>
+                            <li><a><font size="3"><b>当有错误出现时，
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>ispell </b></font><font
+                                size="3"><b>会将可能的正确字一一编上号码，
+                                供使用者参考。
+                                若所显示的字就是所要更改的字，此时只要
+                                键入编号，缓冲区的错误即可获得修正。
+                                例如，检查 </b></font><font
+                                size="3" face="Times New Roman"><b><i>dictionory</i></b><b>
+                                </b></font><font size="3"><b>这个字是否的正确时，视窗上会出现
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>`` (0)dictionary
+                                '' </b></font><font size="3"><b>的提示，此时若想修改错误的字，只需键入提示
+                                的数字 </b></font><font
+                                size="3" face="Times New Roman"><b>`0'
+                                </b></font><font size="3"><b>即可。
+                                </b></font></a></li>
+                            <li><a><font size="3"
+                                face="Times New Roman"><b>r </b><b><i>new</i></b><b>
+                                RET</b></font></a></li>
+                            <li><a><font size="3"><b>将目前找到的错字以新字
+                                </b></font><font size="3"
+                                face="Times New Roman"><b><i>new</i></b><b>
+                                </b></font><font size="3"><b>取而代之。文章中其它地方
+                                若有相同的错误，不会因此而有变动。
+                                </b></font></a></li>
+                            <li><a><font size="3"
+                                face="Times New Roman"><b>R </b><b><i>new</i></b><b>
+                                RET </b></font></a></li>
+                            <li><a><font size="3"><b>除了将目前出错的地方修正外，同时还进行
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>``query-replace''
+                                </b></font><font size="3"><b>的
+                                动作，将所有相同错误的地方也一并修正。
+                                </b></font></a></li>
+                            <li><a><font size="3"
+                                face="Times New Roman"><b>a</b></font></a></li>
+                            <li><a><font size="3"><b>将找出来的错误，将错就错视为是正确的。此错误适合所有目前
+                                此 </b></font><font size="3"
+                                face="Times New Roman"><b>EMACS </b></font><font
+                                size="3"><b>下的所有缓冲区，但离　</b></font><font
+                                size="3" face="Times New Roman"><b>/i&gt;
+                                EMACS </b></font><font size="3"><b>後就恢复原状，
+                                错还是错。 </b></font></a></li>
+                            <li><a><font size="3"
+                                face="Times New Roman"><b>A</b></font></a></li>
+                            <li><a><font size="3"><b>大写的 </b></font><font
+                                size="3" face="Times New Roman"><b>``A''
+                                </b></font><font size="3"><b>与前一个小写的
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>``a''</b></font><font
+                                size="3"><b>，唯一差别的地方就是，
+                                将错就错的地方，只适用於目前所使用的这一个缓冲区。
+                                </b></font></a></li>
+                            <li><a><font size="3"
+                                face="Times New Roman"><b>i</b></font></a></li>
+                            <li><a><font size="3"
+                                face="Times New Roman"><b>ispell </b></font><font
+                                size="3"><b>所使用的字典有二种，一种是标准字典，另一种
+                                是使用者自行订定的私有字典。将标准字典中所没有的字加入
+                                私有字典中就是靠指令 </b></font><font
+                                size="3" face="Times New Roman"><b>``i''
+                                </b></font><font size="3"><b>了。
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>ispell </b></font><font
+                                size="3"><b>在检查字的正确与否时，是根据标准字典来判断对错。
+                                此标准字典对於专有术语的搜集，并不是很周延。为了弥补此缺失，
+                                私有字典就应运而生了。使用者可将标准字典中没有的字，
+                                加入私有字典中，使这些原本被视为「错」的字得以正名。
+                                当 </b></font><font size="3"
+                                face="Times New Roman"><b>ispell </b></font><font
+                                size="3"><b>检查出「错字」时，键入
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>``i'' </b></font><font
+                                size="3"><b>，就可将此错字
+                                纳入私有字典中，而成为「正确」的字。。从此若再出现此字时，
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>ispell </b></font><font
+                                size="3"><b>就会将其视为「正确」的字。纵使离开
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>EMACS </b></font><font
+                                size="3"><b>後再进入 </b></font><font
+                                size="3" face="Times New Roman"><b>EMACS</b></font><font
+                                size="3"><b>，此字也会是「正确」的字。
+                                若想使新字加入私有字典时，
+                                </b></font><font size="3"
+                                face="Times New Roman"><b><i>echo
+                                area</i></b><b> </b></font><font
+                                size="3"><b>能将加入的新字回应出来，则必需使用
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>&quot;m''
+                                </b></font><font size="3"><b>指令，
+                                而非 </b></font><font size="3"
+                                face="Times New Roman"><b>`` i'' </b></font><font
+                                size="3"><b>指令。 </b></font></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p><a><font size="3"><b>以上所谈的是透过 </b></font><font
+        size="3" face="Times New Roman"><b>EMACS </b></font><font
+        size="3"><b>所提供的介面，使用 </b></font><font
+        size="3" face="Times New Roman"><b>UNIX </b></font><font
+        size="3"><b>的拼字检查的 工具（ </b></font><font
+        size="3" face="Times New Roman"><b>ispell</b></font><font
+        size="3"><b>）。如果所使用的系统无法提供此工具软体时，
+        请以 </b></font><font size="3" face="Times New Roman"><b>ftp
+        </b></font><font size="3"><b>取得软体後再自行装置
+        </b></font><font size="3" face="Times New Roman"><b>ispell</b></font><font
+        size="3"><b>。否则，就算 </b></font><font size="3"
+        face="Times New Roman"><b>EMACS </b></font><font size="3"><b>提供了使用
+        </b></font><font size="3" face="Times New Roman"><b>ispell
+        </b></font><font size="3"><b>的介面，也是无济於事的。
+        除了以上所谈的以软体来修正错误外，还有其它的方法可以修正所
+        发生的错误，详述如下： </b></font></a></p>
+        <ul>
+            <li><a><font size="3" face="Times New Roman"><b>Transposing
+                Text</b></font></a></li>
+            <li><ul>
+                    <li><a><font size="3" face="Times New Roman"><b>Ctrl-t
+                        </b></font><font size="3"><b>（</b></font><font
+                        size="3" face="Times New Roman"><b>transpose-chars</b></font><font
+                        size="3"><b>）</b></font></a></li>
+                    <li><a><font size="3"><b>游标前後两个字元（</b></font><font
+                        size="3" face="Times New Roman"><b>character</b></font><font
+                        size="3"><b>）互调。 </b></font></a></li>
+                    <li><a><font size="3" face="Times New Roman"><b>ESC-t</b></font><font
+                        size="3"><b>（</b></font><font size="3"
+                        face="Times New Roman"><b>transpose-words</b></font><font
+                        size="3"><b>）</b></font></a></li>
+                    <li><a><font size="3"><b>游标前後两个字（</b></font><font
+                        size="3" face="Times New Roman"><b>word</b></font><font
+                        size="3"><b>）互调。但两个中间的标点符号
+                        （</b></font><font size="3"
+                        face="Times New Roman"><b>punctuation</b></font><font
+                        size="3"><b>）
+                        则不会移动。例如， </b></font><font
+                        size="3" face="Times New Roman"><b>transposing,text
+                        </b></font><font size="3"><b>则互换成
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>text,transposing
+                        </b></font><font size="3"><b>而不是 </b></font><font
+                        size="3" face="Times New Roman"><b>text
+                        transposing,</b></font><font size="3"><b>。
+                        </b></font></a></li>
+                    <li><a><font size="3" face="Times New Roman"><b>Ctrl-x
+                        Ctrl-t</b></font><font size="3"><b>（</b></font><font
+                        size="3" face="Times New Roman"><b>transpose-lines</b></font><font
+                        size="3"><b>）
+                        前後两列互换。将游标所在的列与其上一列互换。
+                        </b></font></a></li>
+                </ul>
+            </li>
+            <li><a><font size="3" face="Times New Roman"><b>Case
+                Conversion</b></font></a></li>
+            <li><ul>
+                    <li><a><font size="3" face="Times New Roman"><b>ESC-l</b></font></a></li>
+                    <li><a><font size="3"><b>将一个字的字元改成小写的字元。键入指令
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>ESC-l </b></font><font
+                        size="3"><b>会将游标所在 处之後的所有字元换成小写的字元，其范围只限於游标所在处的
+                        那一个字。 </b></font></a></li>
+                    <li><a><font size="3" face="Times New Roman"><b>ESC-u</b></font></a></li>
+                    <li><a><font size="3"><b>将一个字的字元改成大写的字元。键入指令
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>ESC-l </b></font><font
+                        size="3"><b>会将游标所在 处之後的所有字元换成大写的字元，其范围只限於游标所在处的
+                        那一个字。 </b></font></a></li>
+                    <li><a><font size="3" face="Times New Roman"><b>ESC-c</b></font></a></li>
+                    <li><a><font size="3"><b>将游标所在处的字元换成大写的字元（</b></font><font
+                        size="3" face="Times New Roman"><b>capital</b></font><font
+                        size="3"><b>），所以如果要使
+                        一个字以大写为开始可以使用此指令。
+                        </b></font></a></li>
+                </ul>
+            </li>
+        </ul>
+        <p><a><font size="3"><b>接下来所要讨论的议题是，如何使用
+        </b></font><font size="3" face="Times New Roman"><b>EMACS
+        </b></font><font size="3"><b>的编辑器来绘制简单的图形。
+        </b></font></a></p>
+        <h2><a name="3"><font size="3"><b>图形的编辑</b></font></a></h2>
+        <h4><font size="3" face="Times New Roman"><b>EMACS </b></font><font
+        size="3"><b>的绘图模式所能提供的绘图功能并不多，它只予许以键盘
+        上出现的字元，来构思图形，也就是只能以
+        </b></font><font size="3" face="Times New Roman"><b>ASCII
+        </b></font><font size="3"><b>的字元，
+        来编辑所要的图形。</b></font><font size="3"
+        face="Times New Roman"><b>EMACS </b></font><font size="3"><b>的图形模式可以与任何其它的模式
+        一起搭配使用。所以，只要有编辑图形的需要，都可以切换至
+        图形模式，将所要的图形编辑出来。</b></font></h4>
+    </dd>
+    <dd><font size="3" face="Times New Roman"><b>EMACS </b></font><font
+        size="3"><b>的绘图功能，主要是由八个控制游标移动方向
+        的指令来完成。这八个方向也是</b></font><font
+        size="3" face="Times New Roman"><b>EMACS </b></font><font
+        size="3"><b>构图的主体，
+        它们依序是，东、南、西、北、东南、西南、西北以及东北。
+        虽然可以设定八种游标移动的方向，但一次只能设定一个方向，
+        若想使游标移动的方向改变，必需重新设定游标移动的方向。
+        设定这八个游标移动方向的指令分别是： </b></font><ul>
+            <li><font size="3"><b>东： </b></font><font
+                size="3" face="Times New Roman"><b>Ctrl-c &gt; </b></font><font
+                size="3"><b>（</b></font><font size="3"
+                face="Times New Roman"><b>picture-movement-right</b></font><font
+                size="3"><b>）</b></font></li>
+            <li><font size="3"><b></b></font>　</li>
+            <li><font size="3"><b>西： </b></font><font
+                size="3" face="Times New Roman"><b>Ctrl-c &lt; </b></font><font
+                size="3"><b>（</b></font><font size="3"
+                face="Times New Roman"><b>picture-movement-left</b></font><font
+                size="3"><b>） </b></font></li>
+            <li><font size="3"><b></b></font>　</li>
+            <li><font size="3"><b>南： </b></font><font
+                size="3" face="Times New Roman"><b>Ctrl-c . </b></font><font
+                size="3"><b>（</b></font><font size="3"
+                face="Times New Roman"><b>picture-movement-down )</b></font></li>
+            <li><font size="3" face="Times New Roman"><b></b></font>　</li>
+            <li><font size="3"><b>北： </b></font><font
+                size="3" face="Times New Roman"><b>Ctrl-c ^ </b></font><font
+                size="3"><b>（</b></font><font size="3"
+                face="Times New Roman"><b>picture-movement-up) </b></font></li>
+            <li><font size="3" face="Times New Roman"><b></b></font>　</li>
+            <li><font size="3"><b>东南： </b></font><font
+                size="3" face="Times New Roman"><b>Ctrl-c \ </b></font><font
+                size="3"><b>（</b></font><font size="3"
+                face="Times New Roman"><b>picture-movement-se</b></font><font
+                size="3"><b>） </b></font></li>
+            <li><font size="3"><b></b></font>　</li>
+            <li><font size="3"><b>西南： </b></font><font
+                size="3" face="Times New Roman"><b>Ctrl-c / </b></font><font
+                size="3"><b>（</b></font><font size="3"
+                face="Times New Roman"><b>picture-movement-sw</b></font><font
+                size="3"><b>） </b></font></li>
+            <li><font size="3"><b></b></font>　</li>
+            <li><font size="3"><b>东北： </b></font><font
+                size="3" face="Times New Roman"><b>Ctrl-c ' </b></font><font
+                size="3"><b>（</b></font><font size="3"
+                face="Times New Roman"><b>picture-movement-ne</b></font><font
+                size="3"><b>） </b></font></li>
+            <li><font size="3"><b></b></font>　</li>
+            <li><font size="3"><b>西北： </b></font><font
+                size="3" face="Times New Roman"><b>Ctrl-c ` </b></font><font
+                size="3"><b>（</b></font><font size="3"
+                face="Times New Roman"><b>picture-movement-nw</b></font><font
+                size="3"><b>） </b></font></li>
+            <li><font size="3"><b></b></font>　</li>
+        </ul>
+        <p><font size="3"><b>这八个指令似乎颇为复杂，但如配合图形的解释，就可了
+        这八个指令的由来。因为，每个指令的表示法与所要表达的方向
+        有著密切关系。 北</b></font><font size="3"
+        face="Times New Roman"><b>(rignt) C-c ^ . </b></font><font
+        size="3"><b>西北</b></font><font size="3"
+        face="Times New Roman"><b>(nw) . </b></font><font
+        size="3"><b>东北</b></font><font size="3"
+        face="Times New Roman"><b>(ne) C-c ` . C-c ' . . . . . .
+        . . . ... C-c &lt; ................... C-c &gt; </b></font><font
+        size="3"><b>西</b></font><font size="3"
+        face="Times New Roman"><b>(left) ... </b></font><font
+        size="3"><b>东</b></font><font size="3"
+        face="Times New Roman"><b>(right) . . . . . . . . . C-c /
+        . C-c \ </b></font><font size="3"><b>西南</b></font><font
+        size="3" face="Times New Roman"><b>(sw) . </b></font><font
+        size="3"><b>东南</b></font><font size="3"
+        face="Times New Roman"><b>(se) . C-c . </b></font><font
+        size="3"><b>南</b></font><font size="3"
+        face="Times New Roman"><b>(down) </b></font><font
+        size="3"><b>从以上的图示，不知能否看出这八个控制方向的指令与所表达
+        的方向有著密不可分的关连性。例如，往东的方向则以
+        「</b></font><font size="3" face="Times New Roman"><b>&gt;</b></font><font
+        size="3"><b>」来表示， 往西的方向则以 「</b></font><font
+        size="3" face="Times New Roman"><b>&lt;</b></font><font
+        size="3"><b>」，往北的方向则以 「</b></font><font
+        size="3" face="Times New Roman"><b>^</b></font><font
+        size="3"><b>」 来表示等等。 基本上，从使用的指令就可知道所代表的方向为何。当然，其原意
+        并不是要以指令来猜方向，而是用方向来诠释指令。所以，只要
+        掌握西南方的方向，就知道使用 「</b></font><font
+        size="3" face="Times New Roman"><b>/</b></font><font
+        size="3"><b>」 来表示。 </b></font></p>
+    </dd>
+    <dd><font size="3"><b>图形模式可以在编辑的过程中随时使用的。使用图形模式的
+        方法很简单，只要将其唤起即可。唤起图形模式的方法是：
+        </b></font><font size="3" face="Times New Roman"><b>``
+        ESC-x edit-picture''</b></font><font size="3"><b>。 当进入图形模式後，</b><b><i>
+        </i></b></font><font size="3" face="Times New Roman"><b><i>mode
+        line</i></b><b> </b></font><font size="3"><b>会将使用图形模式的讯息
+        显示出来。进入图形模式後，也可以随时离开此模式，而回到
+        唤起此模式前的状态。回到先前模式的方法是</b></font><font
+        size="3" face="Times New Roman"><b>`` Ctrl-c Ctrl-c</b></font><font
+        size="3"><b>。 </b></font></dd>
+    <dd><font size="3"><b>进入图形模式後，就可利用设定游标移动方向的八个指令，
+        来控制输入字元出现的方向，而绘制出合适的图样。当选定了
+        游标的移动方向後， </b></font><font size="3"
+        face="Times New Roman"><b><i>mode line</i></b><b> </b></font><font
+        size="3"><b>会将游标移动的方向显示出来。
+        此时，键入任何一个键盘上的字元，字元会依照所设定的方向出现在萤幕上。
+        </b></font></dd>
+    <dd><font size="3"><b>图形模式所采用的是覆盖模式，这是有其道理的。绘图就是
+        要在特定的地方绘上所欲的图样，如果使用插入的模式，就会破坏整体
+        的设计。所以，使用覆盖模式是较合理的安排。
+        </b></font></dd>
+    <dd><font size="3"><b>图形模式除了设定游标移动方向的指令外，还有其它的指令
+        是针对编辑功能而设。例如，字或列的删减，空白列的增加等等，
+        都是在绘图时，不可或缺的编辑指令。现在就来讨论与绘图有关
+        的编辑指令。绘图的编辑指令与一般编辑的指令大同小异，
+        为了避免将一般的编辑指令与绘图时所使用的编辑指令混淆，
+        现将二者的差异整理列举如下： </b></font><table
+        border="5">
+            <tr>
+                <th><font size="3" face="Times New Roman"><b>Keystrokes
+                </b></font></th>
+                <th><font size="3" face="Times New Roman"><b>Text
+                Mode</b></font></th>
+                <th><font size="3" face="Times New Roman"><b>Picture
+                Mode</b></font></th>
+            </tr>
+            <tr>
+                <th><font size="3" face="Times New Roman"><b>RET</b></font></th>
+                <th align="left"><font size="3"><b>加入一行空白列
+                </b></font></th>
+                <th align="left"><font size="3"><b>使游标向下移动，若要加入空白列，<br>
+                则使 用 </b></font><font size="3"
+                face="Times New Roman"><b>``Ctrl-o'' </b></font><font
+                size="3"><b>指令。</b></font></th>
+            </tr>
+            <tr>
+                <th><font size="3" face="Times New Roman"><b>Ctrl-d
+                </b></font></th>
+                <th align="left"><font size="3"><b>删除一个字元後，文件会向左移动
+                </b></font></th>
+                <th align="left"><font size="3"><b>将游标所在处的字元以空白取代，<br>
+                但文件不会向左移动。若要删除字元，必需使用<br>
+                </b></font><font size="3" face="Times New Roman"><b>&quot;Ctrl-c
+                Ctrl-d&quot; </b></font><font size="3"><b>指令。
+                </b></font></th>
+            </tr>
+            <tr>
+                <th><font size="3" face="Times New Roman"><b>SPACE
+                </b></font></th>
+                <th align="left"><font size="3"><b>输入空白且将文件移向右边
+                </b></font></th>
+                <th align="left"><font size="3"><b>游标向右移动，同时游标所到之处，均将
+                <br>
+                文字以空白覆盖。此时若想输入空白，则
+                <br>
+                必需回到 </b></font><font size="3"
+                face="Times New Roman"><b>Text Mode</b></font><font
+                size="3"><b>，在</b></font><font size="3"
+                face="Times New Roman"><b>text Mode <br>
+                </b></font><font size="3"><b>的状态输入空白
+                。 </b></font></th>
+            </tr>
+            <tr>
+                <th><font size="3" face="Times New Roman"><b>Ctrl-k
+                </b></font></th>
+                <th align="left"><font size="3"><b>删除所在列的内容，使用两次<br>
+                </b></font><font size="3" face="Times New Roman"><b>Ctrl-k
+                </b></font><font size="3"><b>则删除内容与此空白列。</b></font></th>
+                <th align="left"><font size="3"><b>删除内容但不会删除列。欲删除列只有<br>
+                回到 </b></font><font size="3"
+                face="Times New Roman"><b>Text Mode </b></font></th>
+            </tr>
+            <tr>
+                <th><font size="3" face="Times New Roman"><b>TAB </b></font></th>
+                <th align="left"><font size="3"><b>输入 </b></font><font
+                size="3" face="Times New Roman"><b>TABs </b></font><font
+                size="3"><b>且将文件向右移动 </b></font></th>
+                <th align="left"><font size="3"><b>只以</b></font><font
+                size="3" face="Times New Roman"><b>TAB </b></font><font
+                size="3"><b>的距离移动游标，但它所经过之<br>
+                处并不会输入 </b></font><font size="3"
+                face="Times New Roman"><b>TABs </b></font><font
+                size="3"><b>。 </b></font></th>
+            </tr>
+            <tr>
+                <th><font size="3" face="Times New Roman"><b>Ctrl-n
+                </b></font></th>
+                <th align="left"><font size="3"><b>游标移至下一列，但游标所在的栏
+                <br>
+                位则视情形而定。</b></font></th>
+                <th align="left"><font size="3"><b>游标移至下一列，但栏位与上一列相同。
+                </b></font></th>
+            </tr>
+            <tr>
+                <th><font size="3" face="Times New Roman"><b>Ctrl-p
+                </b></font></th>
+                <th align="left"><font size="3"><b>游标移至上一列，但游标所在的栏
+                <br>
+                位则视情形而定。</b></font></th>
+                <th align="left"><font size="3"><b>游标移至上一列，但栏位与下一列相同。
+                </b></font></th>
+            </tr>
+            <tr>
+                <th><font size="3" face="Times New Roman"><b>Ctrl-f
+                </b></font></th>
+                <th align="left"><font size="3"><b>游标向前移动一个字元。
+                </b></font></th>
+                <th align="left"><font size="3"><b>游标向右移动一个字元。
+                </b></font></th>
+            </tr>
+            <tr>
+                <th><font size="3" face="Times New Roman"><b>Ctrl-b
+                </b></font></th>
+                <th align="left"><font size="3"><b>游标往回移动一个字元。
+                </b></font></th>
+                <th align="left"><font size="3"><b>游标向左移动一个字元。
+                </b></font></th>
+            </tr>
+        </table>
+    </dd>
+    <dd><font size="3"><b>除了以上所谈的种种功能之外，图形模式亦可与长方形
+        编辑相配合。长方形编辑是专用来编辑区块文件，而图形模式
+        的编辑，从某个角度来看，就是区块的组合。所以，长方形编辑
+        的运作，就可用在图形模式的剪贴上。因此，任何可以使用在
+        长方形编辑的指令，都可用在图形模式中。不熟悉长方形的编辑者，
+        可参考本文的 </b></font><font size="3"
+        face="Times New Roman"><b>5.4 </b></font><font size="3"><b>节。
+        </b></font></dd>
+    <dd><font size="3"><b>图形模式除了可使用长方形编辑的指令外，图形模式
+        本身，也提供了适用於此模式的专门指令。现就一一为各位介绍。
+        </b></font><ul>
+            <li><font size="3"><b>可利用的长方形编辑指令，如下：</b></font></li>
+            <li><ul>
+                    <li><font size="3" face="Times New Roman"><b>Ctrl-x
+                        r d</b></font><font size="3"><b>（</b></font><font
+                        size="3" face="Times New Roman"><b>delete-rectangle</b></font><font
+                        size="3"><b>）</b></font></li>
+                    <li><font size="3"><b>删除设定好的长方形区块内的文件，经删除後的文件无法再将其
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>yank </b></font><font
+                        size="3"><b>出来。除非是执行 </b></font><font
+                        size="3" face="Times New Roman"><b>undo </b></font><font
+                        size="3"><b>的指令。 </b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>Ctrl-x
+                        r k</b></font><font size="3"><b>（</b></font><font
+                        size="3" face="Times New Roman"><b>kill-rectangle</b></font><font
+                        size="3"><b>）</b></font></li>
+                    <li><font size="3"><b>与图形模式 </b></font><font
+                        size="3" face="Times New Roman"><b>``
+                        Ctrl-c Ctrl-k'' </b></font><font size="3"><b>的作用相同。
+                        </b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>Ctrl-x
+                        r y </b></font><font size="3"><b>（</b></font><font
+                        size="3" face="Times New Roman"><b>yank-rectangle</b></font><font
+                        size="3"><b>）</b></font></li>
+                    <li><font size="3"><b>与图形模式 </b></font><font
+                        size="3" face="Times New Roman"><b>``
+                        Ctrl-c Ctrl-y'' </b></font><font size="3"><b>的作用相同。
+                        </b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>Ctrl-x
+                        r o </b></font><font size="3"><b>（</b></font><font
+                        size="3" face="Times New Roman"><b>open-rectangle</b></font><font
+                        size="3"><b>）</b></font></li>
+                    <li><font size="3"><b>在设定好的长方形区块内，插入空白後使文件向右移动。
+                        </b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>Ctrl-x
+                        r r </b><b><i>r</i></b><b> </b></font><font
+                        size="3"><b>（</b></font><font size="3"
+                        face="Times New Roman"><b>copy-rectangle-to-register</b></font><font
+                        size="3"><b>）</b></font></li>
+                    <li><font size="3"><b>将设定好范围的区块资料，存入
+                        </b></font><font size="3"
+                        face="Times New Roman"><b><i>register</i></b><b>
+                        </b></font><font size="3"><b>中，
+                        此时区块内的资料并不会消失。
+                        </b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>Ctrl-x
+                        r i </b><b><i>r</i></b><b> </b></font><font
+                        size="3"><b>（</b></font><font size="3"
+                        face="Times New Roman"><b>insert-register</b></font><font
+                        size="3"><b>）</b></font></li>
+                    <li><font size="3"><b>将存入 </b></font><font
+                        size="3" face="Times New Roman"><b><i>register</i></b><b>
+                        </b></font><font size="3"><b>中的资料取出。
+                        </b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>ESC-x
+                        clear-rectangle</b></font></li>
+                    <li><font size="3"><b>将设定好的长方形区块内的文件以空白取代。
+                        </b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>ESC-x
+                        string-rectangle RET </b><b><i>string</i></b><b>
+                        RET</b></font></li>
+                    <li><font size="3"><b>设定好的长方形区块插入新的字串（</b><b><i>
+                        </i></b></font><font size="3"
+                        face="Times New Roman"><b><i>string</i></b></font><font
+                        size="3"><b>）。此时的 区块只决定加入新字串的长度，宽度则由所给予的字串长度
+                        来决定。原来区块内的文件会向右移动。
+                        </b></font></li>
+                </ul>
+            </li>
+            <li><font size="3"><b>图形模式自行开发的编辑指令，如下：</b></font></li>
+            <li><ul>
+                    <li><font size="3" face="Times New Roman"><b>Ctrl-c
+                        Ctrl-k</b></font><font size="3"><b>（</b></font><font
+                        size="3" face="Times New Roman"><b>picture-clear-rectangle</b></font><font
+                        size="3"><b>）</b></font></li>
+                    <li><font size="3"><b>长方形指令 </b></font><font
+                        size="3" face="Times New Roman"><b>``
+                        Ctrl-x r k&quot; </b></font><font
+                        size="3"><b>与此指令具有相同的效果。
+                        此指令经常被使用，所以将长方形的指令予以精简，使其在
+                        图形模式中更易於被使用</b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>Ctrl-c
+                        Ctrl-y</b></font><font size="3"><b>（</b></font><font
+                        size="3" face="Times New Roman"><b>picture-yank-rectangle)
+                        </b></font><font size="3"><b>长方形指令
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>`` Ctrl-x r y''
+                        </b></font><font size="3"><b>与此指令具有相同的效果。此指令经常
+                        被使用，所以将长方形的指令予以精简，使其在图形模式中更
+                        易於被使用。 </b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>Ctrl-c
+                        Ctrl-w r </b></font><font size="3"><b>（</b></font><font
+                        size="3" face="Times New Roman"><b>picture-clear-rectangle-to-register</b></font><font
+                        size="3"><b>）</b></font></li>
+                    <li><font size="3"><b>将区块内的资料存入
+                        </b></font><font size="3"
+                        face="Times New Roman"><b><i>register</i></b><b>
+                        </b></font><font size="3"><b>中。此时区块内的资料会以空白
+                        取代，这是与长方形指令 </b></font><font
+                        size="3" face="Times New Roman"><b>``
+                        Ctrl-x r r </b><b><i>r</i></b><b> </b></font><font
+                        size="3"><b>最大不同之处。 </b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>Ctrl-c
+                        Ctrl-x </b><b><i>r</i></b><b> </b></font><font
+                        size="3"><b>（</b></font><font size="3"
+                        face="Times New Roman"><b>picture-yank-rectangle-from-register</b></font><font
+                        size="3"><b>） 将存入 </b></font><font
+                        size="3" face="Times New Roman"><b><i>register</i></b><b>
+                        </b><b><i>r</i></b><b> </b></font><font
+                        size="3"><b>中的资料取出。 </b></font></li>
+                </ul>
+            </li>
+        </ul>
+        <p><font size="3"><b>长方形指令的使用在图形模式中非常有用。因为，图形的构成就是
+        一块块的区域。所以善用长方形指令会使图形的编辑更加灵活。
+        </b></font></p>
+        <hr>
+        <p><a href="index.html"><font size="3"><b>回主选单 </b></font></a></p>
+    </dd>
+</dl>
+</body>
+</html>

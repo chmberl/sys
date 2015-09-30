@@ -83,3 +83,4 @@ if __name__ == '__main__':
         for br in queryLeftTable_tr:
             br.click()
 
+

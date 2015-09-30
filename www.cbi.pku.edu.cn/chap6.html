@@ -1,0 +1,1985 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=gb_2312-80">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Emacs 进阶编辑指令</title>
+</head>
+
+<body>
+
+<h2><font size="3" face="Times New Roman">Emacs </font><font
+size="3">进阶编辑指令</font></h2>
+
+<h4><font size="3">前面的章节谈论 </font><font size="3"
+face="Times New Roman">EMACS </font><font size="3">的基本用法，现在讨论
+</font><font size="3" face="Times New Roman">EMACS </font><font
+size="3">进阶 的用法。现在先谈 </font><font size="3"
+face="Times New Roman">EMACS </font><font size="3">的搜寻 </font><font
+size="3" face="Times New Roman"><i>search</i> </font><font
+size="3">与字串 </font><font size="3" face="Times New Roman"><i>string</i>
+</font><font size="3">的取代功能。 </font></h4>
+
+<hr>
+
+<h2><a name="1"><font size="3">文件的搜寻</font></a></h2>
+
+<h4><font size="3">搜寻特定的字串，并非 </font><font
+size="3" face="Times New Roman">EMACS </font><font size="3">所特有的功能，相信大多数的
+编辑器都具有如此的功能。但 </font><font size="3"
+face="Times New Roman">EMACS </font><font size="3">所采取的搜寻方法是，
+每键入一个字元就展开搜寻，</font><font size="3"
+face="Times New Roman">EMACS </font><font size="3">称此种方式的搜寻为
+</font><font size="3" face="Times New Roman"><i>Incremental
+Search </i></font><font size="3">。 当然， </font><font
+size="3" face="Times New Roman">EMACS </font><font size="3">也提供非
+</font><font size="3" face="Times New Roman">Incremental Search} </font><font
+size="3">，称为 </font><font size="3" face="Times New Roman">Nonincremental
+Search</font><font size="3">。 </font><font size="3"
+face="Times New Roman">EMACS </font><font size="3">对於所要搜寻的字串，仍是利用
+</font><font size="3" face="Times New Roman">minibuffer </font><font
+size="3">来输入所欲搜寻的字串。 此时，输入 </font><font
+size="3" face="Times New Roman"><i>minibuffer</i> </font><font
+size="3">的搜寻字串，若全由小写的英文字母 （</font><font
+size="3" face="Times New Roman">lower case</font><font size="3">）组成，则
+</font><font size="3" face="Times New Roman">EMACS </font><font
+size="3">在展开搜寻的行动时，不论字母
+是否有大小写的差别，会将所有与 </font><font
+size="3" face="Times New Roman"><i>minibuffer</i> </font><font
+size="3">具有相同
+英文字母的字串都找寻出来。例如在 </font><font
+size="3" face="Times New Roman"><i>minibuffer</i> </font><font
+size="3">处输入 </font><font size="3" face="Times New Roman">abc</font><font
+size="3">， </font><font size="3" face="Times New Roman">EMACS </font><font
+size="3">会找寻</font><font size="3" face="Times New Roman">abc</font><font
+size="3">、 </font><font size="3" face="Times New Roman">Abc</font><font
+size="3">、</font><font size="3" face="Times New Roman">aBc</font><font
+size="3">、 </font><font size="3" face="Times New Roman">abC</font><font
+size="3">、</font><font size="3" face="Times New Roman">ABc</font><font
+size="3">、</font><font size="3" face="Times New Roman">aBC</font><font
+size="3">、</font><font size="3" face="Times New Roman">ABC </font><font
+size="3">等字串。 所以在 </font><font size="3"
+face="Times New Roman"><i>minibuffer</i> </font><font size="3">处输入小写的英文字母，就表示所要找寻
+的字串包括大写的字母在内。 如何直接找寻上述例子的
+</font><font size="3" face="Times New Roman">ABC</font><font
+size="3">，而不需经过 </font><font size="3"
+face="Times New Roman">abc</font><font size="3">、</font><font
+size="3" face="Times New Roman">Abc</font><font size="3">、</font><font
+size="3" face="Times New Roman">aBc</font><font size="3">、 </font><font
+size="3" face="Times New Roman">abC</font><font size="3">、 </font><font
+size="3" face="Times New Roman">ABc</font><font size="3">、</font><font
+size="3" face="Times New Roman">ABC </font><font size="3">等字串呢？欲达如此的效果，
+必需在 </font><font size="3" face="Times New Roman"><i>minibuffer</i>
+</font><font size="3">处，给予大写字母（</font><font
+size="3" face="Times New Roman">upper case</font><font size="3">）的字串。
+例如，在 </font><font size="3" face="Times New Roman"><i>minibuffer</i>
+</font><font size="3">处，给予 </font><font size="3"
+face="Times New Roman">ABC </font><font size="3">的字串，此时，缓冲区
+的内容若为</font><font size="3" face="Times New Roman">abc</font><font
+size="3">、 </font><font size="3" face="Times New Roman">Abc</font><font
+size="3">、</font><font size="3" face="Times New Roman">aBc</font><font
+size="3">、 </font><font size="3" face="Times New Roman">abC</font><font
+size="3">、</font><font size="3" face="Times New Roman">ABc</font><font
+size="3">、</font><font size="3" face="Times New Roman">aBC</font><font
+size="3">、</font><font size="3" face="Times New Roman">ABC </font><font
+size="3">，则会 直接搜寻 </font><font size="3"
+face="Times New Roman">ABC </font><font size="3">。所以在 </font><font
+size="3" face="Times New Roman"><i>minibuffer</i> </font><font
+size="3">处输入大写的英文字串时， </font><font
+size="3" face="Times New Roman">EMACS </font><font size="3">所找寻字串的大小写，就会与</font><font
+size="3" face="Times New Roman"><i>minibuffer</i> </font><font
+size="3">字串的大小写 完全一样。
+此种对大小写极度敏感的作法，称为 </font><font
+size="3" face="Times New Roman"><i>case sensitive</i></font><font
+size="3">。 </font><font size="3" face="Times New Roman">EMACS </font><font
+size="3">对於大小写出现的位置也有差别，现在就先来讨论
+</font><font size="3" face="Times New Roman"><i>case sensitive</i>
+</font><font size="3">的问题。 </font></h4>
+
+<ul>
+    <li><font size="3" face="Times New Roman"><i>minibuffer</i> </font><font
+        size="3">的字母都是小写，则可能找到的字串，包含
+        所有大小写的字串。 原始文件：</font><font
+        size="3" face="Times New Roman">abc</font><font size="3">、
+        </font><font size="3" face="Times New Roman">Abc</font><font
+        size="3">、</font><font size="3" face="Times New Roman">aBc</font><font
+        size="3">、 </font><font size="3" face="Times New Roman">abC</font><font
+        size="3">、</font><font size="3" face="Times New Roman">ABc</font><font
+        size="3">、</font><font size="3" face="Times New Roman">aBC</font><font
+        size="3">、</font><font size="3" face="Times New Roman">ABC
+        </font><font size="3">输入 </font><font size="3"
+        face="Times New Roman"><i>minibuffer</i> </font><font
+        size="3">的字串： </font><font size="3"
+        face="Times New Roman">abc search string</font><font
+        size="3">：</font><font size="3" face="Times New Roman">abc</font><font
+        size="3">、 </font><font size="3" face="Times New Roman">Abc</font><font
+        size="3">、</font><font size="3" face="Times New Roman">aBc</font><font
+        size="3">、 </font><font size="3" face="Times New Roman">abC</font><font
+        size="3">、</font><font size="3" face="Times New Roman">ABc</font><font
+        size="3">、</font><font size="3" face="Times New Roman">aBC</font><font
+        size="3">、</font><font size="3" face="Times New Roman">ABC
+        </font></li>
+    <li><font size="3" face="Times New Roman"><i>minibuffer</i></font><font
+        size="3">中的字母，若有任一个以上的字母是大写，则可能
+        找到的字串，就如同 </font><font size="3"
+        face="Times New Roman"><i>minibuffer</i> </font><font
+        size="3">所示的一样。 原始文件：</font><font
+        size="3" face="Times New Roman">abc</font><font size="3">、
+        </font><font size="3" face="Times New Roman">Abc</font><font
+        size="3">、</font><font size="3" face="Times New Roman">aBc</font><font
+        size="3">、 </font><font size="3" face="Times New Roman">abC</font><font
+        size="3">、</font><font size="3" face="Times New Roman">ABc</font><font
+        size="3">、</font><font size="3" face="Times New Roman">aBC</font><font
+        size="3">、</font><font size="3" face="Times New Roman">ABC
+        </font><ul>
+            <li><font size="3">输入 </font><font size="3"
+                face="Times New Roman"><i>minibuffer</i> </font><font
+                size="3">的字串： </font><font size="3"
+                face="Times New Roman">Abc search string</font><font
+                size="3">：</font><font size="3"
+                face="Times New Roman">Abc</font></li>
+            <li><font size="3">输入 </font><font size="3"
+                face="Times New Roman"><i>minibuffer</i> </font><font
+                size="3">的字串： </font><font size="3"
+                face="Times New Roman">aBc search string</font><font
+                size="3">：</font><font size="3"
+                face="Times New Roman">aBc</font></li>
+            <li><font size="3">输入 </font><font size="3"
+                face="Times New Roman"><i>minibuffer</i> </font><font
+                size="3">的字串： </font><font size="3"
+                face="Times New Roman">ABc search string</font><font
+                size="3">：</font><font size="3"
+                face="Times New Roman">ABc</font></li>
+            <li><font size="3">输入 </font><font size="3"
+                face="Times New Roman"><i>minibuffer</i> </font><font
+                size="3">的字串： </font><font size="3"
+                face="Times New Roman">ABC search string</font><font
+                size="3">：</font><font size="3"
+                face="Times New Roman">ABC</font></li>
+        </ul>
+    </li>
+</ul>
+
+<pre><font size="3">如果希望  </font><font size="3"
+face="Times New Roman"><i>minibuffer</i> </font><font size="3">输入什麽，缓冲区就找到什麽时，
+例如，在 </font><font size="3" face="Times New Roman"><i>minibuffer</i></font><font
+size="3">中输入 </font><font size="3" face="Times New Roman">abc</font><font
+size="3">，所要找寻的字串就是 </font><font size="3"
+face="Times New Roman">abc</font><font size="3">。
+此时就必需修改 </font><font size="3"
+face="Times New Roman">EMACS ``case-fold-search'' </font><font
+size="3">变数的值为 </font><font size="3"
+face="Times New Roman">``nil''</font><font size="3">。
+因为</font><font size="3" face="Times New Roman">EMACS </font><font
+size="3">对此变数的预设值是 </font><font size="3"
+face="Times New Roman">t</font><font size="3">，它的意思就是使搜寻成为
+</font><font size="3" face="Times New Roman"><i>case sensitive</i></font><font
+size="3">。若将此变数改成非 </font><font size="3"
+face="Times New Roman"><i>case sensitive</i> </font><font
+size="3">时，在
+</font><font size="3" face="Times New Roman"><i>minibuffer</i>} </font><font
+size="3">输入 </font><font size="3" face="Times New Roman">abc</font><font
+size="3">，就只会找寻 </font><font size="3"
+face="Times New Roman">abc</font><font size="3">。
+
+知道了 </font><font size="3" face="Times New Roman">EMACS </font><font
+size="3">对大小写的处理程序後，现在就来谈谈 
+ </font><font size="3" face="Times New Roman"><i>incremental search</i></font><font
+size="3">和</font><font size="3" face="Times New Roman"><i>noincremental search</i></font><font
+size="3">。键入
+第一个字母至</font><font size="3" face="Times New Roman"><i>minibuffer</i> </font><font
+size="3">时，搜寻的序幕就展开，是为 
+</font><font size="3" face="Times New Roman"><i>incremental search</i></font><font
+size="3">。
+使用  </font><font size="3" face="Times New Roman"><i>incremental search</i></font><font
+size="3">时，当  </font><font size="3" face="Times New Roman"><i>minibuffer</i> 
+</font><font size="3">收到第一个搜寻字母时，搜寻行动就从游标所在位置向下开始搜索。
+此时的游标，会从原先游标所在位置移至其下第一个出现此字母的
+地方；当 </font><font size="3" face="Times New Roman"><i>minibuffer</i> </font><font
+size="3">出现两个字元时，游标也移至其下出现
+此两个字元的地方。当然，这些都必需要以缓冲区中有这些文字为前题，
+若找不到任何合适的文字时，
+ </font><font size="3" face="Times New Roman"><i>echo area</i> </font><font
+size="3">会出现 </font><font size="3" face="Times New Roman">``Failing I-search:'' </font><font
+size="3">的警示语。
+在 </font><font size="3" face="Times New Roman">EMACS </font><font
+size="3">中执行  </font><font size="3" face="Times New Roman"><i>incremental search</i></font><font
+size="3">的方法有两种，
+一种是往前的搜寻（ </font><font size="3"
+face="Times New Roman">forward search)</font><font size="3">，另一种是回头的搜寻
+（ </font><font size="3" face="Times New Roman">backward search</font><font
+size="3">。如下，就是二种搜寻所使用的指令：
+
+</font></pre>
+
+<ul>
+    <li><font size="3" face="Times New Roman">Ctrl-s </font><font
+        size="3">（</font><font size="3" face="Times New Roman">isearch-forward</font><font
+        size="3">）</font></li>
+    <li><font size="3">游标所在处向前（右）搜寻。 </font></li>
+    <li><font size="3" face="Times New Roman">Ctrl-r </font><font
+        size="3">（</font><font size="3" face="Times New Roman">isearch-backward</font><font
+        size="3">）</font></li>
+    <li><font size="3">游标所在处往回（左）搜寻。 </font></li>
+</ul>
+
+<pre><font size="3">当使用 </font><font size="3"
+face="Times New Roman">Ctrl-s </font><font size="3">或 </font><font
+size="3" face="Times New Roman">Ctrl-r</font><font size="3">指令时， </font><font
+size="3" face="Times New Roman">EMACS </font><font size="3">的
+ </font><font size="3" face="Times New Roman">echo area </font><font
+size="3">会出现 </font><font size="3" face="Times New Roman">``I-search:''</font><font
+size="3">或 </font><font size="3" face="Times New Roman">``I-serach backward:''</font><font
+size="3">。当出现这些
+提示字时，就表示其後是要输入搜寻字串。只要键入第一个字元，
+搜寻的行动就立即展开了。 虽然如此，仍有几个有关搜寻的关键字
+必需先行讨论，它们是 </font><font size="3"
+face="Times New Roman">``RET''</font><font size="3">、 </font><font
+size="3" face="Times New Roman">``DEL'' </font><font size="3">与</font><font
+size="3" face="Times New Roman">``Ctrl-g''</font><font size="3">。
+
+</font></pre>
+
+<ul>
+    <li><font size="3" face="Times New Roman">RET</font></li>
+    <li><font size="3">当 </font><font size="3"
+        face="Times New Roman"><i>minibuffer</i></font><font
+        size="3">收到 </font><font size="3"
+        face="Times New Roman">RET </font><font size="3">时，游标会停留在最後一个满足搜寻
+        条件之处，且结束搜寻的动作。这种做法的好处是，若所找的资料
+        就是所要的，且又是必需修改的资料，游标停留在该处，即可立即处理。
+        因为，有些离开搜寻状态的方法，会使游标到第一次执行搜寻的位置，
+        这就是下面要谈的</font><font size="3"
+        face="Times New Roman">`` Ctrl-g'' </font><font size="3">的处理原则。
+        </font></li>
+    <li><font size="3" face="Times New Roman">Ctrl-g</font></li>
+    <li><font size="3" face="Times New Roman">``Ctrl-g'' </font><font
+        size="3">的用法有二种，其一、是离开搜寻，承如上面所言；
+        其二、就是当所键入的搜寻字串，无法找到完全符合的对应字串时，
+        可利用 </font><font size="3" face="Times New Roman">``Ctrl-g''
+        </font><font size="3">将</font><font size="3"
+        face="Times New Roman"><i>minibuffer</i></font><font
+        size="3">中所能找到的子字串留下，
+        而将不能找到的资料除去。 所以，若已经找到所要的字串而想离开搜寻时，键入
+        </font><font size="3" face="Times New Roman">``Ctrl-g'' </font><font
+        size="3">除了可以离开搜寻外，还可以将游标带回原先的出发点。根据
+        </font><font size="3" face="Times New Roman"><i>minibuffer</i>
+        </font><font size="3">处所给予的资料，完全无误的在缓冲区中找到相对应
+        的文字後，以 </font><font size="3"
+        face="Times New Roman">``Ctrl-g'' </font><font size="3">可将游标归回原位。但若所给予的资料在缓冲区
+        中无法找到完全对应的字，此时，若想离开搜寻的状态，就必需用「两次」
+        的 </font><font size="3" face="Times New Roman">``Ctrl-g''
+        </font><font size="3">才可完全脱离搜寻的状态。</font><p><font
+        size="3">此时，键入的第一个 </font><font
+        size="3" face="Times New Roman">``Ctrl-g'' <i>minibuffer</i>
+        </font><font size="3">所找到的字串留下，而将
+        无法兑现的字串删除。此时再键入一次 </font><font
+        size="3" face="Times New Roman">``Ctrl-g'' </font><font
+        size="3">，则会完全离开搜寻的
+        状态，而游标也会自动移回展开搜寻时的位置。
+        </font></p>
+    </li>
+    <li><font size="3" face="Times New Roman">DEL</font></li>
+    <li><font size="3">想要修改 </font><font size="3"
+        face="Times New Roman"><i>minibuffer</i> </font><font
+        size="3">内的字串时，请用</font><font size="3"
+        face="Times New Roman">DEL</font><font size="3">（</font><font
+        size="3" face="Times New Roman">delete-backward-char</font><font
+        size="3">） 。 还记得它吗？它是用来删除字元的，此删除的动作是往回的删除。每执行
+        一次的</font><font size="3" face="Times New Roman">DEL</font><font
+        size="3">，就是一个新字串的诞生，
+        也就是一个新搜寻的展开。值得注意
+        的是，此新展开的搜寻与原先的搜寻方向相反，这个设计是合理的。
+        因为， 只要</font><font size="3"
+        face="Times New Roman"><i>minibuffer</i> </font><font
+        size="3">输入任何一个字，搜寻就己展开了，此时，若以</font><font
+        size="3" face="Times New Roman">DEL </font><font size="3">来
+        删除错误的输入，则表示先前所找到的字串也不符需要，所以只能重新来过
+        才是可行之路。这也就是为何每删掉一个字元，搜寻的行动会回走的理由了。
+        </font></li>
+</ul>
+
+<pre><font size="3">要使用搜寻的指令，只需键入 </font><font
+size="3" face="Times New Roman">``Ctrl-s'' </font><font size="3">。此时</font><font
+size="3" face="Times New Roman"><i>minibuffer</i></font><font
+size="3">会出现 
+</font><font size="3" face="Times New Roman">``I-search:''</font><font
+size="3">。若键入 </font><font size="3"
+face="Times New Roman">Ctrl-r </font><font size="3">後，则出现 </font><font
+size="3" face="Times New Roman">``I-search backward:''</font><font
+size="3">。
+
+使用搜寻的指令，会有若干情形出现：
+</font></pre>
+
+<ul>
+    <li><font size="3">首次搜寻，即觅得所要的字串。</font></li>
+    <li><font size="3">使用者此时可根据所需来做适当的处理。例如，离开搜寻，修改搜寻到
+        的资料等等。</font></li>
+    <li><font size="3">搜寻不利，必需一而再，再而三的努力，才能找到所要的字串。</font></li>
+    <li><font size="3">此时只要重复使用 </font><font
+        size="3" face="Times New Roman">`` Ctrl-s'' </font><font
+        size="3">，游标就移至下一个符合的字串。所以，
+        只要所找寻的字串不变　就不需要再给予搜寻的字串。重复使用
+        </font><font size="3" face="Times New Roman">`` Ctrl-s'' </font><font
+        size="3">的结果，仍无法找到所要的字串，</font><font
+        size="3" face="Times New Roman"><i>echo area</i> </font><font
+        size="3">会回应出 </font><font size="3"
+        face="Times New Roman">``Failing I-search:'' </font><font
+        size="3">的讯息。 </font></li>
+    <li><font size="3">若重复使用 </font><font size="3"
+        face="Times New Roman">`` Ctrl-s'' </font><font size="3">的结果，已使
+        </font><font size="3" face="Times New Roman">echo area </font><font
+        size="3">出现</font></li>
+    <li><font size="3" face="Times New Roman">``Failing
+        I-search''</font><font size="3">後，则表示缓冲区已到了极限。若想再查看已阅　
+        过的资料，只要再使用一次 </font><font
+        size="3" face="Times New Roman">`` Ctrl-s'' </font><font
+        size="3">，就会迫使搜寻从原来的启始点
+        再进行一次的搜寻。 </font></li>
+    <li><font size="3">搜寻的过程中，若想回头再查阅已看过的资料时，只要交替使用
+        </font><font size="3" face="Times New Roman">`` Ctrl-s'' </font><font
+        size="3">与 </font><font size="3" face="Times New Roman">``
+        Ctrl-r'' </font><font size="3">，就可以了。</font></li>
+</ul>
+
+<pre><font size="3" face="Times New Roman">EMACS </font><font
+size="3">可以将搜寻过的字串，再拿出来重复使用。因为，</font><font
+size="3" face="Times New Roman">EMACS 
+</font><font size="3">将使用过的搜寻字串，都放在一个名为 <i> </i></font><font
+size="3" face="Times New Roman"><i>search ring</i></font><font
+size="3">的变数中。
+它与先前讨论过的  </font><font size="3"
+face="Times New Roman">kill-ring </font><font size="3">类似，都为变数。既为变数，其值就可以
+增减与参阅的。至於如何查阅变数的值，请再行参考 </font><font
+size="3" face="Times New Roman">4.4 </font><font size="3">节 
+（</font><font size="3" face="Times New Roman">EMACS buffer and windows</font><font
+size="3">）。
+
+再使用搜寻过的字串，只要将 </font><font size="3"
+face="Times New Roman"><i>`` serach-ring''</i></font><font
+size="3">此一变数的
+值取出即可。取出其值的方法有两种，一种是往前（右）的取出，
+另一种是往回（左）的撷取，其分界点是以最新使用过的搜寻字串
+为分野。因为<i> </i></font><font size="3"
+face="Times New Roman"><i>`` search-ring''</i> </font><font
+size="3">为一个</font><font size="3" face="Times New Roman">ring</font><font
+size="3">，所以撷取的方式，
+不是采顺时锺的方向，就是采反时锺的方向。今举一实例说明之。
+
+以下是以 </font><font size="3" face="Times New Roman">`` Ctrl-h v'' </font><font
+size="3">所得到有关<i> </i></font><font size="3"
+face="Times New Roman"><i>`` search-ring''</i> </font><font
+size="3">的资料。
+
+</font><font size="3" face="Times New Roman">search-ring's value is (&quot;kill&quot; &quot;Ctrl&quot; &quot;tex&quot; &quot;Ctrl-h&quot; &quot;text&quot; &quot;search&quot;)
+
+Documentation:
+List of search string sequences.
+
+
+</font><font size="3">此时 </font><font size="3"
+face="Times New Roman">`` search-ring''  </font><font size="3">的变数值是：
+
+        </font><font size="3" face="Times New Roman">kill</font><font
+size="3">、 </font><font size="3" face="Times New Roman">Ctrl</font><font
+size="3">、 </font><font size="3" face="Times New Roman">tex</font><font
+size="3">、 </font><font size="3" face="Times New Roman">Ctrl-h</font><font
+size="3">、 </font><font size="3" face="Times New Roman">text </font><font
+size="3">、 </font><font size="3" face="Times New Roman">search
+</font><font size="3">最新的搜寻字串则位於最前端，此时为 </font><font
+size="3" face="Times New Roman">``kill'' </font><font size="3">。往前（右）所得
+的字串则为</font><font size="3" face="Times New Roman">``Ctrl''</font><font
+size="3">，往回（左）所得的字串则为 </font><font
+size="3" face="Times New Roman">``search''</font><font size="3">。
+今以此例，将使用</font><font size="3"
+face="Times New Roman">`` search-ring'' </font><font size="3">得取使用过的搜寻资料的步骤
+说明如下：
+</font></pre>
+
+<ul>
+    <li><font size="3">首先键入 </font><font size="3"
+        face="Times New Roman">Ctrl-s </font><font size="3">或 </font><font
+        size="3" face="Times New Roman">Ctrl-r</font></li>
+    <li><ul>
+            <li><font size="3" face="Times New Roman">ESC-p</font></li>
+            <li><font size="3">当 </font><font size="3"
+                face="Times New Roman">echo area </font><font
+                size="3">出现 </font><font size="3"
+                face="Times New Roman">I-search: </font><font
+                size="3">後，再键入</font><font size="3"
+                face="Times New Roman">``ESC-p''</font><font
+                size="3">， 则可得到 </font><font size="3"
+                face="Times New Roman">``Ctrl''</font><font
+                size="3">的字串。若想继续往前寻找使用过的字串，
+                只要重复键入</font><font size="3"
+                face="Times New Roman">``ESC-p'' </font><font
+                size="3">即可。 </font></li>
+            <li><font size="3" face="Times New Roman">ESC-n\indexESC-n</font></li>
+            <li><font size="3">当 </font><font size="3"
+                face="Times New Roman">echo area </font><font
+                size="3">出现 </font><font size="3"
+                face="Times New Roman">I-search: </font><font
+                size="3">後，再键入</font><font size="3"
+                face="Times New Roman">ESC-n</font><font size="3">，则可得到
+                </font><font size="3" face="Times New Roman">``search''
+                </font><font size="3">的字串。若想继续往回寻找使用过的字串，只要重复
+                键入 </font><font size="3"
+                face="Times New Roman">``ESC-n'' </font><font
+                size="3">即可。 </font></li>
+        </ul>
+    </li>
+</ul>
+
+<pre><font size="3">除了  </font><font size="3"
+face="Times New Roman">search-ring </font><font size="3">的资料可再使用外，将拷贝技巧运用在搜寻上，
+也是资料再使用的另一项运用。
+
+拷贝在搜寻上的运用，就是将缓冲区的资料拷贝至  </font><font
+size="3" face="Times New Roman">echo area </font><font size="3">出现
+</font><font size="3" face="Times New Roman">I-search: </font><font
+size="3">後的  </font><font size="3" face="Times New Roman"><i>minibuffer</i> </font><font
+size="3">处。经此拷贝的过程，任何大小
+的字串，都可使它轻易的出现在  </font><font size="3"
+face="Times New Roman"><i>minibuffer</i> </font><font size="3">处。
+
+以下就是使用的方法：
+</font></pre>
+
+<ul>
+    <li><font size="3">键入 </font><font size="3"
+        face="Times New Roman">Ctrl-y</font></li>
+    <li><font size="3">若要将游标所在位置到列尾的所有资料，放入
+        </font><font size="3" face="Times New Roman"><i>minibuffer</i>
+        </font><font size="3">处， </font><font size="3"
+        face="Times New Roman">`` Ctrl-y'' </font><font size="3">可完成此一任务。
+        </font></li>
+    <li><font size="3">键入 </font><font size="3"
+        face="Times New Roman">Ctrl-w</font></li>
+    <li><font size="3">若只想拷贝游标所在位置之後的字（</font><font
+        size="3" face="Times New Roman">word</font><font size="3">），使用
+        </font><font size="3" face="Times New Roman">`` Ctrl-w'' </font><font
+        size="3">是一个很好的选择。 </font><font
+        size="3" face="Times New Roman">`` Ctrl-w'' </font><font
+        size="3">是拷贝缓冲区上的一个字（</font><font
+        size="3" face="Times New Roman">word</font><font size="3">）
+        到 </font><font size="3" face="Times New Roman"><i>minibuffer</i>
+        </font><font size="3">。其拷贝的范围是以游标所在地为准则，
+        若游标位於一字的第一个字元时，则拷贝整个的字到</font><font
+        size="3" face="Times New Roman"><i>minibuffer</i> </font><font
+        size="3">处，
+        若游标所在位置不在字首，则将游标之後的次字串拷贝至
+        </font><font size="3" face="Times New Roman"><i>minibuffer</i>
+        </font><font size="3">处。 </font></li>
+    <li><font size="3">键入 </font><font size="3"
+        face="Times New Roman">ESC-y(yank-pop)</font></li>
+    <li><font size="3">向 </font><font size="3"
+        face="Times New Roman"><i>kill-ring </i></font><font
+        size="3">借资料也是可行的方法之一。使用 </font><font
+        size="3" face="Times New Roman">`` Ctrl-s'' </font><font
+        size="3">或</font><font size="3" face="Times New Roman">``
+        Ctrl-r'' </font><font size="3">指令後，可使用 </font><font
+        size="3" face="Times New Roman">`` ESC-y'' </font><font
+        size="3">将原先放於</font><font size="3"
+        face="Times New Roman"><i>kill-ring</i> </font><font
+        size="3">的资料拷贝於</font><font size="3"
+        face="Times New Roman"><i>minibuffer</i> </font><font
+        size="3">处。可惜的是，此方法只能将最新被删除
+        的资料来出用。 </font></li>
+</ul>
+
+<pre><font size="3">到此为止，所谈的搜寻都是  </font><font
+size="3" face="Times New Roman"><i>incremental search</i></font><font
+size="3">的搜寻，现在来谈谈
+ </font><font size="3" face="Times New Roman"><i>nonincremental search</i></font><font
+size="3">。  </font><font size="3" face="Times New Roman">nonincremental search
+</font><font size="3">是一般编辑器处理搜寻最常用的方法，所以又将其称为传统的用法。
+
+ </font><font size="3" face="Times New Roman">non<i>incremental search</i></font><font
+size="3">的使用，必需从  </font><font size="3"
+face="Times New Roman"><i>incremental search</i></font><font
+size="3">开始。
+当以 </font><font size="3" face="Times New Roman">`` Ctrl-s'' </font><font
+size="3">或 </font><font size="3" face="Times New Roman">``<b> Ctrl-r'' </b></font><font
+size="3"><b>启动  </b></font><font size="3"
+face="Times New Roman"><b>incremental search</b></font><font
+size="3"><b>後，待 </b><b><i> </i></b></font><font size="3"
+face="Times New Roman"><b><i>echo area</i></b><b>
+</b></font><font size="3"><b>出现 </b></font><font size="3"
+face="Times New Roman"><b>``I-search:'' </b></font><font size="3"><b>或</b></font><font
+size="3" face="Times New Roman"><b>``I-search backward:'' </b></font><font
+size="3"><b>後，只键入 </b></font><font size="3"
+face="Times New Roman"><b>RET </b></font><font size="3"><b>而不给予
+任何其它的字串，此时就启动了</b><b><i>  </i></b></font><font
+size="3" face="Times New Roman"><b><i>nonincremental search.</i></b></font><font
+size="3"><b>当然</b></font><font size="3"
+face="Times New Roman"><b><i>echo area</i></b><b>
+</b></font><font size="3"><b>出现的讯息会不一样，此时  </b></font><font
+size="3" face="Times New Roman"><b>echo area </b></font><font
+size="3"><b>出现的讯息 </b></font><font size="3"
+face="Times New Roman"><b>``Search:'' </b></font><font size="3"><b>或
+</b></font><font size="3" face="Times New Roman"><b>``Search backward:''</b></font><font
+size="3"><b>。所以要使用  </b></font><font size="3"
+face="Times New Roman"><b><i>incremental search</i></b></font><font
+size="3"><b>或
+ </b></font><font size="3" face="Times New Roman"><b><i>nonincremental search</i></b></font><font
+size="3"><b>，完全取决於键入  </b></font><font size="3"
+face="Times New Roman"><b><i>minibuffer</i></b><b> </b></font><font
+size="3"><b>的内容
+而定。若为只键入 </b></font><font size="3"
+face="Times New Roman"><b>RET </b></font><font size="3"><b>，就是选择 </b><b><i> </i></b></font><font
+size="3" face="Times New Roman"><b><i>nonincremental serach</i></b></font><font
+size="3"><b><i>。</i></b><b>
+
+在启动了 </b><b><i> </i></b></font><font size="3"
+face="Times New Roman"><b><i>nonincremental search</i></b></font><font
+size="3"><b>之後，在 </b></font><font size="3"
+face="Times New Roman"><b>``Search:'' </b></font><font size="3"><b>或
+</b></font><font size="3" face="Times New Roman"><b>``Search backward:''</b></font><font
+size="3"><b>之後键入 </b></font><font size="3"
+face="Times New Roman"><b>``Ctrl-w''</b></font><font size="3"><b>，则表示要执行字的搜寻
+（</b></font><font size="3" face="Times New Roman"><b>Words Search</b></font><font
+size="3"><b>）。此功能可以用来搜寻一组的字，只要在 </b></font><font
+size="3" face="Times New Roman"><b><i>minibuffer</i></b><b> 
+</b></font><font size="3"><b>中将所要搜寻字群以一个空白隔开，就表示所要搜寻的是一个
+字群了。以下将  </b></font><font size="3"
+face="Times New Roman"><b>nonincremental serach </b></font><font
+size="3"><b>的相关指令整理如下：
+
+</b></font></pre>
+
+<ul>
+    <li><font size="3" face="Times New Roman"><b><i>nonincremental</i></b><b>
+        </b></font><font size="3"><b>字串（</b></font><font
+        size="3" face="Times New Roman"><b>string</b></font><font
+        size="3"><b>）的搜寻</b></font></li>
+    <li><ul>
+            <li><font size="3" face="Times New Roman"><b>Ctrl-r
+                RET string RET </b></font></li>
+            <li><font size="3" face="Times New Roman"><b>Ctrl-s
+                RET string RET </b></font></li>
+        </ul>
+    </li>
+    <li><font size="3" face="Times New Roman"><b><i>nonincremental
+        </i></b></font><font size="3"><b><i>字</i></b><b>（</b></font><font
+        size="3" face="Times New Roman"><b>word</b></font><font
+        size="3"><b>）的搜寻</b></font></li>
+    <li><ul>
+            <li><font size="3" face="Times New Roman"><b>Ctrl-r
+                RET Ctrl-w words RET </b></font></li>
+            <li><font size="3" face="Times New Roman"><b>Ctrl-s
+                RET Ctrl-w words RET </b></font></li>
+        </ul>
+    </li>
+</ul>
+
+<pre><font size="3"><b>还有一种搜寻不论是  </b></font><font
+size="3" face="Times New Roman"><b><i>incremental search</i></b></font><font
+size="3"><b>或</b><b><i> </i></b></font><font size="3"
+face="Times New Roman"><b><i>nonincremental search</i></b><b>
+</b></font><font size="3"><b>都有的，那就是 </b><b><i> </i></b></font><font
+size="3" face="Times New Roman"><b><i>regular expression</i></b></font><font
+size="3"><b>，简称为</b></font><font size="3"
+face="Times New Roman"><b><i>Regexp</i></b></font><font size="3"><b>。
+所谓的  </b></font><font size="3" face="Times New Roman"><b>regular expression</b></font><font
+size="3"><b>就是以最少的字元组合来表示最大可能的巨集。
+现先不讨论如何来表达</b><b><i> </i></b></font><font
+size="3" face="Times New Roman"><b><i>regular expression</i></b><b> </b></font><font
+size="3"><b>，只讨论如何使用  
+</b></font><font size="3" face="Times New Roman"><b><i>regular expression</i></b><b> </b></font><font
+size="3"><b>的搜寻。
+因为有关 </b><b><i> </i></b></font><font size="3"
+face="Times New Roman"><b><i>regular expression</i></b><b> </b></font><font
+size="3"><b>会有专节（</b></font><font size="3"
+face="Times New Roman"><b>6.3 </b></font><font size="3"><b>节）来讨论。
+
+</b></font></pre>
+
+<ul>
+    <li><font size="3" face="Times New Roman"><b>Regexp </b></font><font
+        size="3"><b>的 </b></font><font size="3"
+        face="Times New Roman"><b>incremental search</b></font></li>
+    <li><ul>
+            <li><font size="3" face="Times New Roman"><b>ESC-Ctrl-s</b></font><font
+                size="3"><b>（</b></font><font size="3"
+                face="Times New Roman"><b>isearch-forward-regexp)
+                </b></font></li>
+            <li><font size="3"><b>使用</b></font><font size="3"
+                face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+                size="3"><b>的搜寻方法： 先按下 </b></font><font
+                size="3" face="Times New Roman"><b>``ESC'' </b></font><font
+                size="3"><b>之後再将其放掉，随後再按下
+                </b></font><font size="3" face="Times New Roman"><b>``Ctrl-s''</b></font><font
+                size="3"><b>， </b></font><font size="3"
+                face="Times New Roman"><b><i>echo area</i></b><b>
+                </b></font><font size="3"><b>处就会出现 </b></font><font
+                size="3" face="Times New Roman"><b>Regexp
+                I-search: </b></font><font size="3"><b>这时就可以输入
+                </b></font><font size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+                </b></font><font size="3"><b>的表示字串了。
+                当然还有若干事与 </b></font><font
+                size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+                </b></font><font size="3"><b>的搜寻有关，讨论如下：
+                </b></font><ul>
+                    <li><font size="3"><b>若要继续以 </b></font><font
+                        size="3" face="Times New Roman"><b>Regexp
+                        </b></font><font size="3"><b>的方法搜寻，只需继续键入
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>``Ctrl-s'' </b></font><font
+                        size="3"><b>就可找到下一笔相关的资料。</b></font></li>
+                    <li><font size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+                        </b></font><font size="3"><b>的搜寻，也有其独立的
+                        </b></font><font size="3"
+                        face="Times New Roman"><b><i>search-ring</i></b></font><font
+                        size="3"><b>。 这也意谓著可以再使用
+                        </b></font><font size="3"
+                        face="Times New Roman"><b><i>Regexp</i></b><b>
+                        </b></font><font size="3"><b>的</b><b><i>
+                        </i></b></font><font size="3"
+                        face="Times New Roman"><b><i>search ring</i></b><b>
+                        </b></font><font size="3"><b>。
+                        其使用法与前所讨论的方法一样，就是以
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>`` ESC-p'' </b></font><font
+                        size="3"><b>与 </b></font><font size="3"
+                        face="Times New Roman"><b>`` ESC-n'' </b></font><font
+                        size="3"><b>来再使用</b></font><font
+                        size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+                        </b></font><font size="3"><b>的 </b></font><font
+                        size="3" face="Times New Roman"><b><i>search-ring</i></b></font><font
+                        size="3"><b>。 </b></font></li>
+                </ul>
+            </li>
+            <li><font size="3" face="Times New Roman"><b>ESC-Ctrl-r</b></font><font
+                size="3"><b>（</b></font><font size="3"
+                face="Times New Roman"><b>isearch-backward-regexp</b></font><font
+                size="3"><b>）</b></font></li>
+            <li><font size="3"><b>往回（左）的 </b></font><font
+                size="3" face="Times New Roman"><b>Regexp </b></font><font
+                size="3"><b>搜寻，若想继续的往回找寻想要的字串，
+                只需键入 </b></font><font size="3"
+                face="Times New Roman"><b>`` Ctrl-r'' </b></font><font
+                size="3"><b>即可。当然，也可以 </b></font><font
+                size="3" face="Times New Roman"><b>`` ESC-p'' </b></font><font
+                size="3"><b>与 </b></font><font size="3"
+                face="Times New Roman"><b>`` ESC-n'' </b></font><font
+                size="3"><b>来再使用其 </b></font><font
+                size="3" face="Times New Roman"><b>search-ring</b></font><font
+                size="3"><b>。 </b></font></li>
+        </ul>
+    </li>
+    <li><font size="3" face="Times New Roman"><b><i>nonincremental
+        search</i></b></font></li>
+    <li><font size="3"><b>以下是以 </b></font><font size="3"
+        face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+        size="3"><b>来执行 </b></font><font size="3"
+        face="Times New Roman"><b><i>nonincremental search</i></b></font><font
+        size="3"><b>的方法。</b></font></li>
+    <li><ul>
+            <li><font size="3" face="Times New Roman"><b>ESC-x
+                re-search-forward</b></font></li>
+            <li><font size="3" face="Times New Roman"><b>ESC-x
+                re-search-backward</b></font></li>
+        </ul>
+    </li>
+</ul>
+
+<pre><font size="3"><b>搜寻缓冲区的内容，除了要参考其内容外，有很大的机率是希望
+能将找到的内容以它种内容取代。取代（ </b></font><font
+size="3" face="Times New Roman"><b>Replacement</b></font><font
+size="3"><b>）的方法，
+就是下一节讨论的主题。
+</b></font></pre>
+
+<hr>
+
+<h2><a name="2"><font size="3"><b>文件的取代</b></font></a></h2>
+
+<h4><font size="3"><b>从事编辑工作的时候，常会为了某种需求而将某一共同的用语
+以另外一种语辞替换，此情形最常发生在撰写程式的时候。
+当然，英文字串由大写改为小写或小写改为大写也是经常可见的。
+编辑文件在处理这些事时，就如如下的若干问题产生。
+</b></font></h4>
+
+<ol>
+    <li><font size="3"><b>所有要修改的文件，都能如愿以偿的得到适当的修改，不会
+        有漏网之鱼发生。</b></font></li>
+    <li><font size="3"><b>修改过文件的一致性，是必要的条件。</b></font></li>
+</ol>
+
+<pre><font size="3"><b>因为有这些问题的考量，所以使用  </b></font><font
+size="3" face="Times New Roman"><b>replacement </b></font><font
+size="3"><b>来完成如是的工作，
+就成为最佳的解决之道。现在就来谈谈 </b></font><font
+size="3" face="Times New Roman"><b>EMACS </b></font><font
+size="3"><b>如何处理</b><b><i> </i></b></font><font size="3"
+face="Times New Roman"><b><i>replacement</i></b><b>
+</b></font><font size="3"><b>的问题。
+
+</b></font><font size="3" face="Times New Roman"><b>EMACS </b></font><font
+size="3"><b>处理 </b><b><i> </i></b></font><font size="3"
+face="Times New Roman"><b><i>replacement</i></b><b> </b></font><font
+size="3"><b>的方法有一气呵成的取代，
+与选择性的取代二种。
+所给予的被取代文字也有二种，
+一、被取代的字串完全与所给予的字串一样；
+二、以 </b></font><font size="3" face="Times New Roman"><b>Regexp </b></font><font
+size="3"><b>来做为取代的依据。试分述之。
+</b></font></pre>
+
+<ul>
+    <li><font size="3"><b>二种的取代方法</b></font></li>
+    <li><ul>
+            <li><font size="3"><b>一气呵成的取代</b></font></li>
+            <li><font size="3"><b>所谓一气呵成的取代，是一鼓作气将游标之後所有符合条件的
+                字串，全部以新字串取而代之。
+                此作法不会一一徵求是否要取而代之的意见，而是自动、全盘
+                且无条件的取代。 此作法称为 </b></font><font
+                size="3" face="Times New Roman"><b>Unconditional
+                Replacement</b></font><font size="3"><b>。 </b></font></li>
+            <li><font size="3"><b>选择性的取代</b></font></li>
+            <li><font size="3"><b>选择性的取代，是会先徵求取代的意见，只有在取得同意权时，
+                才会采取取代的行动。这种取代的行为称为
+                </b></font><font size="3" face="Times New Roman"><b><i>query
+                replacement</i></b></font><font size="3"><b>。 </b></font></li>
+        </ul>
+    </li>
+    <li><font size="3"><b>二种被取代字串的表示法</b></font></li>
+    <li><ul>
+            <li><font size="3"><b>被取代的字串完全与所给予的字串一样。</b></font></li>
+            <li><font size="3"><b>此方法所要取代的文字，与
+                </b></font><font size="3" face="Times New Roman"><b><i>minibuffer</i></b><b>
+                </b></font><font size="3"><b>中所给予的文字一样。
+                所以，其可能符合条件的选择最多也只有一种。
+                </b></font></li>
+            <li><font size="3" face="Times New Roman"><b><i>Regexp
+                </i></b></font><font size="3"><b>来做为取代的依据。</b></font></li>
+            <li><font size="3"><b>此方法就是以</b><b><i> </i></b></font><font
+                size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+                </b></font><font size="3"><b>来表示所要找寻的字串集。前已论及，所谓的
+                </b></font><font size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+                </b></font><font size="3"><b>就是以最少的字元组来表达最多的巨集。此时的取代，
+                就不是单一字串的取代而是某一集合中的所有字串的取代。
+                所以，以此所得的取代字串就有多重的选择。如何表达正确的
+                </b></font><font size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+                </b></font><font size="3"><b>会在下一节中详细讨论。
+                </b></font></li>
+        </ul>
+    </li>
+</ul>
+
+<pre><font size="3"><b>以下就是使用取代（ </b></font><font
+size="3" face="Times New Roman"><b>replacement</b></font><font
+size="3"><b>）的方法。
+</b></font></pre>
+
+<ul>
+    <li><font size="3" face="Times New Roman"><b>Unconditional
+        Replace</b></font></li>
+    <li><font size="3"><b>进行取代时不事先徵求意见，迳行将缓冲区中游标所在位置（包括
+        游标所在位置本身）之後，所有符合的字串都以新字串取而代之。
+        </b></font><ul>
+            <li><font size="3" face="Times New Roman"><b>ESC-x
+                replace-string RET string RET newstring RET</b></font></li>
+            <li><font size="3"><b>此指令是将缓冲区中，所有出现
+                </b></font><font size="3" face="Times New Roman"><b>string
+                </b></font><font size="3"><b>的字串以</b></font><font
+                size="3" face="Times New Roman"><b>newstring </b></font><font
+                size="3"><b>取代。 其详细的步骤如下：
+                </b></font><ol>
+                    <li><font size="3"><b>键入 </b></font><font
+                        size="3" face="Times New Roman"><b>``ESC-x
+                        replace-string''</b></font><font size="3"><b>，当按下
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>RET </b></font><font
+                        size="3"><b>时，</b></font></li>
+                    <li><font size="3" face="Times New Roman"><b><i>echo
+                        area</i></b><b> </b></font><font size="3"><b>会出现</b></font><p><font
+                        size="3" face="Times New Roman"><b>Replace
+                        string:</b></font></p>
+                        <p><font size="3"><b>此时可利用 </b></font><font
+                        size="3" face="Times New Roman"><b>``Replace
+                        string:'' </b></font><font size="3"><b>後的
+                        </b></font><font size="3"
+                        face="Times New Roman"><b><i>minibuffer</i></b><b>
+                        </b></font><font size="3"><b>，
+                        将所要被取代的字串输入，按下
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>RET </b></font><font
+                        size="3"><b>则表示已完成输入的工作
+                        。 </b></font></p>
+                    </li>
+                    <li><font size="3"><b>按下 </b></font><font
+                        size="3" face="Times New Roman"><b>RET </b></font><font
+                        size="3"><b>时，</b><b><i> </i></b></font><font
+                        size="3" face="Times New Roman"><b><i>echo
+                        area</i></b><b> </b></font><font size="3"><b>会出现如下讯息：</b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>Replace
+                        string string with: </b></font><font
+                        size="3"><b>此时可利用 </b></font><font
+                        size="3" face="Times New Roman"><b><i>minibuffer</i></b><b>
+                        </b></font><font size="3"><b>给予所要取代的新字串。
+                        键入 </b></font><font size="3"
+                        face="Times New Roman"><b>RET </b></font><font
+                        size="3"><b>时，游标所在位置之後的所有
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>string </b></font><font
+                        size="3"><b>都会转换成</b></font><font
+                        size="3" face="Times New Roman"><b><i>newstring</i></b></font><font
+                        size="3"><b>。 </b></font></li>
+                    <li><font size="3"><b>当转换完成後， </b></font><font
+                        size="3" face="Times New Roman"><b>echo
+                        area </b></font><font size="3"><b>会出现
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>``done''</b></font><font
+                        size="3"><b>。此时就已 大功告成了。
+                        </b></font></li>
+                </ol>
+            </li>
+            <li><font size="3" face="Times New Roman"><b>ESC-x
+                replace-</b><b><i>Regexp</i></b><b> RET </b><b><i>Regexp</i></b><b>
+                RET</b><b><i>newstring</i></b><b> RET </b></font><font
+                size="3"><b>此方法与上一个方法雷同，不同之处在於所要取代的资料不是
+                某一个特定的字串，而是某一巨集的字串组。从指令的表示法，
+                也可以看出所给予的被取代字串是 </b></font><font
+                size="3" face="Times New Roman"><b>``</b><b><i>Regexp</i></b><b>''
+                </b></font><font size="3"><b>而非 </b></font><font
+                size="3" face="Times New Roman"><b>``string''</b></font><font
+                size="3"><b>。
+                其详细的执行步骤与字串的取代雷同，只是在
+                </b></font><font size="3" face="Times New Roman"><b>echo
+                area </b></font><font size="3"><b>将所有 的 </b></font><font
+                size="3" face="Times New Roman"><b>string </b></font><font
+                size="3"><b>换成 </b></font><font size="3"
+                face="Times New Roman"><b><i>Regexp</i></b></font><font
+                size="3"><b>罢了。 </b></font></li>
+        </ul>
+    </li>
+    <li><font size="3" face="Times New Roman"><b>Query Replace</b></font></li>
+    <li><font size="3" face="Times New Roman"><b><i>Query Replace</i></b></font><font
+        size="3"><b>顾名思义就是在取代时会徵询取代的意见，
+        使用者可根据需要来取决是否要进行取代。以下就介绍字串和
+        </b></font><font size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+        </b></font><font size="3"><b>的取代。 </b></font><ul>
+            <li><font size="3" face="Times New Roman"><b>ESC-x
+                query-replace RET string RET newstring RET</b></font></li>
+            <li><font size="3"><b>使用</b><b><i> </i></b></font><font
+                size="3" face="Times New Roman"><b><i>query
+                replace</i></b><b> </b></font><font size="3"><b>的方法及步骤与
+                </b></font><font size="3" face="Times New Roman"><b><i>unconditional
+                replace</i></b></font><font size="3"><b>的方法雷同，不同处只在於所引用的
+                指令有异，以及多增了询问的选择。其详细步骤如下
+                （斜体字表示使用者所输入的资料，粗体字表示系统自行根据
+                输入资料的回应）： </b></font><ol>
+                    <li><font size="3" face="Times New Roman"><b>ESC-x
+                        query-replace RET</b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>Query
+                        replace: </b><b><i>Regexp</i></b><b> RET</b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>Query
+                        replace </b><b><i>Regexp</i></b><b> with:
+                        newstring RET</b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>Query
+                        replacing </b><b><i>Regexp</i></b><b>
+                        with newstring:(? for help)</b></font></li>
+                    <li><font size="3"><b>此步骤是 </b></font><font
+                        size="3" face="Times New Roman"><b><i>query
+                        replace</i></b><b> </b></font><font
+                        size="3"><b>与 </b></font><font size="3"
+                        face="Times New Roman"><b><i>unconditional
+                        replace</i></b><b> </b></font><font
+                        size="3"><b>最大不同之处。因为所有徵询的工作都是从此展开。
+                        不知如何使用徵询的使用者可键入
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>``?'' </b></font><font
+                        size="3"><b>来得到线上的求助。
+                        以下就是键入 </b></font><font
+                        size="3" face="Times New Roman"><b>``?'' </b></font><font
+                        size="3"><b>系统给予的资讯。 </b></font><font
+                        size="3" face="Times New Roman"><b>Query
+                        replacing </b><b><i>Regexp</i></b><b>
+                        with string.</b></font><p><font size="3"
+                        face="Times New Roman"><b>Type Space or
+                        `y' to replace one match, Delete or `n'
+                        to skip to next,</b></font></p>
+                        <p><font size="3" face="Times New Roman"><b>RET
+                        or `q' to exit, Period to replace one
+                        match and exit,</b></font></p>
+                        <p><font size="3" face="Times New Roman"><b>Comma
+                        to replace but not move point
+                        immediately,</b></font></p>
+                        <p><font size="3" face="Times New Roman"><b>C-r
+                        to enter recursive edit (M-C-c to get out
+                        again),</b></font></p>
+                        <p><font size="3" face="Times New Roman"><b>C-w
+                        to delete match and recursive edit,</b></font></p>
+                        <p><font size="3" face="Times New Roman"><b>C-l
+                        to clear the screen, redisplay, and offer
+                        same replacement again,</b></font></p>
+                        <p><font size="3" face="Times New Roman"><b>!
+                        to replace all remaining matches with no
+                        more questions,</b></font></p>
+                        <p><font size="3" face="Times New Roman"><b>^
+                        to move point back to previous match.</b></font></p>
+                        <p><font size="3"><b>使用 </b></font><font
+                        size="3" face="Times New Roman"><b><i>query
+                        replace</i></b><b> </b></font><font
+                        size="3"><b>时可有多种选择项。现只介绍常用的几个选项：
+                        </b></font></p>
+                        <ol>
+                            <li><font size="3"
+                                face="Times New Roman"><b>Space </b></font><font
+                                size="3"><b>或 </b></font><font
+                                size="3" face="Times New Roman"><b>y</b></font></li>
+                            <li><font size="3"><b>当决定以新的字串取代原来的字串时，以
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>Space </b></font><font
+                                size="3"><b>或 </b></font><font
+                                size="3" face="Times New Roman"><b>y
+                                </b></font><font size="3"><b>来表示。
+                                执行 </b></font><font size="3"
+                                face="Times New Roman"><b><i>query
+                                replace</i></b><b> </b></font><font
+                                size="3"><b>时，游标会移至下一个合适的字串处，
+                                此时若决定将其取代，则键入
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>``Space''
+                                </b></font><font size="3"><b>或 </b></font><font
+                                size="3" face="Times New Roman"><b>``y''</b></font><font
+                                size="3"><b>。当取代完成後，
+                                游标会自动移至下一个合适的字串处。当然也可以放弃所找到
+                                的字串，这就是下一个要讨论的选项了。
+                                </b></font></li>
+                            <li><font size="3"
+                                face="Times New Roman"><b>Delete </b></font><font
+                                size="3"><b>或 </b></font><font
+                                size="3" face="Times New Roman"><b>n</b></font></li>
+                            <li><font size="3"><b>放弃字串的取代，使游标移至下一个目的地，是
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>Delete </b></font><font
+                                size="3"><b>或</b></font><font
+                                size="3" face="Times New Roman"><b>n
+                                </b></font><font size="3"><b>所做的事情。
+                                </b></font></li>
+                            <li><font size="3"><b>　（</b></font><font
+                                size="3" face="Times New Roman"><b>Period</b></font><font
+                                size="3"><b>）</b></font></li>
+                            <li><font size="3"><b>若已找到合适的字串，而想终止所有进一步的取代行为时，
+                                键入</b></font><font size="3"
+                                face="Times New Roman"><b>``.''</b></font><font
+                                size="3"><b>可使目前游标所在处的字串以新的字串取代，并且
+                                在取代後立即离开</b></font><font
+                                size="3" face="Times New Roman"><b><i>query
+                                replace</i></b><b> </b></font><font
+                                size="3"><b>的状态。 </b></font></li>
+                            <li><font size="3"
+                                face="Times New Roman"><b>!</b></font></li>
+                            <li><font size="3"
+                                face="Times New Roman"><b>`` !'' </b></font><font
+                                size="3"><b>可使</b><b><i> </i></b></font><font
+                                size="3" face="Times New Roman"><b><i>query
+                                replace</i></b><b> </b></font><font
+                                size="3"><b>恢复为</b></font><font
+                                size="3" face="Times New Roman"><b><i>unconditional
+                                replace</i></b></font><font
+                                size="3"><b>。 因此，若想放弃询问的权利而恢复
+                                </b></font><font size="3"
+                                face="Times New Roman"><b><i>unconditional
+                                replace</i></b><b> </b></font><font
+                                size="3"><b>的 状态，键入 </b></font><font
+                                size="3" face="Times New Roman"><b>``!''
+                                </b></font><font size="3"><b>就可将游标所位置及其以後所有合适的字串，
+                                都以新字串取而代之。 </b></font></li>
+                            <li><font size="3"
+                                face="Times New Roman"><b>RET </b></font><font
+                                size="3"><b>或 </b></font><font
+                                size="3" face="Times New Roman"><b>``
+                                q''</b></font></li>
+                            <li><font size="3"><b>若想就此离开
+                                </b></font><font size="3"
+                                face="Times New Roman"><b>query-replace
+                                </b></font><font size="3"><b>而不再做进一步的取代动作，
+                                只需按下</b></font><font
+                                size="3" face="Times New Roman"><b>RET
+                                </b></font><font size="3"><b>或 </b></font><font
+                                size="3" face="Times New Roman"><b>``q''
+                                </b></font><font size="3"><b>即可。
+                                </b></font></li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li><font size="3" face="Times New Roman"><b>ESC-x
+                query-replace-</b><b><i>Regexp</i></b><b> RET </b><b><i>Regexp</i></b><b>
+                RET newstring RET</b></font></li>
+            <li><font size="3"><b>此方法与 </b></font><font
+                size="3" face="Times New Roman"><b>`` ESC-x
+                query-replace RET string RET newstring RET'' </b></font><font
+                size="3"><b>相似，但此时所取代的不是特定的字串，而是某一字串的巨集。
+                </b></font></li>
+        </ul>
+    </li>
+</ul>
+
+<pre><font size="3"><b>字串大小写（ </b></font><font
+size="3" face="Times New Roman"><b><i>case sensitive</i></b></font><font
+size="3"><b>）的问题与取代也有很大
+的相关性。因为大小写的问题，对於 </b><b><i> </i></b></font><font
+size="3" face="Times New Roman"><b><i>unconditional replace</i></b><b> </b></font><font
+size="3"><b>与
+ </b></font><font size="3" face="Times New Roman"><b><i>query replace</i></b><b> </b></font><font
+size="3"><b>均适用。所以，只举</b><b><i> </i></b></font><font
+size="3" face="Times New Roman"><b><i>query-replace</i></b><b>
+</b></font><font size="3"><b>为例说明，至於 </b><b><i> </i></b></font><font
+size="3" face="Times New Roman"><b><i>unconditional replace</i></b><b> </b></font><font
+size="3"><b>就如法泡制。
+当启动 </b></font><font size="3" face="Times New Roman"><b>`` ESC-x query-replace RET  string RET  newstring RET''
+</b></font><font size="3"><b>时， </b></font><font size="3"
+face="Times New Roman"><b>string </b></font><font size="3"><b>与  </b></font><font
+size="3" face="Times New Roman"><b>newstring </b></font><font
+size="3"><b>的大小写，关系不同字串的取代。
+其规则如下所述：
+</b></font></pre>
+
+<ul>
+    <li><font size="3"><b>当 </b></font><font size="3"
+        face="Times New Roman"><b>string </b></font><font
+        size="3"><b>与 </b></font><font size="3"
+        face="Times New Roman"><b>newstring </b></font><font
+        size="3"><b>都以小写的形式出现时，</b></font></li>
+    <li><font size="3"><b>取代工作的进行，就有三种情形：
+        </b></font><ul>
+            <li><font size="3"><b>缓冲区原始字串的第一个字母是以小写为开端时，不论
+                此字串是否有其它的大写字母，经取代後全转换成小写。</b></font></li>
+            <li><font size="3"><b>若原始字串的每个字母都是大写时，经取代後也维持大写的形式。</b></font></li>
+            <li><font size="3"><b>若原始字串以大写为开端，不论此字串是否还有其它的字母
+                为大写，只要不是全为大写的情形，取代後只有字串的第一个
+                字母为大写，其余一律为小写。</b></font></li>
+        </ul>
+        <p><font size="3"><b>以下举一实例，供参考： </b></font><font
+        size="3" face="Times New Roman"><b><i>string</i></b><b> </b></font><font
+        size="3"><b>：</b></font><font size="3"
+        face="Times New Roman"><b>abc </b></font><font size="3"><b>，</b><b><i>
+        </i></b></font><font size="3" face="Times New Roman"><b><i>newstring</i></b></font><font
+        size="3"><b>： </b></font><font size="3"
+        face="Times New Roman"><b>xyz </b></font><font size="3"><b>原始文件为：
+        </b></font><font size="3" face="Times New Roman"><b>abc
+        Abc aBc abC ABc AbC aBC ABC </b></font><font size="3"><b>经过取代为：
+        </b></font><font size="3" face="Times New Roman"><b>xyz
+        Xyz xyz xyz Xyz Xyz xyz XYZ </b></font></p>
+    </li>
+    <li><font size="3"><b>当 </b></font><font size="3"
+        face="Times New Roman"><b><i>newstring</i></b><b> </b></font><font
+        size="3"><b>部份为大写，而 </b></font><font
+        size="3" face="Times New Roman"><b><i>string</i></b><b> </b></font><font
+        size="3"><b>依然维持小写 的情形：</b></font></li>
+    <li><ul>
+            <li><font size="3"><b>若原始字串的第一个字母为大写时，被取代後的第一个字母
+                仍维持大写的形式。其余原始字串的大小写，就视
+                </b></font><font size="3" face="Times New Roman"><b><i>newstring</i></b><b>
+                </b></font><font size="3"><b>的大小写而定，与原始字串本身的大小写无关。</b></font></li>
+            <li><font size="3" face="Times New Roman"><b><i>newstring</i></b><b>
+                </b></font><font size="3"><b>的字母若以大写出现，则被取代的原始字串
+                也会在相对应的位置以大写的形式出现。</b></font></li>
+            <li><font size="3"><b>若原始字串全为大写时，取代後仍维持大写的形式。</b></font></li>
+        </ul>
+        <p><font size="3"><b>以下为若干实例，供参考：
+        </b></font></p>
+        <ul>
+            <li><font size="3" face="Times New Roman"><b>string </b></font><font
+                size="3"><b>：</b></font><font size="3"
+                face="Times New Roman"><b>abc </b></font><font
+                size="3"><b>， </b></font><font size="3"
+                face="Times New Roman"><b>newstring</b></font><font
+                size="3"><b>： </b></font><font size="3"
+                face="Times New Roman"><b>Xyz</b></font></li>
+            <li><font size="3"><b>原始文件为： </b></font><font
+                size="3" face="Times New Roman"><b>abc Abc aBc
+                abC ABc AbC aBC ABC </b></font><font size="3"><b>经过取代为：
+                </b></font><font size="3" face="Times New Roman"><b>Xyz
+                Xyz Xyz Xyz Xyz Xyz Xyz XYZ</b></font></li>
+            <li><font size="3" face="Times New Roman"><b>string </b></font><font
+                size="3"><b>：</b></font><font size="3"
+                face="Times New Roman"><b>abc </b></font><font
+                size="3"><b>， </b></font><font size="3"
+                face="Times New Roman"><b>newstring</b></font><font
+                size="3"><b>： </b></font><font size="3"
+                face="Times New Roman"><b>xYz</b></font></li>
+            <li><font size="3"><b>原始文件为： </b></font><font
+                size="3" face="Times New Roman"><b>abc Abc aBc
+                abC ABc AbC aBC ABC </b></font><font size="3"><b>经过取代为：
+                </b></font><font size="3" face="Times New Roman"><b>xYz
+                XYz xYz xYz XYz XYz xYz XYZ</b></font></li>
+            <li><font size="3" face="Times New Roman"><b>string </b></font><font
+                size="3"><b>：</b></font><font size="3"
+                face="Times New Roman"><b>abc </b></font><font
+                size="3"><b>， </b></font><font size="3"
+                face="Times New Roman"><b>newstring</b></font><font
+                size="3"><b>： </b></font><font size="3"
+                face="Times New Roman"><b>xyZ</b></font></li>
+            <li><font size="3"><b>原始文件为： </b></font><font
+                size="3" face="Times New Roman"><b>abc Abc aBc
+                abC ABc AbC aBC ABC </b></font><font size="3"><b>经过取代为：
+                </b></font><font size="3" face="Times New Roman"><b>xyZ
+                XyZ xyZ xyZ XyZ XyZ xyZ XYZ</b></font></li>
+            <li><font size="3" face="Times New Roman"><b>string </b></font><font
+                size="3"><b>：</b></font><font size="3"
+                face="Times New Roman"><b>abc </b></font><font
+                size="3"><b>， </b></font><font size="3"
+                face="Times New Roman"><b>newstring</b></font><font
+                size="3"><b>： </b></font><font size="3"
+                face="Times New Roman"><b>XYz</b></font></li>
+            <li><font size="3"><b>原始文件为： </b></font><font
+                size="3" face="Times New Roman"><b>abc Abc aBc
+                abC ABc AbC aBC ABC </b></font><font size="3"><b>经过取代为：
+                </b></font><font size="3" face="Times New Roman"><b>XYz
+                XYz XYz XYz XYz XYz XYz XYZ</b></font></li>
+            <li><font size="3" face="Times New Roman"><b>string </b></font><font
+                size="3"><b>：</b></font><font size="3"
+                face="Times New Roman"><b>abc</b></font><font
+                size="3"><b>， </b></font><font size="3"
+                face="Times New Roman"><b>newstring</b></font><font
+                size="3"><b>： </b></font><font size="3"
+                face="Times New Roman"><b>xYZ</b></font></li>
+            <li><font size="3"><b>原始文件为： </b></font><font
+                size="3" face="Times New Roman"><b>abc Abc aBc
+                abC ABc AbC aBC ABC </b></font><font size="3"><b>经过取代为：
+                </b></font><font size="3" face="Times New Roman"><b>xYZ
+                XYZ xYZ xYZ XYZ XYZ xYZ XYZ</b></font></li>
+            <li><font size="3" face="Times New Roman"><b>string </b></font><font
+                size="3"><b>：</b></font><font size="3"
+                face="Times New Roman"><b>abc </b></font><font
+                size="3"><b>， </b></font><font size="3"
+                face="Times New Roman"><b>newstring</b></font><font
+                size="3"><b>： </b></font><font size="3"
+                face="Times New Roman"><b>XYZ</b></font></li>
+            <li><font size="3"><b>原始文件为： </b></font><font
+                size="3" face="Times New Roman"><b>abc Abc aBc
+                abC ABc AbC aBC ABC </b></font><font size="3"><b>经过取代为：
+                </b></font><font size="3" face="Times New Roman"><b>XYZ
+                XYZ XYZ XYZ XYZ XYZ XYZ XYZ</b></font></li>
+        </ul>
+    </li>
+    <li><font size="3"><b>只要 </b></font><font size="3"
+        face="Times New Roman"><b><i>string</i></b><b> </b></font><font
+        size="3"><b>有大写的字母出现时，取代後字串的大小写，
+        就完全依照 </b></font><font size="3"
+        face="Times New Roman"><b>newstring </b></font><font
+        size="3"><b>的大小写。换言之，</b><b><i> </i></b></font><font
+        size="3" face="Times New Roman"><b><i>newstring</i></b><b>
+        </b></font><font size="3"><b>为大写的地方依旧为大写，为小写的地方依然为小写。
+        以下为若干实例，供参考： </b></font><ul>
+            <li><font size="3" face="Times New Roman"><b>string </b></font><font
+                size="3"><b>：</b></font><font size="3"
+                face="Times New Roman"><b>Abc </b></font><font
+                size="3"><b>， </b></font><font size="3"
+                face="Times New Roman"><b>newstring</b></font><font
+                size="3"><b>： </b></font><font size="3"
+                face="Times New Roman"><b>xyz</b></font></li>
+            <li><font size="3"><b>原始文件为： </b></font><font
+                size="3" face="Times New Roman"><b>abc Abc aBc
+                abC ABc AbC aBC ABC </b></font><font size="3"><b>经过取代为：
+                </b></font><font size="3" face="Times New Roman"><b>xyz
+                xyz xyz xyz xyz xyz xyz xyz</b></font></li>
+            <li><font size="3" face="Times New Roman"><b>string </b></font><font
+                size="3"><b>：</b></font><font size="3"
+                face="Times New Roman"><b>aBc </b></font><font
+                size="3"><b>， </b></font><font size="3"
+                face="Times New Roman"><b>newstring</b></font><font
+                size="3"><b>： </b></font><font size="3"
+                face="Times New Roman"><b>xyz</b></font></li>
+            <li><font size="3"><b>原始文件为： </b></font><font
+                size="3" face="Times New Roman"><b>abc Abc aBc
+                abC ABc AbC aBC ABC </b></font><font size="3"><b>经过取代为：
+                </b></font><font size="3" face="Times New Roman"><b>xyz
+                xyz xyz xyz xyz xyz xyz xyz</b></font></li>
+            <li><font size="3" face="Times New Roman"><b>string </b></font><font
+                size="3"><b>：</b></font><font size="3"
+                face="Times New Roman"><b>ABc </b></font><font
+                size="3"><b>， </b></font><font size="3"
+                face="Times New Roman"><b>newstring</b></font><font
+                size="3"><b>： </b></font><font size="3"
+                face="Times New Roman"><b>xyz</b></font></li>
+            <li><font size="3"><b>原始文件为： </b></font><font
+                size="3" face="Times New Roman"><b>abc Abc aBc
+                abC ABc AbC aBC ABC </b></font><font size="3"><b>经过取代为：
+                </b></font><font size="3" face="Times New Roman"><b>xyz
+                xyz xyz xyz xyz xyz xyz xyz</b></font></li>
+            <li><font size="3" face="Times New Roman"><b>string </b></font><font
+                size="3"><b>：</b></font><font size="3"
+                face="Times New Roman"><b>ABC </b></font><font
+                size="3"><b>， </b></font><font size="3"
+                face="Times New Roman"><b>newstring</b></font><font
+                size="3"><b>： </b></font><font size="3"
+                face="Times New Roman"><b>xyz</b></font></li>
+            <li><font size="3"><b>原始文件为： </b></font><font
+                size="3" face="Times New Roman"><b>abc Abc aBc
+                abC ABc AbC aBC ABC </b></font><font size="3"><b>经过取代为：
+                </b></font><font size="3" face="Times New Roman"><b>xyz
+                xyz xyz xyz xyz xyz xyz xyz</b></font></li>
+            <li><font size="3" face="Times New Roman"><b>string </b></font><font
+                size="3"><b>：</b></font><font size="3"
+                face="Times New Roman"><b>aBC </b></font><font
+                size="3"><b>， </b></font><font size="3"
+                face="Times New Roman"><b>newstring</b></font><font
+                size="3"><b>： </b></font><font size="3"
+                face="Times New Roman"><b>Xyz</b></font></li>
+            <li><font size="3"><b>原始文件为： </b></font><font
+                size="3" face="Times New Roman"><b>abc Abc aBc
+                abC ABc AbC aBC ABC </b></font><font size="3"><b>经过取代为：
+                </b></font><font size="3" face="Times New Roman"><b>Xyz
+                Xyz Xyz Xyz Xyz Xyz Xyz Xyz</b></font></li>
+            <li><font size="3" face="Times New Roman"><b>string </b></font><font
+                size="3"><b>：</b></font><font size="3"
+                face="Times New Roman"><b>Abc </b></font><font
+                size="3"><b>， </b></font><font size="3"
+                face="Times New Roman"><b>newstring</b></font><font
+                size="3"><b>： </b></font><font size="3"
+                face="Times New Roman"><b>xYz</b></font></li>
+            <li><font size="3"><b>原始文件为： </b></font><font
+                size="3" face="Times New Roman"><b>abc Abc aBc
+                abC ABc AbC aBC ABC </b></font><font size="3"><b>经过取代为：
+                </b></font><font size="3" face="Times New Roman"><b>xYz
+                xYz xYz xYz xYz xYz xYz xYz</b></font></li>
+            <li><font size="3" face="Times New Roman"><b>string </b></font><font
+                size="3"><b>：</b></font><font size="3"
+                face="Times New Roman"><b>aBc </b></font><font
+                size="3"><b>， </b></font><font size="3"
+                face="Times New Roman"><b>newstring</b></font><font
+                size="3"><b>： </b></font><font size="3"
+                face="Times New Roman"><b>XYz</b></font></li>
+            <li><font size="3"><b>原始文件为： </b></font><font
+                size="3" face="Times New Roman"><b>abc Abc aBc
+                abC ABc AbC aBC ABC </b></font><font size="3"><b>经过取代为：</b></font><font
+                size="3" face="Times New Roman"><b>XYz XYz XYz
+                XYz XYz XYz XYz XYz</b></font></li>
+            <li><font size="3" face="Times New Roman"><b>string </b></font><font
+                size="3"><b>：</b></font><font size="3"
+                face="Times New Roman"><b>ABC </b></font><font
+                size="3"><b>， </b></font><font size="3"
+                face="Times New Roman"><b>newstring</b></font><font
+                size="3"><b>： </b></font><font size="3"
+                face="Times New Roman"><b>XYZ</b></font></li>
+            <li><font size="3"><b>原始文件为： </b></font><font
+                size="3" face="Times New Roman"><b>abc Abc aBc
+                abC ABc AbC aBC ABC </b></font><font size="3"><b>经过取代为：
+                </b></font><font size="3" face="Times New Roman"><b>XYZ
+                XYZ XYZ XYZ XYZ XYZ XYZ XYZ</b></font></li>
+        </ul>
+    </li>
+</ul>
+
+<pre><font size="3"><b>讨论至此，取代的部份应该可以告一段落了。接下来，就是要将
+一直未正式讨论的</b><b><i> </i></b></font><font size="3"
+face="Times New Roman"><b><i>Regular Expression</i></b><b> </b></font><font
+size="3"><b>做一详尽的说明。
+</b></font></pre>
+
+<h2><a name="3"><font size="3" face="Times New Roman"><b>Regular
+Expression</b></font></a></h2>
+
+<h4><font size="3"><b>所谓的 </b></font><font size="3"
+face="Times New Roman"><b><i>Regular Expression</i></b></font><font
+size="3"><b>（以下简称 </b></font><font size="3"
+face="Times New Roman"><b><i>Regexp</i></b></font><font size="3"><b>）
+是用来表达一连续字元的组合，或是用来描述字样（</b></font><font
+size="3" face="Times New Roman"><b>pattern</b></font><font
+size="3"><b>）
+的一种方法，它在概念上不同於字串。 字串是指由一连续字元（</b></font><font
+size="3" face="Times New Roman"><b>character</b></font><font
+size="3"><b>）所形成的字元组，
+一个字元组就只代表一个特定的字串，而 </b></font><font
+size="3" face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+size="3"><b>通常所代表
+的是一组具有共通特性的字串集，此共通特性称为
+</b></font><font size="3" face="Times New Roman"><b><i>pattern</i></b></font><font
+size="3"><b>。 </b></font><font size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+</b></font><font size="3"><b>的精神，就是希望以最少的字元，来表达最大的巨集。
+所以 </b></font><font size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+</b></font><font size="3"><b>所能表达的字串数应不只於一个，而是一个字串
+的集合。这也是字串与 </b></font><font size="3"
+face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+size="3"><b>最大不同处。当然， 也可将字串视为 </b></font><font
+size="3" face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+size="3"><b>的一个特例。 本文一直没有讨论撰写程式的问题，但不可否认的，
+程式撰写使用到 </b></font><font size="3"
+face="Times New Roman"><b><i>Regexp</i></b></font><font size="3"><b>的机会不胜数。举凡变数、常数的
+重新命名，同类字串的搜寻，数个程式合并後的整理工作等等，
+若能灵活使用 </b></font><font size="3"
+face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+size="3"><b>，则可达事半功倍之效。这是一篇 讨论 </b></font><font
+size="3" face="Times New Roman"><b>EMACS </b></font><font
+size="3"><b>使用入门的文章，并不是讨论程式语言的文章，
+所以只是将 </b></font><font size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+</b></font><font size="3"><b>的用法告知。</b></font></h4>
+
+<p><font size="3"><b>撰写程式常有的经验，就是要将数个函式合并後，必需将
+使用这些函式的地方，以合并後的新名称取代。例如
+</b></font><font size="3" face="Times New Roman"><b>read_i.c</b></font><font
+size="3"><b>、 </b></font><font size="3" face="Times New Roman"><b>read_c.c
+</b></font><font size="3"><b>与</b></font><font size="3"
+face="Times New Roman"><b>read_f </b></font><font size="3"><b>等三个函式合并成
+</b></font><font size="3" face="Times New Roman"><b>read.c </b></font><font
+size="3"><b>时，所有使用
+这三个函式的地方，都必需改成 </b></font><font
+size="3" face="Times New Roman"><b>read.c</b></font><font
+size="3"><b>。 此时，若以传统的修改方法，恐会漏一挂万，若采取代法，
+则必需执行三次的取代，才可以大功告成。但使用
+</b></font><font size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+</b></font><font size="3"><b>， 则可以一举成功。既方便又快速。
+又则，编辑文件或程式时，注解的功夫是不可或缺的。
+不同的文件与语言，各有其不同的注解表示法。例如　
+</b></font><font size="3" face="Times New Roman"><b>LISP </b></font><font
+size="3"><b>语言是以 </b></font><font size="3"
+face="Times New Roman"><b>``;'' </b></font><font size="3"><b>表示注解，
+</b></font><font size="3" face="Times New Roman"><b>LaTex </b></font><font
+size="3"><b>则以</b></font><font size="3"
+face="Times New Roman"><b>``'' </b></font><font size="3"><b>为注解。有时为了
+将注解分类，极</b></font><font size="3"
+face="Times New Roman"><b>H</b></font><font size="3"><b>不同数目的注解符号来做区分。此时遇到的问题
+是，当重新分类注解时，相对应的注解符号也要调整。以
+</b></font><font size="3" face="Times New Roman"><b>LISP</b></font><font
+size="3"><b>语言为例， 重新分类後，可能将拥有一个
+</b></font><font size="3" face="Times New Roman"><b>``;'' </b></font><font
+size="3"><b>及二个 </b></font><font size="3"
+face="Times New Roman"><b>``;''</b></font><font size="3"><b>的注解符号，以三个
+</b></font><font size="3" face="Times New Roman"><b>``;'' </b></font><font
+size="3"><b>注解符号取而代之，这时若使用</b></font><font
+size="3" face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+size="3"><b>，问题就可迎刃而解。</b></font></p>
+
+<p><font size="3"><b>程式档名的转换也可以 </b></font><font
+size="3" face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+size="3"><b>来轻松完成。
+因为不同的程式各有其不同的副名，例如 </b></font><font
+size="3" face="Times New Roman"><b>C </b></font><font size="3"><b>语言的副名为
+</b></font><font size="3" face="Times New Roman"><b>``.c'' </b></font><font
+size="3"><b>， </b></font><font size="3" face="Times New Roman"><b>C++
+</b></font><font size="3"><b>语言的副名为 </b></font><font
+size="3" face="Times New Roman"><b>``.C'' </b></font><font
+size="3"><b>，而</b></font><font size="3"
+face="Times New Roman"><b>FORTRAN </b></font><font size="3"><b>语言则为
+</b></font><font size="3" face="Times New Roman"><b>``.f'' </b></font><font
+size="3"><b>等等。 此时，若想将 </b></font><font
+size="3" face="Times New Roman"><b>FORTRAN </b></font><font
+size="3"><b>语言所发展软体，转换成 </b></font><font
+size="3" face="Times New Roman"><b>C </b></font><font size="3"><b>语言，
+则必需将所有 </b></font><font size="3"
+face="Times New Roman"><b>``.c'' </b></font><font size="3"><b>的档名做适当的调整。</b></font></p>
+
+<p><font size="3"><b>例如，将所有</b></font><font size="3"
+face="Times New Roman"><b>``filename.f'' </b></font><font
+size="3"><b>的档案，改为 </b></font><font size="3"
+face="Times New Roman"><b>``filename.c'' </b></font><font
+size="3"><b>的档名。 此时，若使用 </b></font><font
+size="3" face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+size="3"><b>，可能在极短的时间就可将所有的
+档名转换成功。 </b></font><font size="3"
+face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+size="3"><b>的运用非常的广泛，这里所举的例子
+只是凤毛麟角。以下就开始简介 </b></font><font
+size="3" face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+size="3"><b>的使用法，至於
+更详细的介绍，请参照另一篇 </b></font><font size="3"
+face="Times New Roman"><b>94019 </b></font><font size="3"><b>的技术报告。</b></font></p>
+
+<p><font size="3" face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+size="3"><b>并非是 </b></font><font size="3"
+face="Times New Roman"><b>EMACS </b></font><font size="3"><b>的专利，而是
+</b></font><font size="3" face="Times New Roman"><b>UNIX </b></font><font
+size="3"><b>系统下 的产物。 </b></font><font size="3"
+face="Times New Roman"><b>UNIX </b></font><font size="3"><b>系统下的许多工具程式都使用
+</b></font><font size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+</b></font><font size="3"><b>， 虽然彼此在表达 </b></font><font
+size="3" face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+size="3"><b>的方法上，略有差别，但在概念上
+却是一致的。 </b></font><font size="3"
+face="Times New Roman"><b>UNIX </b></font><font size="3"><b>系统上使用
+</b></font><font size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+</b></font><font size="3"><b>的工具，除了</b></font><font
+size="3" face="Times New Roman"><b>EMACS </b></font><font
+size="3"><b>外，尚有</b></font><font size="3"
+face="Times New Roman"><b>ed </b></font><font size="3"><b>、</b></font><font
+size="3" face="Times New Roman"><b>ex </b></font><font size="3"><b>、</b></font><font
+size="3" face="Times New Roman"><b>vi </b></font><font size="3"><b>、</b></font><font
+size="3" face="Times New Roman"><b>sed </b></font><font size="3"><b>、</b></font><font
+size="3" face="Times New Roman"><b>awk </b></font><font size="3"><b>、</b></font><font
+size="3" face="Times New Roman"><b>grep </b></font><font size="3"><b>、</b></font><font
+size="3" face="Times New Roman"><b>egrep </b></font><font
+size="3"><b>等等。 这里所介绍的 </b></font><font
+size="3" face="Times New Roman"><b><i>Regexp</i></b></font><font
+size="3"><b>，在概念上与其它地方是共通的， 但在实际的运作上可能会有所出入。</b></font></p>
+
+<p><font size="3" face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+size="3"><b>是由字元所组成，此字元分为一般字元与特殊字元
+两种。一般字元所组成的 </b></font><font size="3"
+face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+size="3"><b>，是最简单的 </b></font><font size="3"
+face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+size="3"><b>的表示法。因为它所要表达的字串与 </b></font><font
+size="3" face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+size="3"><b>完全一模一样 。 由特殊字元所组成的 </b></font><font
+size="3" face="Times New Roman"><b><i>Regexp</i></b></font><font
+size="3"><b>就较为复杂了。因为不同的特殊 字元，各有特殊的代表意义。
+</b></font><font size="3" face="Times New Roman"><b>EMACS </b></font><font
+size="3"><b>中</b></font><font size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+</b></font><font size="3"><b>的特殊字元有 </b></font><font
+size="3" face="Times New Roman"><b>$</b></font><font size="3"><b>、
+</b></font><font size="3" face="Times New Roman"><b>^ </b></font><font
+size="3"><b>、 </b></font><font size="3" face="Times New Roman"><b>.</b></font><font
+size="3"><b>、 </b></font><font size="3" face="Times New Roman"><b>*
+</b></font><font size="3"><b>、 </b></font><font size="3"
+face="Times New Roman"><b>+ </b></font><font size="3"><b>、 </b></font><font
+size="3" face="Times New Roman"><b>? </b></font><font size="3"><b>、
+</b></font><font size="3" face="Times New Roman"><b>[</b></font><font
+size="3"><b>、</b></font><font size="3" face="Times New Roman"><b>]
+</b></font><font size="3"><b>及 </b></font><font size="3"
+face="Times New Roman"><b>\</b></font><font size="3"><b>等九个。例如，
+</b></font><font size="3" face="Times New Roman"><b>``a'' </b></font><font
+size="3"><b>是一般 的字元，它也只代表 </b></font><font
+size="3" face="Times New Roman"><b>``a''</b></font><font size="3"><b>，别无其它。但是
+</b></font><font size="3" face="Times New Roman"><b>``a.''</b></font><font
+size="3"><b>、 </b></font><font size="3" face="Times New Roman"><b>``a*''
+</b></font><font size="3"><b>、 </b></font><font size="3"
+face="Times New Roman"><b>``a?'' </b></font><font size="3"><b>与
+</b></font><font size="3" face="Times New Roman"><b>``a+''</b></font><font
+size="3"><b>等所代表的意义，除了 </b></font><font
+size="3" face="Times New Roman"><b>``a'' </b></font><font
+size="3"><b>外，尚有其它的意涵。
+特殊字元之外的字元，都是一般字元，但有些特殊字元是由
+一般字元加上 </b></font><font size="3"
+face="Times New Roman"><b>\ </b></font><font size="3"><b>而形成的。
+现在来谈谈几个简单的 </b></font><font size="3"
+face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+size="3"><b>的表示法。 想进一步多了解 </b></font><font
+size="3" face="Times New Roman"><b><i>Regexp</i></b></font><font
+size="3"><b>，仍请参考编号为 </b></font><font size="3"
+face="Times New Roman"><b>94019 </b></font><font size="3"><b>的技术报告。
+以下就开始讨论，代表 </b></font><font size="3"
+face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+size="3"><b>的符号
+有九个。为了讨论上的方便，将其分成若干类： </b></font></p>
+
+<ul>
+    <li><font size="3"><b>不在乎所出现的字母为何，可以『</b></font><font
+        size="3" face="Times New Roman"><b>.</b></font><font
+        size="3"><b>』 来表示。</b></font></li>
+    <li><font size="3"><b>所以『</b></font><font size="3"
+        face="Times New Roman"><b>.</b></font><font size="3"><b>』
+        代表除了 </b></font><font size="3"
+        face="Times New Roman"><b>newline </b></font><font
+        size="3"><b>之外的任何一个字元。 例如 </b></font><font
+        size="3" face="Times New Roman"><b>``a.b'' </b></font><font
+        size="3"><b>表示任何一个由三个字元所组成的字串，
+        此三个字元必需符合第一个字元是 </b></font><font
+        size="3" face="Times New Roman"><b>``a''</b></font><font
+        size="3"><b>， 第三个字元 是 </b></font><font
+        size="3" face="Times New Roman"><b>``b''</b></font><font
+        size="3"><b>，但中间的字元只要不是 </b></font><font
+        size="3" face="Times New Roman"><b><i>newline</i></b></font><font
+        size="3"><b>， 任何字元都可以。所以 </b></font><font
+        size="3" face="Times New Roman"><b>``a.b'' </b></font><font
+        size="3"><b>可以为 </b></font><font size="3"
+        face="Times New Roman"><b>aab</b></font><font size="3"><b>、</b></font><font
+        size="3" face="Times New Roman"><b>abb</b></font><font
+        size="3"><b>、</b></font><font size="3"
+        face="Times New Roman"><b>acb</b></font><font size="3"><b>、</b></font><font
+        size="3" face="Times New Roman"><b>axb</b></font><font
+        size="3"><b>、</b></font><font size="3"
+        face="Times New Roman"><b>a1b</b></font><font size="3"><b>、</b></font><font
+        size="3" face="Times New Roman"><b>a2b </b></font><font
+        size="3"><b>等等，
+        甚至可以是一些特殊字元，只要这些特殊字元在此时没有
+        特别的意义。例如 </b></font><font size="3"
+        face="Times New Roman"><b>``a^b''</b></font><font
+        size="3"><b>。 </b></font></li>
+    <li><font size="3"><b>以特殊字元，来表示重复出现的一般字元。这些特殊字元称为</b></font></li>
+    <li><font size="3" face="Times New Roman"><b>postfix
+        character</b></font><font size="3"><b>。其表示符号有
+        『</b></font><font size="3" face="Times New Roman"><b>*</b></font><font
+        size="3"><b>』、『</b></font><font size="3"
+        face="Times New Roman"><b>+</b></font><font size="3"><b>』
+        与『</b></font><font size="3" face="Times New Roman"><b>?</b></font><font
+        size="3"><b>』 等三种。 </b></font><ul>
+            <li><font size="3"><b>『</b></font><font size="3"
+                face="Times New Roman"><b>*</b></font><font
+                size="3"><b>』</b></font></li>
+            <li><font size="3"><b>任何字元之後加上『</b></font><font
+                size="3" face="Times New Roman"><b>*</b></font><font
+                size="3"><b>』，可表示字元重复出现的次数，
+                从零次到无限多次。因此 </b></font><font
+                size="3" face="Times New Roman"><b>``ab*''</b></font><font
+                size="3"><b>，可表示， </b></font><font
+                size="3" face="Times New Roman"><b>a</b></font><font
+                size="3"><b>、</b></font><font size="3"
+                face="Times New Roman"><b>ab</b></font><font
+                size="3"><b>、</b></font><font size="3"
+                face="Times New Roman"><b>abb</b></font><font
+                size="3"><b>、</b></font><font size="3"
+                face="Times New Roman"><b>abbb</b></font><font
+                size="3"><b>、</b></font><font size="3"
+                face="Times New Roman"><b>abbb</b></font><font
+                size="3"><b>以及 </b></font><font size="3"
+                face="Times New Roman"><b>ab...b </b></font><font
+                size="3"><b>到无限个 </b></font><font
+                size="3" face="Times New Roman"><b>b</b></font><font
+                size="3"><b>。 </b></font></li>
+            <li><font size="3"><b>『</b></font><font size="3"
+                face="Times New Roman"><b>+</b></font><font
+                size="3"><b>』</b></font></li>
+            <li><font size="3"><b>任何字元之後加上『</b></font><font
+                size="3" face="Times New Roman"><b>+</b></font><font
+                size="3"><b>』，可表示字元重复的出现次数，
+                从一次到无限多次。因此 </b></font><font
+                size="3" face="Times New Roman"><b>``ab+''</b></font><font
+                size="3"><b>，可表示为 </b></font><font
+                size="3" face="Times New Roman"><b>ab</b></font><font
+                size="3"><b>、</b></font><font size="3"
+                face="Times New Roman"><b>abb</b></font><font
+                size="3"><b>、</b></font><font size="3"
+                face="Times New Roman"><b>abbb</b></font><font
+                size="3"><b>、</b></font><font size="3"
+                face="Times New Roman"><b>abbb </b></font><font
+                size="3"><b>以及 </b></font><font size="3"
+                face="Times New Roman"><b>ab...b </b></font><font
+                size="3"><b>到无限个 </b></font><font
+                size="3" face="Times New Roman"><b>b</b></font><font
+                size="3"><b>。 </b></font></li>
+            <li><font size="3"><b>『</b></font><font size="3"
+                face="Times New Roman"><b>?</b></font><font
+                size="3"><b>』</b></font></li>
+            <li><font size="3"><b>任何字元之後加上『</b></font><font
+                size="3" face="Times New Roman"><b>?</b></font><font
+                size="3"><b>』，可表示字元重复的出现次数，
+                不是零次就是只有一次。因此 </b></font><font
+                size="3" face="Times New Roman"><b>``ab?'' </b></font><font
+                size="3"><b>不是表示为 </b></font><font
+                size="3" face="Times New Roman"><b>``a'' </b></font><font
+                size="3"><b>， 就是表示为 </b></font><font
+                size="3" face="Times New Roman"><b>``ab''</b></font><font
+                size="3"><b>。 </b></font></li>
+        </ul>
+    </li>
+    <li><font size="3"><b>若字元为属於某一特定集合中的元素时，可以字集（</b></font><font
+        size="3" face="Times New Roman"><b>character set</b></font><font
+        size="3"><b>） 来表示。</b></font></li>
+    <li><font size="3"><b>此时的代表符号是 </b></font><font
+        size="3" face="Times New Roman"><b>[...]</b></font><font
+        size="3"><b>。中括号内就是放置字集的地方。如下讨论
+        字集的若干变化。 </b></font><ul>
+            <li><font size="3" face="Times New Roman"><b>[...]</b></font></li>
+            <li><font size="3"><b>最简单的字集表示法，是将所有符合的字元放於在括号内。
+                例如，</b></font><font size="3"
+                face="Times New Roman"><b>[a@!d13]</b></font><font
+                size="3"><b>。此时，符合的字元就只有 </b></font><font
+                size="3" face="Times New Roman"><b>a</b></font><font
+                size="3"><b>、</b></font><font size="3"
+                face="Times New Roman"><b>@</b></font><font
+                size="3"><b>、</b></font><font size="3"
+                face="Times New Roman"><b>!</b></font><font
+                size="3"><b>、</b></font><font size="3"
+                face="Times New Roman"><b>1 </b></font><font
+                size="3"><b>和 </b></font><font size="3"
+                face="Times New Roman"><b>3 </b></font><font
+                size="3"><b>而已。 若所表示的字集，具有一定范围的连续性，为了方便表达，
+                可以 </b></font><font size="3"
+                face="Times New Roman"><b>[a-g] </b></font><font
+                size="3"><b>来代表</b></font><font size="3"
+                face="Times New Roman"><b>[abcdefg] </b></font><font
+                size="3"><b>。 这一类的表示法，将会有更
+                详细的讨论。 </b></font></li>
+            <li><font size="3" face="Times New Roman"><b>[...] </b></font><font
+                size="3"><b>与其它的特殊字元的配合。</b></font><font
+                size="3" face="Times New Roman"><b>&gt;</b></font></li>
+            <li><ul>
+                    <li><font size="3" face="Times New Roman"><b>[...]
+                        </b></font><font size="3"><b>与 「</b></font><font
+                        size="3" face="Times New Roman"><b>*</b></font><font
+                        size="3"><b>」 的配合</b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>c[ab]d
+                        </b></font><font size="3"><b>代表 </b></font><font
+                        size="3" face="Times New Roman"><b>``cad''
+                        </b></font><font size="3"><b>或 </b></font><font
+                        size="3" face="Times New Roman"><b>``cbd''</b></font><font
+                        size="3"><b>。 </b></font><font size="3"
+                        face="Times New Roman"><b>c[ab]*d </b></font><font
+                        size="3"><b>代表头尾为 </b></font><font
+                        size="3" face="Times New Roman"><b>``c'' </b></font><font
+                        size="3"><b>与 </b></font><font size="3"
+                        face="Times New Roman"><b>``d'' </b></font><font
+                        size="3"><b>的字串 ，
+                        头尾间的组合，则由 </b></font><font
+                        size="3" face="Times New Roman"><b>[ab]* </b></font><font
+                        size="3"><b>来决定。 </b></font><font
+                        size="3" face="Times New Roman"><b>[ab]* </b></font><font
+                        size="3"><b>可表示为 </b></font><font
+                        size="3" face="Times New Roman"><b>cd</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>cad</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>cbd</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>caabd</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>cabbaar </b></font><font
+                        size="3"><b>等形式。 </b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>[...]
+                        </b></font><font size="3"><b>与 </b></font><font
+                        size="3" face="Times New Roman"><b>+ </b></font><font
+                        size="3"><b>的配合</b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>c[ab]+d
+                        </b></font><font size="3"><b>表示头尾为
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>``c'' </b></font><font
+                        size="3"><b>与 </b></font><font size="3"
+                        face="Times New Roman"><b>``d'' </b></font><font
+                        size="3"><b>的字串 ， 头尾间的组合，则由</b></font><font
+                        size="3" face="Times New Roman"><b>[ab]+ </b></font><font
+                        size="3"><b>来决定。 </b></font><font
+                        size="3" face="Times New Roman"><b>[ab]+ </b></font><font
+                        size="3"><b>可表示为 </b></font><font
+                        size="3" face="Times New Roman"><b>cad</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>cbd</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>caabd</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>cabbaad </b></font><font
+                        size="3"><b>等形式。 </b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>[...]
+                        </b></font><font size="3"><b>与 </b></font><font
+                        size="3" face="Times New Roman"><b>? </b></font><font
+                        size="3"><b>的配合</b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>c[ab]?d
+                        </b></font><font size="3"><b>表示头尾为
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>``c'' </b></font><font
+                        size="3"><b>与 </b></font><font size="3"
+                        face="Times New Roman"><b>``d'' </b></font><font
+                        size="3"><b>的字串 ， 头尾间的组合，则由
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>[ab]? </b></font><font
+                        size="3"><b>来决定。 </b></font><font
+                        size="3" face="Times New Roman"><b>[ab]? </b></font><font
+                        size="3"><b>可表示为 </b></font><font
+                        size="3" face="Times New Roman"><b>cd</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>cad</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>cbd </b></font><font
+                        size="3"><b>等形式。 </b></font></li>
+                </ul>
+            </li>
+            <li><font size="3"><b>特殊字元，为字集内容时的解释</b></font></li>
+            <li><font size="3"><b>任何 </b></font><font
+                size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+                </b></font><font size="3"><b>的特殊字元，出现在中括号内都
+                可将其视为一般的字元，除了二个符号之外。这二个
+                例外的符号，也要看其出现的位置而做不同的解释。
+                这两个符号是 </b></font><font size="3"
+                face="Times New Roman"><b>``^'' </b></font><font
+                size="3"><b>， </b></font><font size="3"
+                face="Times New Roman"><b>``-''</b></font><font
+                size="3"><b>。 </b></font><ol>
+                    <li><font size="3" face="Times New Roman"><b>``^''</b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>``^''
+                        </b></font><font size="3"><b>若出现在括号的第一个位置时，表示「以下皆非」
+                        的意思。所以， </b></font><font
+                        size="3" face="Times New Roman"><b>[a-zA-Z]
+                        </b></font><font size="3"><b>表示所有英文字母的集合，
+                        而</b></font><font size="3"
+                        face="Times New Roman"><b>[^a-zA-Z] </b></font><font
+                        size="3"><b>则表示除了英文字母之外的所有集合。
+                        </b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>``-''</b></font></li>
+                    <li><font size="3"><b>简化范围性的字集的表示法。其用法是将字集的起始点
+                        放於 </b></font><font size="3"
+                        face="Times New Roman"><b>``-''</b></font><font
+                        size="3"><b>的右边，而终点放於 </b></font><font
+                        size="3" face="Times New Roman"><b>``-'' </b></font><font
+                        size="3"><b>的右边。 例如，</b></font><font
+                        size="3" face="Times New Roman"><b>[abcdefg]
+                        </b></font><font size="3"><b>可以 </b></font><font
+                        size="3" face="Times New Roman"><b>[a-g] </b></font><font
+                        size="3"><b>来表示， </b></font><font
+                        size="3" face="Times New Roman"><b>[a-z] </b></font><font
+                        size="3"><b>则表示二十六个字母的集合。</b></font><font
+                        size="3" face="Times New Roman"><b>[0-9] </b></font><font
+                        size="3"><b>则表示数字的集合，
+                        要表示二位数字的集合，则可以
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>[0-9][0-9] </b></font><font
+                        size="3"><b>来表示。 </b></font></li>
+                </ol>
+            </li>
+        </ul>
+    </li>
+    <li><font size="3"><b>指定 </b></font><font size="3"
+        face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+        size="3"><b>出现的地方为列首或列尾。</b></font></li>
+    <li><ul>
+            <li><font size="3" face="Times New Roman"><b>``^''</b></font><font
+                size="3"><b>，指定 </b></font><font size="3"
+                face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+                size="3"><b>出现在列首的符号。</b></font></li>
+            <li><font size="3"><b>在 </b></font><font size="3"
+                face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+                size="3"><b>前加上 </b></font><font size="3"
+                face="Times New Roman"><b>``^'' </b></font><font
+                size="3"><b>的符号，即表示此 </b></font><font
+                size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+                </b></font><font size="3"><b>必需出现在列首。例如，
+                </b></font><font size="3" face="Times New Roman"><b>``^
+                The'' </b></font><font size="3"><b>，则找寻每列以</b></font><font
+                size="3" face="Times New Roman"><b>``The'' </b></font><font
+                size="3"><b>为首的字串。 </b></font></li>
+            <li><font size="3" face="Times New Roman"><b>``$''</b></font><font
+                size="3"><b>， 指定 </b></font><font size="3"
+                face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+                size="3"><b>出现在列尾的符号。</b></font></li>
+            <li><font size="3"><b>指定 </b></font><font
+                size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+                </b></font><font size="3"><b>必需出现在列尾时，只要在
+                </b></font><font size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+                </b></font><font size="3"><b>後加上一个 </b></font><font
+                size="3" face="Times New Roman"><b>``$'' </b></font><font
+                size="3"><b>即可。例如， </b></font><font
+                size="3" face="Times New Roman"><b>xxxx+$ </b></font><font
+                size="3"><b>会将列尾以 </b></font><font
+                size="3" face="Times New Roman"><b>``x'' </b></font><font
+                size="3"><b>结束的字串找出。 </b></font></li>
+        </ul>
+    </li>
+    <li><font size="3" face="Times New Roman"><b>``\'' </b></font><font
+        size="3"><b>的用法</b></font></li>
+    <li><font size="3" face="Times New Roman"><b>\ </b></font><font
+        size="3"><b>在 </b></font><font size="3"
+        face="Times New Roman"><b><i>Regexp</i></b><b> </b></font><font
+        size="3"><b>中有二种涵意：一、使特殊字元变为
+        普通字元，二、使普通字元转为特殊字元。
+        </b></font><ul>
+            <li><font size="3"><b>特殊字前加上 </b></font><font
+                size="3" face="Times New Roman"><b>\ </b></font><font
+                size="3"><b>，此特殊字元就不具特殊意义，
+                只是一个普通字元而已。例如，列首要以
+                </b></font><font size="3" face="Times New Roman"><b>^
+                </b></font><font size="3"><b>为开端， 则以 </b></font><font
+                size="3" face="Times New Roman"><b>\^ </b></font><font
+                size="3"><b>来表示，此时的 </b></font><font
+                size="3" face="Times New Roman"><b>^ </b></font><font
+                size="3"><b>则为普通字元。</b></font></li>
+            <li><font size="3"><b>将如下的普通字元</b></font></li>
+            <li><font size="3" face="Times New Roman"><b>|</b></font><font
+                size="3"><b>、 </b></font><font size="3"
+                face="Times New Roman"><b>(</b></font><font
+                size="3"><b>、 </b></font><font size="3"
+                face="Times New Roman"><b>)</b></font><font
+                size="3"><b>、 </b></font><font size="3"
+                face="Times New Roman"><b>d</b></font><font
+                size="3"><b>、 </b></font><font size="3"
+                face="Times New Roman"><b>'</b></font><font
+                size="3"><b>、 </b></font><font size="3"
+                face="Times New Roman"><b>`</b></font><font
+                size="3"><b>、 </b></font><font size="3"
+                face="Times New Roman"><b>b</b></font><font
+                size="3"><b>、 </b></font><font size="3"
+                face="Times New Roman"><b>B</b></font><font
+                size="3"><b>、</b></font><font size="3"
+                face="Times New Roman"><b>&lt; </b></font><font
+                size="3"><b>、</b></font><font size="3"
+                face="Times New Roman"><b>&gt; </b></font><font
+                size="3"><b>、 </b></font><font size="3"
+                face="Times New Roman"><b>w</b></font><font
+                size="3"><b>、 </b></font><font size="3"
+                face="Times New Roman"><b>W</b></font><font
+                size="3"><b>、 </b></font><font size="3"
+                face="Times New Roman"><b>sc</b></font><font
+                size="3"><b>、 </b></font><font size="3"
+                face="Times New Roman"><b>Sc </b></font><font
+                size="3"><b>之前加上 </b></font><font
+                size="3" face="Times New Roman"><b>\ </b></font><font
+                size="3"><b>之後，则此普通字元就已特殊化了。现在
+                只讨论几个常用的字元（</b></font><font
+                size="3" face="Times New Roman"><b>| </b></font><font
+                size="3"><b>、</b></font><font size="3"
+                face="Times New Roman"><b>(</b></font><font
+                size="3"><b>、</b></font><font size="3"
+                face="Times New Roman"><b>)</b></font><font
+                size="3"><b>、</b></font><font size="3"
+                face="Times New Roman"><b>d</b></font><font
+                size="3"><b>、</b></font><font size="3"
+                face="Times New Roman"><b>&lt; </b></font><font
+                size="3"><b>、</b></font><font size="3"
+                face="Times New Roman"><b>&gt; </b></font><font
+                size="3"><b>）。 </b></font><ul>
+                    <li><font size="3" face="Times New Roman"><b>\|
+                        </b></font><font size="3"><b>，（表示选择的用法）</b></font></li>
+                    <li><font size="3"><b>欲在二个 </b></font><font
+                        size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+                        </b></font><font size="3"><b>中择一而用，可以
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>\| </b></font><font
+                        size="3"><b>， 将二个 </b></font><font
+                        size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+                        </b></font><font size="3"><b>放於其左右来表示。
+                        例如</b></font><font size="3"
+                        face="Times New Roman"><b>,the\| it </b></font><font
+                        size="3"><b>为二选一的 </b></font><font
+                        size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+                        </b></font><font size="3"><b>的表示法。可能的符合字串为大小写穿插其间的
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>the </b></font><font
+                        size="3"><b>或 </b></font><font size="3"
+                        face="Times New Roman"><b>it</b></font><font
+                        size="3"><b>。例如，</b></font><font
+                        size="3" face="Times New Roman"><b>The</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>tHe</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>thE</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>THe</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>tHE</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>THE</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>iT</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>IT </b></font><font
+                        size="3"><b>等。为何会有不同的大小写表示法，请再一次注意
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>EMACS </b></font><font
+                        size="3"><b>对於 </b></font><font
+                        size="3" face="Times New Roman"><b><i>case
+                        sensitive</i></b><b> </b></font><font
+                        size="3"><b>的处理方式。若不清楚者，
+                        请参照 </b></font><font size="3"
+                        face="Times New Roman"><b>6.1 </b></font><font
+                        size="3"><b>节。 以 </b></font><font
+                        size="3" face="Times New Roman"><b>\| </b></font><font
+                        size="3"><b>所表示的 </b></font><font
+                        size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+                        </b></font><font size="3"><b>有一个特色，
+                        那是在找寻合适的字串时，与 </b></font><font
+                        size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+                        </b></font><font size="3"><b>从开始至结尾
+                        都符合的字串。所以，若想找出
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>read </b></font><font
+                        size="3"><b>或 </b></font><font size="3"
+                        face="Times New Roman"><b>get </b></font><font
+                        size="3"><b>其後立即接上 </b></font><font
+                        size="3" face="Times New Roman"><b>file </b></font><font
+                        size="3"><b>的字串，就必需以 </b></font><font
+                        size="3" face="Times New Roman"><b>``
+                        readfile\| getfile </b></font><font
+                        size="3"><b>来表示。乍看之下，似乎没有任何的疑问。事实上，
+                        这种表示法也没有不对，可是各位是否还记得
+                        </b></font><font size="3"
+                        face="Times New Roman"><b><i>Regexp</i></b><b>
+                        </b></font><font size="3"><b>的真谛，就是要以最少的字元来表示最大的字集，在这个例子
+                        中的重复性很高，似乎不太能符合
+                        </b></font><font size="3"
+                        face="Times New Roman"><b><i>Regexp</i></b><b>
+                        </b></font><font size="3"><b>的精神。
+                        下面就是改进的方法。 </b></font></li>
+                    <li><font size="3"><b>利用 </b></font><font
+                        size="3" face="Times New Roman"><b>\(...\)
+                        </b></font><font size="3"><b>将 </b></font><font
+                        size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+                        </b></font><font size="3"><b>的范围规范出来。</b></font></li>
+                    <li><font size="3"><b>利用此方法，上例就可以</b></font><font
+                        size="3" face="Times New Roman"><b>``\(read\|
+                        get\)file'' </b></font><font size="3"><b>来找寻
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>readfile </b></font><font
+                        size="3"><b>或 </b></font><font size="3"
+                        face="Times New Roman"><b>getfile</b></font><font
+                        size="3"><b>。这样是不是简捷多了吗？
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>\(...\) </b></font><font
+                        size="3"><b>还可以配合 </b></font><font
+                        size="3" face="Times New Roman"><b>*</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>+</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>? </b></font><font
+                        size="3"><b>等特殊字元 使用。 </b></font><font
+                        size="3" face="Times New Roman"><b>*</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>+</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>? </b></font><font
+                        size="3"><b>等特殊字元在处理字元的重复性时，
+                        只适用在特殊字元之前的一个字元，所以若想重复一组
+                        字元时，就必需以</b></font><font
+                        size="3" face="Times New Roman"><b>\(...\)
+                        </b></font><font size="3"><b>将其组合起来。例如，</b></font><font
+                        size="3" face="Times New Roman"><b>``ba\(na\)*</b></font><font
+                        size="3"><b>， 可以表示 </b></font><font
+                        size="3" face="Times New Roman"><b>bana</b></font><font
+                        size="3"><b>、</b></font><font size="3"
+                        face="Times New Roman"><b>banana </b></font><font
+                        size="3"><b>与</b></font><font size="3"
+                        face="Times New Roman"><b>bana.......na </b></font><font
+                        size="3"><b>等无数个 </b></font><font
+                        size="3" face="Times New Roman"><b>na </b></font><font
+                        size="3"><b>的组合。 </b></font></li>
+                </ul>
+                <p><font size="3"><b>除了以上所述的表示法外，若干普通字元加上
+                </b></font><font size="3" face="Times New Roman"><b>\
+                </b></font><font size="3"><b>还可以
+                有特别的用法，以下讨论常用的几个用法。
+                </b></font></p>
+                <ol>
+                    <li><font size="3" face="Times New Roman"><b>\
+                        d</b></font></li>
+                    <li><font size="3"><b>在 </b></font><font
+                        size="3" face="Times New Roman"><b><i>Regexp</i></b><b>
+                        </b></font><font size="3"><b>的表示法中，可以只撷取部份的符合
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>egexp </b></font><font
+                        size="3"><b>。其做法是将要保留的
+                        </b></font><font size="3"
+                        face="Times New Roman"><b><i>Regexp</i></b><b>
+                        </b></font><font size="3"><b>暂存在缓冲区
+                        内之後，再将其拿出来使用。例如，要将所有副名为
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>.c </b></font><font
+                        size="3"><b>的档名，换成为 </b></font><font
+                        size="3" face="Times New Roman"><b>.f </b></font><font
+                        size="3"><b>的档名，其做法如下：
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>ESC-x replace-</b><b><i>Regexp</i></b><b>
+                        RET \(file[0-9]\)\.c RET \1\.f </b></font><font
+                        size="3"><b>如此，会将所有名为 </b></font><font
+                        size="3" face="Times New Roman"><b>file1.c
+                        file2.c file3.c ...... file9.c </b></font><font
+                        size="3"><b>的档名，改为 </b></font><font
+                        size="3" face="Times New Roman"><b>file1.f
+                        file2.f file3.f ........ file9.f</b></font><font
+                        size="3"><b>。 </b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>\&lt;
+                        </b></font><font size="3"><b>，寻找一字的开头</b></font></li>
+                    <li><font size="3" face="Times New Roman"><b>\&gt;
+                        </b></font><font size="3"><b>，寻找一字的结尾
+                        例如，</b></font><font size="3"
+                        face="Times New Roman"><b>\&lt;
+                        b[a-z]g\&gt; </b></font><font size="3"><b>会将
+                        </b></font><font size="3"
+                        face="Times New Roman"><b>beg</b></font><font
+                        size="3"><b>、 </b></font><font size="3"
+                        face="Times New Roman"><b>big</b></font><font
+                        size="3"><b>、 </b></font><font size="3"
+                        face="Times New Roman"><b>bag </b></font><font
+                        size="3"><b>等字串找出。 </b></font></li>
+                </ol>
+            </li>
+        </ul>
+        <hr>
+        <p><a href="index.html"><font size="3"><b>回主选单</b></font></a></p>
+    </li>
+</ul>
+</body>
+</html>

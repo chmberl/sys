@@ -1,5 +1,7 @@
 #!/usr/bin/ruby -w
 
+
+
 ary = ['fred', 10, 'this is a string']
 
 ary.each do |i|
